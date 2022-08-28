@@ -1,0 +1,2 @@
+﻿<%@ Control Language="C#" AutoEventWireup="true" CodeBehind="Html.ascx.cs" Inherits="DynamicData.Admin.DynamicData.FieldTemplates.HtmlField" %>
+<%#  Utility.Truncate( Server.HtmlDecode(FieldValueString),20)  %>

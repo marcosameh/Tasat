@@ -1,0 +1,29 @@
+﻿@page "/sitemap.xml"
+<?xml version="1.0" encoding="UTF-8" ?>
+
+@model App.UI.Pages.sitemapModel
+
+@{
+    Layout = null;
+    PageContext.HttpContext.Response.ContentType = "text/xml";
+}
+
+
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
+    @*Include your static urls*@
+    <url>
+        <loc>@Model.DomainName/</loc>
+       @*<loc>@hostName/services</loc>*@
+        
+    </url>
+    @*Dynamically include pages generated from your database*@
+     <url>
+    @foreach (var article in Model.Articles)
+    {
+       
+            <loc>@Model.DomainName/@article</loc>
+       
+    }
+     </url>
+    @*You get the idea*@
+</urlset>

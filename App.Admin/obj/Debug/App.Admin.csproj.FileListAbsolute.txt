@@ -1,0 +1,147 @@
+D:\Clients\Bonta Yachting\Code\App.Admin\bin\DynamicData.Admin.dll.config
+D:\Clients\Bonta Yachting\Code\App.Admin\bin\DynamicData.Admin.dll
+D:\Clients\Bonta Yachting\Code\App.Admin\bin\DynamicData.Admin.pdb
+D:\Clients\Bonta Yachting\Code\App.Admin\bin\Antlr3.Runtime.dll
+D:\Clients\Bonta Yachting\Code\App.Admin\bin\EntityFramework.dll
+D:\Clients\Bonta Yachting\Code\App.Admin\bin\EntityFramework.SqlServer.dll
+D:\Clients\Bonta Yachting\Code\App.Admin\bin\Humanizer.dll
+D:\Clients\Bonta Yachting\Code\App.Admin\bin\Microsoft.AspNet.DynamicData.EFProvider.dll
+D:\Clients\Bonta Yachting\Code\App.Admin\bin\Microsoft.AspNet.EntityDataSource.dll
+D:\Clients\Bonta Yachting\Code\App.Admin\bin\Microsoft.Web.Infrastructure.dll
+D:\Clients\Bonta Yachting\Code\App.Admin\bin\Newtonsoft.Json.dll
+D:\Clients\Bonta Yachting\Code\App.Admin\bin\NotAClue.ComponentModel.DataAnnotations.dll
+D:\Clients\Bonta Yachting\Code\App.Admin\bin\NotAClue.dll
+D:\Clients\Bonta Yachting\Code\App.Admin\bin\NotAClue.Web.dll
+D:\Clients\Bonta Yachting\Code\App.Admin\bin\NotAClue.Web.DynamicData.dll
+D:\Clients\Bonta Yachting\Code\App.Admin\bin\RazorEngine.dll
+D:\Clients\Bonta Yachting\Code\App.Admin\bin\SixLabors.ImageSharp.dll
+D:\Clients\Bonta Yachting\Code\App.Admin\bin\System.Buffers.dll
+D:\Clients\Bonta Yachting\Code\App.Admin\bin\System.Diagnostics.DiagnosticSource.dll
+D:\Clients\Bonta Yachting\Code\App.Admin\bin\System.Memory.dll
+D:\Clients\Bonta Yachting\Code\App.Admin\bin\System.Net.Http.Formatting.dll
+D:\Clients\Bonta Yachting\Code\App.Admin\bin\System.Numerics.Vectors.dll
+D:\Clients\Bonta Yachting\Code\App.Admin\bin\System.Runtime.CompilerServices.Unsafe.dll
+D:\Clients\Bonta Yachting\Code\App.Admin\bin\System.Web.Http.dll
+D:\Clients\Bonta Yachting\Code\App.Admin\bin\System.Web.Http.WebHost.dll
+D:\Clients\Bonta Yachting\Code\App.Admin\bin\System.Web.Optimization.dll
+D:\Clients\Bonta Yachting\Code\App.Admin\bin\System.Web.Razor.dll
+D:\Clients\Bonta Yachting\Code\App.Admin\bin\WebGrease.dll
+D:\Clients\Bonta Yachting\Code\App.Admin\bin\Antlr3.Runtime.pdb
+D:\Clients\Bonta Yachting\Code\App.Admin\bin\EntityFramework.xml
+D:\Clients\Bonta Yachting\Code\App.Admin\bin\EntityFramework.SqlServer.xml
+D:\Clients\Bonta Yachting\Code\App.Admin\bin\Humanizer.xml
+D:\Clients\Bonta Yachting\Code\App.Admin\bin\Newtonsoft.Json.xml
+D:\Clients\Bonta Yachting\Code\App.Admin\bin\RazorEngine.xml
+D:\Clients\Bonta Yachting\Code\App.Admin\bin\SixLabors.ImageSharp.xml
+D:\Clients\Bonta Yachting\Code\App.Admin\bin\System.Diagnostics.DiagnosticSource.xml
+D:\Clients\Bonta Yachting\Code\App.Admin\bin\System.Memory.xml
+D:\Clients\Bonta Yachting\Code\App.Admin\bin\System.Net.Http.Formatting.xml
+D:\Clients\Bonta Yachting\Code\App.Admin\bin\System.Numerics.Vectors.xml
+D:\Clients\Bonta Yachting\Code\App.Admin\bin\System.Runtime.CompilerServices.Unsafe.xml
+D:\Clients\Bonta Yachting\Code\App.Admin\bin\System.Web.Http.xml
+D:\Clients\Bonta Yachting\Code\App.Admin\bin\System.Web.Http.WebHost.xml
+D:\Clients\Bonta Yachting\Code\App.Admin\bin\System.Web.Optimization.xml
+D:\Clients\Bonta Yachting\Code\App.Admin\bin\System.Web.Razor.xml
+D:\Clients\Bonta Yachting\Code\App.Admin\obj\Debug\App.Admin.csproj.AssemblyReference.cache
+D:\Clients\Bonta Yachting\Code\App.Admin\obj\Debug\App.Admin.csproj.CoreCompileInputs.cache
+D:\Clients\Bonta Yachting\Code\App.Admin\obj\Debug\App.Admin.csproj.CopyComplete
+D:\Clients\Bonta Yachting\Code\App.Admin\obj\Debug\DynamicData.Admin.dll
+D:\Clients\Bonta Yachting\Code\App.Admin\obj\Debug\DynamicData.Admin.pdb
+D:\Clients\dotnetcore-templates\App.Admin\bin\DynamicData.Admin.dll.config
+D:\Clients\dotnetcore-templates\App.Admin\bin\DynamicData.Admin.dll
+D:\Clients\dotnetcore-templates\App.Admin\bin\DynamicData.Admin.pdb
+D:\Clients\dotnetcore-templates\App.Admin\bin\Antlr3.Runtime.dll
+D:\Clients\dotnetcore-templates\App.Admin\bin\EntityFramework.dll
+D:\Clients\dotnetcore-templates\App.Admin\bin\EntityFramework.SqlServer.dll
+D:\Clients\dotnetcore-templates\App.Admin\bin\Humanizer.dll
+D:\Clients\dotnetcore-templates\App.Admin\bin\Microsoft.AspNet.DynamicData.EFProvider.dll
+D:\Clients\dotnetcore-templates\App.Admin\bin\Microsoft.AspNet.EntityDataSource.dll
+D:\Clients\dotnetcore-templates\App.Admin\bin\Microsoft.Web.Infrastructure.dll
+D:\Clients\dotnetcore-templates\App.Admin\bin\Newtonsoft.Json.dll
+D:\Clients\dotnetcore-templates\App.Admin\bin\NotAClue.ComponentModel.DataAnnotations.dll
+D:\Clients\dotnetcore-templates\App.Admin\bin\NotAClue.dll
+D:\Clients\dotnetcore-templates\App.Admin\bin\NotAClue.Web.dll
+D:\Clients\dotnetcore-templates\App.Admin\bin\NotAClue.Web.DynamicData.dll
+D:\Clients\dotnetcore-templates\App.Admin\bin\RazorEngine.dll
+D:\Clients\dotnetcore-templates\App.Admin\bin\SixLabors.ImageSharp.dll
+D:\Clients\dotnetcore-templates\App.Admin\bin\System.Buffers.dll
+D:\Clients\dotnetcore-templates\App.Admin\bin\System.Diagnostics.DiagnosticSource.dll
+D:\Clients\dotnetcore-templates\App.Admin\bin\System.Memory.dll
+D:\Clients\dotnetcore-templates\App.Admin\bin\System.Net.Http.Formatting.dll
+D:\Clients\dotnetcore-templates\App.Admin\bin\System.Numerics.Vectors.dll
+D:\Clients\dotnetcore-templates\App.Admin\bin\System.Runtime.CompilerServices.Unsafe.dll
+D:\Clients\dotnetcore-templates\App.Admin\bin\System.Web.Http.dll
+D:\Clients\dotnetcore-templates\App.Admin\bin\System.Web.Http.WebHost.dll
+D:\Clients\dotnetcore-templates\App.Admin\bin\System.Web.Optimization.dll
+D:\Clients\dotnetcore-templates\App.Admin\bin\System.Web.Razor.dll
+D:\Clients\dotnetcore-templates\App.Admin\bin\WebGrease.dll
+D:\Clients\dotnetcore-templates\App.Admin\bin\Antlr3.Runtime.pdb
+D:\Clients\dotnetcore-templates\App.Admin\bin\EntityFramework.xml
+D:\Clients\dotnetcore-templates\App.Admin\bin\EntityFramework.SqlServer.xml
+D:\Clients\dotnetcore-templates\App.Admin\bin\Humanizer.xml
+D:\Clients\dotnetcore-templates\App.Admin\bin\Newtonsoft.Json.xml
+D:\Clients\dotnetcore-templates\App.Admin\bin\RazorEngine.xml
+D:\Clients\dotnetcore-templates\App.Admin\bin\SixLabors.ImageSharp.xml
+D:\Clients\dotnetcore-templates\App.Admin\bin\System.Diagnostics.DiagnosticSource.xml
+D:\Clients\dotnetcore-templates\App.Admin\bin\System.Memory.xml
+D:\Clients\dotnetcore-templates\App.Admin\bin\System.Net.Http.Formatting.xml
+D:\Clients\dotnetcore-templates\App.Admin\bin\System.Numerics.Vectors.xml
+D:\Clients\dotnetcore-templates\App.Admin\bin\System.Runtime.CompilerServices.Unsafe.xml
+D:\Clients\dotnetcore-templates\App.Admin\bin\System.Web.Http.xml
+D:\Clients\dotnetcore-templates\App.Admin\bin\System.Web.Http.WebHost.xml
+D:\Clients\dotnetcore-templates\App.Admin\bin\System.Web.Optimization.xml
+D:\Clients\dotnetcore-templates\App.Admin\bin\System.Web.Razor.xml
+D:\Clients\dotnetcore-templates\App.Admin\obj\Debug\App.Admin.csproj.AssemblyReference.cache
+D:\Clients\dotnetcore-templates\App.Admin\obj\Debug\App.Admin.csproj.CoreCompileInputs.cache
+D:\Clients\dotnetcore-templates\App.Admin\obj\Debug\App.Admin.csproj.CopyComplete
+D:\Clients\dotnetcore-templates\App.Admin\obj\Debug\DynamicData.Admin.dll
+D:\Clients\dotnetcore-templates\App.Admin\obj\Debug\DynamicData.Admin.pdb
+D:\Clients\Tasat\App.Admin\obj\Debug\DynamicData.Admin.dll
+D:\Clients\Tasat\App.Admin\obj\Debug\DynamicData.Admin.pdb
+D:\Clients\Tasat\App.Admin\bin\DynamicData.Admin.dll.config
+D:\Clients\Tasat\App.Admin\bin\DynamicData.Admin.dll
+D:\Clients\Tasat\App.Admin\bin\DynamicData.Admin.pdb
+D:\Clients\Tasat\App.Admin\bin\Antlr3.Runtime.dll
+D:\Clients\Tasat\App.Admin\bin\EntityFramework.dll
+D:\Clients\Tasat\App.Admin\bin\EntityFramework.SqlServer.dll
+D:\Clients\Tasat\App.Admin\bin\Humanizer.dll
+D:\Clients\Tasat\App.Admin\bin\Microsoft.AspNet.DynamicData.EFProvider.dll
+D:\Clients\Tasat\App.Admin\bin\Microsoft.AspNet.EntityDataSource.dll
+D:\Clients\Tasat\App.Admin\bin\Microsoft.Web.Infrastructure.dll
+D:\Clients\Tasat\App.Admin\bin\Newtonsoft.Json.dll
+D:\Clients\Tasat\App.Admin\bin\NotAClue.ComponentModel.DataAnnotations.dll
+D:\Clients\Tasat\App.Admin\bin\NotAClue.dll
+D:\Clients\Tasat\App.Admin\bin\NotAClue.Web.dll
+D:\Clients\Tasat\App.Admin\bin\NotAClue.Web.DynamicData.dll
+D:\Clients\Tasat\App.Admin\bin\RazorEngine.dll
+D:\Clients\Tasat\App.Admin\bin\SixLabors.ImageSharp.dll
+D:\Clients\Tasat\App.Admin\bin\System.Buffers.dll
+D:\Clients\Tasat\App.Admin\bin\System.Diagnostics.DiagnosticSource.dll
+D:\Clients\Tasat\App.Admin\bin\System.Memory.dll
+D:\Clients\Tasat\App.Admin\bin\System.Net.Http.Formatting.dll
+D:\Clients\Tasat\App.Admin\bin\System.Numerics.Vectors.dll
+D:\Clients\Tasat\App.Admin\bin\System.Runtime.CompilerServices.Unsafe.dll
+D:\Clients\Tasat\App.Admin\bin\System.Web.Http.dll
+D:\Clients\Tasat\App.Admin\bin\System.Web.Http.WebHost.dll
+D:\Clients\Tasat\App.Admin\bin\System.Web.Optimization.dll
+D:\Clients\Tasat\App.Admin\bin\System.Web.Razor.dll
+D:\Clients\Tasat\App.Admin\bin\WebGrease.dll
+D:\Clients\Tasat\App.Admin\bin\Antlr3.Runtime.pdb
+D:\Clients\Tasat\App.Admin\bin\EntityFramework.xml
+D:\Clients\Tasat\App.Admin\bin\EntityFramework.SqlServer.xml
+D:\Clients\Tasat\App.Admin\bin\Humanizer.xml
+D:\Clients\Tasat\App.Admin\bin\Newtonsoft.Json.xml
+D:\Clients\Tasat\App.Admin\bin\RazorEngine.xml
+D:\Clients\Tasat\App.Admin\bin\SixLabors.ImageSharp.xml
+D:\Clients\Tasat\App.Admin\bin\System.Diagnostics.DiagnosticSource.xml
+D:\Clients\Tasat\App.Admin\bin\System.Memory.xml
+D:\Clients\Tasat\App.Admin\bin\System.Net.Http.Formatting.xml
+D:\Clients\Tasat\App.Admin\bin\System.Numerics.Vectors.xml
+D:\Clients\Tasat\App.Admin\bin\System.Runtime.CompilerServices.Unsafe.xml
+D:\Clients\Tasat\App.Admin\bin\System.Web.Http.xml
+D:\Clients\Tasat\App.Admin\bin\System.Web.Http.WebHost.xml
+D:\Clients\Tasat\App.Admin\bin\System.Web.Optimization.xml
+D:\Clients\Tasat\App.Admin\bin\System.Web.Razor.xml
+D:\Clients\Tasat\App.Admin\obj\Debug\App.Admin.csproj.AssemblyReference.cache
+D:\Clients\Tasat\App.Admin\obj\Debug\App.Admin.csproj.CoreCompileInputs.cache
+D:\Clients\Tasat\App.Admin\obj\Debug\App.Admin.csproj.CopyComplete

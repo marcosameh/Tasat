@@ -1,0 +1,18 @@
+﻿@using System.Globalization
+@model App.UI.Models.PageModelBase
+
+<li class="nav-item dropdown">
+    <a class="nav-link dropdown-toggle" id="navbarDropdown" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+        @CultureInfo.CurrentCulture.TwoLetterISOLanguageName.ToUpper()
+    </a>
+    <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+        @foreach (var culture in Model.SupportedCulturesList)
+        {
+            var currentCulture = (culture.Value == Model.DefaultCulture.TwoLetterISOLanguageName) ? string.Empty : culture.Value;
+
+            <a class="dropdown-item lang-nav" href="@($"{Model.RequestPath(currentCulture)}")"
+                onclick="setCookie(event, '@culture.Value')"> @culture.Text</a>
+
+        }
+    </div>
+</li>

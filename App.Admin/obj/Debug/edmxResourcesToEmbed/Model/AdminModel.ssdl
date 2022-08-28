@@ -1,0 +1,1138 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="SharedKernelModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+  <EntityType Name="Album">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="Name" Type="nvarchar" MaxLength="50" Nullable="false" />
+    <Property Name="DisplayOrder" Type="int" Nullable="false" />
+    <Property Name="Active" Type="bit" Nullable="false" />
+  </EntityType>
+  <EntityType Name="AlbumLocalized">
+    <Key>
+      <PropertyRef Name="AlbumId" />
+      <PropertyRef Name="LanguageId" />
+    </Key>
+    <Property Name="AlbumId" Type="int" Nullable="false" />
+    <Property Name="LanguageId" Type="int" Nullable="false" />
+    <Property Name="Name" Type="nvarchar" MaxLength="50" Nullable="false" />
+    <Property Name="Description" Type="nvarchar" MaxLength="500" />
+    <Property Name="MetaTitle" Type="nvarchar" MaxLength="65" />
+    <Property Name="MetaDescription" Type="nvarchar" MaxLength="160" />
+  </EntityType>
+  <EntityType Name="AlbumPhoto">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="AlbumId" Type="int" Nullable="false" />
+    <Property Name="Photo" Type="nvarchar" MaxLength="100" Nullable="false" />
+    <Property Name="DisplayOrder" Type="int" Nullable="false" />
+  </EntityType>
+  <EntityType Name="aspnet_Applications">
+    <Key>
+      <PropertyRef Name="ApplicationId" />
+    </Key>
+    <Property Name="ApplicationName" Type="nvarchar" MaxLength="256" Nullable="false" />
+    <Property Name="LoweredApplicationName" Type="nvarchar" MaxLength="256" Nullable="false" />
+    <Property Name="ApplicationId" Type="uniqueidentifier" Nullable="false" />
+    <Property Name="Description" Type="nvarchar" MaxLength="256" />
+  </EntityType>
+  <EntityType Name="aspnet_Membership">
+    <Key>
+      <PropertyRef Name="UserId" />
+    </Key>
+    <Property Name="ApplicationId" Type="uniqueidentifier" Nullable="false" />
+    <Property Name="UserId" Type="uniqueidentifier" Nullable="false" />
+    <Property Name="Password" Type="nvarchar" MaxLength="128" Nullable="false" />
+    <Property Name="PasswordFormat" Type="int" Nullable="false" />
+    <Property Name="PasswordSalt" Type="nvarchar" MaxLength="128" Nullable="false" />
+    <Property Name="MobilePIN" Type="nvarchar" MaxLength="16" />
+    <Property Name="Email" Type="nvarchar" MaxLength="256" />
+    <Property Name="LoweredEmail" Type="nvarchar" MaxLength="256" />
+    <Property Name="PasswordQuestion" Type="nvarchar" MaxLength="256" />
+    <Property Name="PasswordAnswer" Type="nvarchar" MaxLength="128" />
+    <Property Name="IsApproved" Type="bit" Nullable="false" />
+    <Property Name="IsLockedOut" Type="bit" Nullable="false" />
+    <Property Name="CreateDate" Type="datetime" Nullable="false" />
+    <Property Name="LastLoginDate" Type="datetime" Nullable="false" />
+    <Property Name="LastPasswordChangedDate" Type="datetime" Nullable="false" />
+    <Property Name="LastLockoutDate" Type="datetime" Nullable="false" />
+    <Property Name="FailedPasswordAttemptCount" Type="int" Nullable="false" />
+    <Property Name="FailedPasswordAttemptWindowStart" Type="datetime" Nullable="false" />
+    <Property Name="FailedPasswordAnswerAttemptCount" Type="int" Nullable="false" />
+    <Property Name="FailedPasswordAnswerAttemptWindowStart" Type="datetime" Nullable="false" />
+    <Property Name="Comment" Type="ntext" />
+  </EntityType>
+  <EntityType Name="aspnet_Roles">
+    <Key>
+      <PropertyRef Name="RoleId" />
+    </Key>
+    <Property Name="ApplicationId" Type="uniqueidentifier" Nullable="false" />
+    <Property Name="RoleId" Type="uniqueidentifier" Nullable="false" />
+    <Property Name="RoleName" Type="nvarchar" MaxLength="256" Nullable="false" />
+    <Property Name="LoweredRoleName" Type="nvarchar" MaxLength="256" Nullable="false" />
+    <Property Name="Description" Type="nvarchar" MaxLength="256" />
+  </EntityType>
+  <EntityType Name="aspnet_SchemaVersions">
+    <Key>
+      <PropertyRef Name="Feature" />
+      <PropertyRef Name="CompatibleSchemaVersion" />
+    </Key>
+    <Property Name="Feature" Type="nvarchar" MaxLength="128" Nullable="false" />
+    <Property Name="CompatibleSchemaVersion" Type="nvarchar" MaxLength="128" Nullable="false" />
+    <Property Name="IsCurrentVersion" Type="bit" Nullable="false" />
+  </EntityType>
+  <EntityType Name="aspnet_Users">
+    <Key>
+      <PropertyRef Name="UserId" />
+    </Key>
+    <Property Name="ApplicationId" Type="uniqueidentifier" Nullable="false" />
+    <Property Name="UserId" Type="uniqueidentifier" Nullable="false" />
+    <Property Name="UserName" Type="nvarchar" MaxLength="256" Nullable="false" />
+    <Property Name="LoweredUserName" Type="nvarchar" MaxLength="256" Nullable="false" />
+    <Property Name="MobileAlias" Type="nvarchar" MaxLength="16" />
+    <Property Name="IsAnonymous" Type="bit" Nullable="false" />
+    <Property Name="LastActivityDate" Type="datetime" Nullable="false" />
+  </EntityType>
+  <EntityType Name="aspnet_UsersInRoles">
+    <Key>
+      <PropertyRef Name="UserId" />
+      <PropertyRef Name="RoleId" />
+    </Key>
+    <Property Name="UserId" Type="uniqueidentifier" Nullable="false" />
+    <Property Name="RoleId" Type="uniqueidentifier" Nullable="false" />
+  </EntityType>
+  <EntityType Name="Banner">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="PageId" Type="int" Nullable="false" />
+    <Property Name="Photo" Type="nvarchar" MaxLength="100" Nullable="false" />
+    <Property Name="CustomField" Type="nvarchar" MaxLength="500" />
+    <Property Name="DisplayOrder" Type="int" Nullable="false" />
+    <Property Name="Active" Type="bit" Nullable="false" />
+  </EntityType>
+  <EntityType Name="BannerLocalized">
+    <Key>
+      <PropertyRef Name="BannerId" />
+      <PropertyRef Name="LanguageId" />
+    </Key>
+    <Property Name="BannerId" Type="int" Nullable="false" />
+    <Property Name="LanguageId" Type="int" Nullable="false" />
+    <Property Name="Title" Type="nvarchar" MaxLength="250" Nullable="false" />
+    <Property Name="SubTitle" Type="nvarchar" MaxLength="500" Nullable="false" />
+    <Property Name="Link" Type="nvarchar" MaxLength="250" />
+  </EntityType>
+  <EntityType Name="Career">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="CityId" Type="int" Nullable="false" />
+    <Property Name="Name" Type="nvarchar" MaxLength="50" Nullable="false" />
+    <Property Name="Active" Type="bit" Nullable="false" />
+    <Property Name="DisplayOrder" Type="int" Nullable="false" />
+    <Property Name="DateSubmitted" Type="smalldatetime" Nullable="false" />
+  </EntityType>
+  <EntityType Name="CareerLocalized">
+    <Key>
+      <PropertyRef Name="CareerId" />
+      <PropertyRef Name="LanguageId" />
+    </Key>
+    <Property Name="CareerId" Type="int" Nullable="false" />
+    <Property Name="LanguageId" Type="int" Nullable="false" />
+    <Property Name="Title" Type="nvarchar" MaxLength="100" Nullable="false" />
+    <Property Name="Description" Type="nvarchar" MaxLength="1000" Nullable="false" />
+  </EntityType>
+  <EntityType Name="City">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="Name" Type="nvarchar" MaxLength="100" Nullable="false" />
+  </EntityType>
+  <EntityType Name="CityLocalized">
+    <Key>
+      <PropertyRef Name="LanguageId" />
+      <PropertyRef Name="CityId" />
+    </Key>
+    <Property Name="LanguageId" Type="int" Nullable="false" />
+    <Property Name="CityId" Type="int" Nullable="false" />
+    <Property Name="Title" Type="nvarchar" MaxLength="100" Nullable="false" />
+  </EntityType>
+  <EntityType Name="Country">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="Name" Type="varchar" MaxLength="80" Nullable="false" />
+    <Property Name="ItalianName" Type="nvarchar" MaxLength="80" />
+    <Property Name="GermanName" Type="nvarchar" MaxLength="80" />
+    <Property Name="FrenchName" Type="nvarchar" MaxLength="80" />
+    <Property Name="PolishName" Type="nvarchar" MaxLength="80" />
+    <Property Name="RussianName" Type="nvarchar" MaxLength="80" />
+    <Property Name="ArabicName" Type="nvarchar" MaxLength="80" />
+    <Property Name="Iso2" Type="char" MaxLength="2" Nullable="false" />
+    <Property Name="Iso3" Type="char" MaxLength="3" />
+    <Property Name="CountryCode" Type="int" />
+  </EntityType>
+  <EntityType Name="Faq">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="CategoryId" Type="int" />
+    <Property Name="Name" Type="nvarchar" MaxLength="250" Nullable="false" />
+    <Property Name="Active" Type="bit" Nullable="false" />
+    <Property Name="DisplayOrder" Type="int" Nullable="false" />
+  </EntityType>
+  <EntityType Name="FaqCategory">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="UrlName" Type="varchar" MaxLength="200" Nullable="false" />
+  </EntityType>
+  <EntityType Name="FaqCategoryLocalized">
+    <Key>
+      <PropertyRef Name="CategoryId" />
+      <PropertyRef Name="LanguageId" />
+    </Key>
+    <Property Name="CategoryId" Type="int" Nullable="false" />
+    <Property Name="LanguageId" Type="int" Nullable="false" />
+    <Property Name="Name" Type="nvarchar" MaxLength="200" Nullable="false" />
+  </EntityType>
+  <EntityType Name="FaqLocalized">
+    <Key>
+      <PropertyRef Name="FaqId" />
+      <PropertyRef Name="LanguageId" />
+    </Key>
+    <Property Name="FaqId" Type="int" Nullable="false" />
+    <Property Name="LanguageId" Type="int" Nullable="false" />
+    <Property Name="Question" Type="nvarchar" MaxLength="1000" Nullable="false" />
+    <Property Name="Answer" Type="nvarchar(max)" Nullable="false" />
+  </EntityType>
+  <EntityType Name="HomeBanner">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="Photo" Type="nvarchar" MaxLength="100" Nullable="false" />
+    <Property Name="DisplayOrder" Type="int" Nullable="false" />
+    <Property Name="Active" Type="bit" Nullable="false" />
+    <Property Name="VideoUrl" Type="nvarchar" MaxLength="100" />
+    <Property Name="Link" Type="nvarchar" MaxLength="500" />
+  </EntityType>
+  <EntityType Name="HomeBannerLocalized">
+    <Key>
+      <PropertyRef Name="LanguageId" />
+      <PropertyRef Name="HomeBannerId" />
+    </Key>
+    <Property Name="LanguageId" Type="int" Nullable="false" />
+    <Property Name="HomeBannerId" Type="int" Nullable="false" />
+    <Property Name="Title" Type="nvarchar" MaxLength="100" Nullable="false" />
+    <Property Name="SubTitle" Type="nvarchar" MaxLength="200" />
+    <Property Name="LinkText" Type="nvarchar" MaxLength="100" />
+  </EntityType>
+  <EntityType Name="InfoPage">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="CategoryId" Type="int" />
+    <Property Name="UrlName" Type="nvarchar" MaxLength="50" Nullable="false" />
+    <Property Name="Active" Type="bit" Nullable="false" />
+    <Property Name="Banner" Type="nvarchar" MaxLength="250" />
+    <Property Name="DisplayOrder" Type="int" Nullable="false" />
+  </EntityType>
+  <EntityType Name="InfoPageCategory">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="UrlName" Type="varchar" MaxLength="50" Nullable="false" />
+    <Property Name="Active" Type="bit" Nullable="false" />
+  </EntityType>
+  <EntityType Name="InfoPageCategoryLocalized">
+    <Key>
+      <PropertyRef Name="CategoryId" />
+      <PropertyRef Name="LanguageId" />
+    </Key>
+    <Property Name="CategoryId" Type="int" Nullable="false" />
+    <Property Name="LanguageId" Type="int" Nullable="false" />
+    <Property Name="Name" Type="nvarchar" MaxLength="50" Nullable="false" />
+  </EntityType>
+  <EntityType Name="InfoPageLocalized">
+    <Key>
+      <PropertyRef Name="PageId" />
+      <PropertyRef Name="LanguageId" />
+    </Key>
+    <Property Name="PageId" Type="int" Nullable="false" />
+    <Property Name="LanguageId" Type="int" Nullable="false" />
+    <Property Name="Title" Type="nvarchar" MaxLength="100" Nullable="false" />
+    <Property Name="SubTitle" Type="nvarchar" MaxLength="250" />
+    <Property Name="Body" Type="nvarchar(max)" Nullable="false" />
+    <Property Name="MetaTitle" Type="nvarchar" MaxLength="65" />
+    <Property Name="MetaDescription" Type="nvarchar" MaxLength="160" />
+  </EntityType>
+  <EntityType Name="Language">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="int" Nullable="false" />
+    <Property Name="LocalName" Type="nvarchar" MaxLength="50" />
+    <Property Name="CultureName" Type="nvarchar" MaxLength="50" />
+    <Property Name="FriendlyName" Type="nvarchar" MaxLength="50" />
+    <Property Name="Active" Type="bit" Nullable="false" />
+    <Property Name="DisplayOrder" Type="int" Nullable="false" />
+  </EntityType>
+  <EntityType Name="MediaCollection">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="PageId" Type="int" Nullable="false" />
+    <Property Name="Name" Type="nvarchar" MaxLength="50" Nullable="false" />
+    <Property Name="Width" Type="int" Nullable="false" />
+    <Property Name="Height" Type="int" Nullable="false" />
+  </EntityType>
+  <EntityType Name="MediaItem">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="Photo" Type="nvarchar" MaxLength="200" Nullable="false" />
+    <Property Name="Alt" Type="nvarchar" MaxLength="50" />
+    <Property Name="VedioUrl" Type="nvarchar" MaxLength="200" />
+    <Property Name="DisplayOrder" Type="int" />
+    <Property Name="ItemKey" Type="varchar" MaxLength="20" Nullable="false" />
+    <Property Name="PageId" Type="int" Nullable="false" />
+    <Property Name="Width" Type="int" Nullable="false" />
+    <Property Name="Height" Type="int" Nullable="false" />
+  </EntityType>
+  <EntityType Name="MetaTag">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="PageId" Type="int" Nullable="false" />
+  </EntityType>
+  <EntityType Name="MetaTagLocalized">
+    <Key>
+      <PropertyRef Name="MetaTagId" />
+      <PropertyRef Name="LanguageId" />
+    </Key>
+    <Property Name="MetaTagId" Type="int" Nullable="false" />
+    <Property Name="LanguageId" Type="int" Nullable="false" />
+    <Property Name="MetaTitle" Type="nvarchar" MaxLength="60" Nullable="false" />
+    <Property Name="MetaDescription" Type="nvarchar" MaxLength="160" Nullable="false" />
+    <Property Name="MetaKeywords" Type="nvarchar" MaxLength="500" />
+  </EntityType>
+  <EntityType Name="News">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="NewsDate" Type="smalldatetime" Nullable="false" />
+    <Property Name="GroupId" Type="int" />
+    <Property Name="UrlName" Type="nvarchar" MaxLength="100" Nullable="false" />
+    <Property Name="Photo" Type="nvarchar" MaxLength="200" Nullable="false" />
+    <Property Name="Thumbnail" Type="nvarchar" MaxLength="250" />
+    <Property Name="Active" Type="bit" Nullable="false" />
+  </EntityType>
+  <EntityType Name="NewsletterSubscription">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="Email" Type="nvarchar" MaxLength="50" Nullable="false" />
+    <Property Name="SubscriptionDate" Type="smalldatetime" Nullable="false" />
+  </EntityType>
+  <EntityType Name="NewsLocalized">
+    <Key>
+      <PropertyRef Name="NewsId" />
+      <PropertyRef Name="LanguageId" />
+    </Key>
+    <Property Name="NewsId" Type="int" Nullable="false" />
+    <Property Name="LanguageId" Type="int" Nullable="false" />
+    <Property Name="Title" Type="nvarchar" MaxLength="150" Nullable="false" />
+    <Property Name="Body" Type="nvarchar(max)" Nullable="false" />
+    <Property Name="MetaTitle" Type="nvarchar" MaxLength="60" />
+    <Property Name="MetaDescription" Type="nvarchar" MaxLength="160" />
+    <Property Name="ShortDescription" Type="nvarchar" MaxLength="500" Nullable="false" />
+  </EntityType>
+  <EntityType Name="Setting">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="CategoryId" Type="int" Nullable="false" />
+    <Property Name="Key" Type="varchar" MaxLength="50" Nullable="false" />
+    <Property Name="Value" Type="nvarchar" MaxLength="1000" Nullable="false" />
+    <Property Name="Description" Type="varchar" MaxLength="250" />
+    <Property Name="DataType" Type="int" Nullable="false" />
+  </EntityType>
+  <EntityType Name="SettingCategory">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="int" Nullable="false" />
+    <Property Name="Name" Type="varchar" MaxLength="50" Nullable="false" />
+  </EntityType>
+  <EntityType Name="SitePage">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="int" Nullable="false" />
+    <Property Name="Name" Type="nvarchar" MaxLength="50" Nullable="false" />
+  </EntityType>
+  <EntityType Name="SocialLink">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="Type" Type="int" Nullable="false" />
+    <Property Name="GroupId" Type="int" />
+    <Property Name="Link" Type="nvarchar" MaxLength="250" Nullable="false" />
+    <Property Name="CssClass" Type="nvarchar" MaxLength="20" />
+    <Property Name="Active" Type="bit" Nullable="false" />
+  </EntityType>
+  <EntityType Name="TeamMember">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="Name" Type="nvarchar" MaxLength="50" Nullable="false" />
+    <Property Name="Email" Type="nvarchar" MaxLength="50" Nullable="false" />
+    <Property Name="Photo" Type="nvarchar" MaxLength="60" Nullable="false" />
+    <Property Name="DisplayOrder" Type="int" Nullable="false" />
+    <Property Name="IsActive" Type="bit" />
+    <Property Name="Featured" Type="bit" Nullable="false" />
+  </EntityType>
+  <EntityType Name="Testimonial">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="TestimonialSourceId" Type="int" Nullable="false" />
+    <Property Name="Date" Type="smalldatetime" Nullable="false" />
+    <Property Name="Title" Type="nvarchar" MaxLength="50" />
+    <Property Name="Description" Type="nvarchar" MaxLength="500" Nullable="false" />
+    <Property Name="Name" Type="nvarchar" MaxLength="50" Nullable="false" />
+    <Property Name="Location" Type="nvarchar" MaxLength="50" Nullable="false" />
+    <Property Name="DisplayOrder" Type="int" Nullable="false" />
+    <Property Name="Active" Type="bit" Nullable="false" />
+  </EntityType>
+  <EntityType Name="TestimonialSource">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="Name" Type="nvarchar" MaxLength="50" Nullable="false" />
+    <Property Name="Photo" Type="nvarchar" MaxLength="150" />
+  </EntityType>
+  <EntityType Name="User">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="AspNetUserId" Type="uniqueidentifier" Nullable="false" />
+    <Property Name="PasswordResetKey" Type="uniqueidentifier" />
+    <Property Name="PasswordResetTime" Type="smalldatetime" />
+  </EntityType>
+  <Association Name="FK__aspnet_Me__Appli__6BAEFA67">
+    <End Role="aspnet_Applications" Type="Self.aspnet_Applications" Multiplicity="1" />
+    <End Role="aspnet_Membership" Type="Self.aspnet_Membership" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="aspnet_Applications">
+        <PropertyRef Name="ApplicationId" />
+      </Principal>
+      <Dependent Role="aspnet_Membership">
+        <PropertyRef Name="ApplicationId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK__aspnet_Me__UserI__6CA31EA0">
+    <End Role="aspnet_Users" Type="Self.aspnet_Users" Multiplicity="1" />
+    <End Role="aspnet_Membership" Type="Self.aspnet_Membership" Multiplicity="0..1" />
+    <ReferentialConstraint>
+      <Principal Role="aspnet_Users">
+        <PropertyRef Name="UserId" />
+      </Principal>
+      <Dependent Role="aspnet_Membership">
+        <PropertyRef Name="UserId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK__aspnet_Ro__Appli__00AA174D">
+    <End Role="aspnet_Applications" Type="Self.aspnet_Applications" Multiplicity="1" />
+    <End Role="aspnet_Roles" Type="Self.aspnet_Roles" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="aspnet_Applications">
+        <PropertyRef Name="ApplicationId" />
+      </Principal>
+      <Dependent Role="aspnet_Roles">
+        <PropertyRef Name="ApplicationId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK__aspnet_Us__Appli__5B78929E">
+    <End Role="aspnet_Applications" Type="Self.aspnet_Applications" Multiplicity="1" />
+    <End Role="aspnet_Users" Type="Self.aspnet_Users" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="aspnet_Applications">
+        <PropertyRef Name="ApplicationId" />
+      </Principal>
+      <Dependent Role="aspnet_Users">
+        <PropertyRef Name="ApplicationId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK__aspnet_Us__RoleI__056ECC6A">
+    <End Role="aspnet_Roles" Type="Self.aspnet_Roles" Multiplicity="1" />
+    <End Role="aspnet_UsersInRoles" Type="Self.aspnet_UsersInRoles" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="aspnet_Roles">
+        <PropertyRef Name="RoleId" />
+      </Principal>
+      <Dependent Role="aspnet_UsersInRoles">
+        <PropertyRef Name="RoleId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK__aspnet_Us__UserI__047AA831">
+    <End Role="aspnet_Users" Type="Self.aspnet_Users" Multiplicity="1" />
+    <End Role="aspnet_UsersInRoles" Type="Self.aspnet_UsersInRoles" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="aspnet_Users">
+        <PropertyRef Name="UserId" />
+      </Principal>
+      <Dependent Role="aspnet_UsersInRoles">
+        <PropertyRef Name="UserId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_AlbumPhotos_Albums">
+    <End Role="Album" Type="Self.Album" Multiplicity="1">
+      <OnDelete Action="Cascade" />
+    </End>
+    <End Role="AlbumPhoto" Type="Self.AlbumPhoto" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Album">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="AlbumPhoto">
+        <PropertyRef Name="AlbumId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Banner_SitePages">
+    <End Role="SitePage" Type="Self.SitePage" Multiplicity="1">
+      <OnDelete Action="Cascade" />
+    </End>
+    <End Role="Banner" Type="Self.Banner" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="SitePage">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="Banner">
+        <PropertyRef Name="PageId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_BannerLocalized_Banner">
+    <End Role="Banner" Type="Self.Banner" Multiplicity="1">
+      <OnDelete Action="Cascade" />
+    </End>
+    <End Role="BannerLocalized" Type="Self.BannerLocalized" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Banner">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="BannerLocalized">
+        <PropertyRef Name="BannerId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_BannerLocalized_Language">
+    <End Role="Language" Type="Self.Language" Multiplicity="1">
+      <OnDelete Action="Cascade" />
+    </End>
+    <End Role="BannerLocalized" Type="Self.BannerLocalized" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Language">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="BannerLocalized">
+        <PropertyRef Name="LanguageId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Career_City">
+    <End Role="City" Type="Self.City" Multiplicity="1">
+      <OnDelete Action="Cascade" />
+    </End>
+    <End Role="Career" Type="Self.Career" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="City">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="Career">
+        <PropertyRef Name="CityId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_CityLocalized_City">
+    <End Role="City" Type="Self.City" Multiplicity="1">
+      <OnDelete Action="Cascade" />
+    </End>
+    <End Role="CityLocalized" Type="Self.CityLocalized" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="City">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="CityLocalized">
+        <PropertyRef Name="CityId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_CityLocalized_Language">
+    <End Role="Language" Type="Self.Language" Multiplicity="1" />
+    <End Role="CityLocalized" Type="Self.CityLocalized" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Language">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="CityLocalized">
+        <PropertyRef Name="LanguageId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Faqs_FaqCategories">
+    <End Role="FaqCategory" Type="Self.FaqCategory" Multiplicity="0..1">
+      <OnDelete Action="Cascade" />
+    </End>
+    <End Role="Faq" Type="Self.Faq" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="FaqCategory">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="Faq">
+        <PropertyRef Name="CategoryId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_HomeBannerLocalized_HomeBanner">
+    <End Role="HomeBanner" Type="Self.HomeBanner" Multiplicity="1">
+      <OnDelete Action="Cascade" />
+    </End>
+    <End Role="HomeBannerLocalized" Type="Self.HomeBannerLocalized" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="HomeBanner">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="HomeBannerLocalized">
+        <PropertyRef Name="HomeBannerId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_HomeBannerLocalized_Language">
+    <End Role="Language" Type="Self.Language" Multiplicity="1" />
+    <End Role="HomeBannerLocalized" Type="Self.HomeBannerLocalized" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Language">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="HomeBannerLocalized">
+        <PropertyRef Name="LanguageId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_InfoPage_InfoPageCategory">
+    <End Role="InfoPageCategory" Type="Self.InfoPageCategory" Multiplicity="0..1">
+      <OnDelete Action="Cascade" />
+    </End>
+    <End Role="InfoPage" Type="Self.InfoPage" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="InfoPageCategory">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="InfoPage">
+        <PropertyRef Name="CategoryId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_JobLocalized_Job">
+    <End Role="Career" Type="Self.Career" Multiplicity="1">
+      <OnDelete Action="Cascade" />
+    </End>
+    <End Role="CareerLocalized" Type="Self.CareerLocalized" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Career">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="CareerLocalized">
+        <PropertyRef Name="CareerId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_JobLocalized_Language">
+    <End Role="Language" Type="Self.Language" Multiplicity="1" />
+    <End Role="CareerLocalized" Type="Self.CareerLocalized" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Language">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="CareerLocalized">
+        <PropertyRef Name="LanguageId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_LocalizedAlbums_Albums">
+    <End Role="Album" Type="Self.Album" Multiplicity="1">
+      <OnDelete Action="Cascade" />
+    </End>
+    <End Role="AlbumLocalized" Type="Self.AlbumLocalized" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Album">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="AlbumLocalized">
+        <PropertyRef Name="AlbumId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_LocalizedAlbums_LocalizedAlbums">
+    <End Role="Language" Type="Self.Language" Multiplicity="1" />
+    <End Role="AlbumLocalized" Type="Self.AlbumLocalized" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Language">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="AlbumLocalized">
+        <PropertyRef Name="LanguageId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_LocalizedFaq_Faqs">
+    <End Role="Faq" Type="Self.Faq" Multiplicity="1">
+      <OnDelete Action="Cascade" />
+    </End>
+    <End Role="FaqLocalized" Type="Self.FaqLocalized" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Faq">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="FaqLocalized">
+        <PropertyRef Name="FaqId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_LocalizedFaq_Languages">
+    <End Role="Language" Type="Self.Language" Multiplicity="1" />
+    <End Role="FaqLocalized" Type="Self.FaqLocalized" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Language">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="FaqLocalized">
+        <PropertyRef Name="LanguageId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_LocalizedFaqCategories_FaqCategories">
+    <End Role="FaqCategory" Type="Self.FaqCategory" Multiplicity="1">
+      <OnDelete Action="Cascade" />
+    </End>
+    <End Role="FaqCategoryLocalized" Type="Self.FaqCategoryLocalized" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="FaqCategory">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="FaqCategoryLocalized">
+        <PropertyRef Name="CategoryId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_LocalizedFaqCategories_Languages1">
+    <End Role="Language" Type="Self.Language" Multiplicity="1" />
+    <End Role="FaqCategoryLocalized" Type="Self.FaqCategoryLocalized" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Language">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="FaqCategoryLocalized">
+        <PropertyRef Name="LanguageId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_LocalizedInfoPageCategories_InfoPageCategories">
+    <End Role="InfoPageCategory" Type="Self.InfoPageCategory" Multiplicity="1">
+      <OnDelete Action="Cascade" />
+    </End>
+    <End Role="InfoPageCategoryLocalized" Type="Self.InfoPageCategoryLocalized" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="InfoPageCategory">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="InfoPageCategoryLocalized">
+        <PropertyRef Name="CategoryId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_LocalizedInfoPageCategories_Languages">
+    <End Role="Language" Type="Self.Language" Multiplicity="1" />
+    <End Role="InfoPageCategoryLocalized" Type="Self.InfoPageCategoryLocalized" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Language">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="InfoPageCategoryLocalized">
+        <PropertyRef Name="LanguageId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_LocalizedInfoPages_InfoPages">
+    <End Role="InfoPage" Type="Self.InfoPage" Multiplicity="1">
+      <OnDelete Action="Cascade" />
+    </End>
+    <End Role="InfoPageLocalized" Type="Self.InfoPageLocalized" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="InfoPage">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="InfoPageLocalized">
+        <PropertyRef Name="PageId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_LocalizedInfoPages_Languages">
+    <End Role="Language" Type="Self.Language" Multiplicity="1" />
+    <End Role="InfoPageLocalized" Type="Self.InfoPageLocalized" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Language">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="InfoPageLocalized">
+        <PropertyRef Name="LanguageId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_LocalizedNew_Languages">
+    <End Role="Language" Type="Self.Language" Multiplicity="1" />
+    <End Role="NewsLocalized" Type="Self.NewsLocalized" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Language">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="NewsLocalized">
+        <PropertyRef Name="LanguageId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_LocalizedNew_News">
+    <End Role="News" Type="Self.News" Multiplicity="1">
+      <OnDelete Action="Cascade" />
+    </End>
+    <End Role="NewsLocalized" Type="Self.NewsLocalized" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="News">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="NewsLocalized">
+        <PropertyRef Name="NewsId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_MediaCollection_MediaItemPage">
+    <End Role="SitePage" Type="Self.SitePage" Multiplicity="1">
+      <OnDelete Action="Cascade" />
+    </End>
+    <End Role="MediaCollection" Type="Self.MediaCollection" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="SitePage">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="MediaCollection">
+        <PropertyRef Name="PageId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_MediaItem_SitePages">
+    <End Role="SitePage" Type="Self.SitePage" Multiplicity="1">
+      <OnDelete Action="Cascade" />
+    </End>
+    <End Role="MediaItem" Type="Self.MediaItem" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="SitePage">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="MediaItem">
+        <PropertyRef Name="PageId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_MetaTag_SitePage">
+    <End Role="SitePage" Type="Self.SitePage" Multiplicity="1">
+      <OnDelete Action="Cascade" />
+    </End>
+    <End Role="MetaTag" Type="Self.MetaTag" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="SitePage">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="MetaTag">
+        <PropertyRef Name="PageId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_MetaTagLocalized_Language">
+    <End Role="Language" Type="Self.Language" Multiplicity="1" />
+    <End Role="MetaTagLocalized" Type="Self.MetaTagLocalized" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Language">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="MetaTagLocalized">
+        <PropertyRef Name="LanguageId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_MetaTagLocalized_MetaTag">
+    <End Role="MetaTag" Type="Self.MetaTag" Multiplicity="1">
+      <OnDelete Action="Cascade" />
+    </End>
+    <End Role="MetaTagLocalized" Type="Self.MetaTagLocalized" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="MetaTag">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="MetaTagLocalized">
+        <PropertyRef Name="MetaTagId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_SettingsKeys_SettingsCategories">
+    <End Role="SettingCategory" Type="Self.SettingCategory" Multiplicity="1" />
+    <End Role="Setting" Type="Self.Setting" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="SettingCategory">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="Setting">
+        <PropertyRef Name="CategoryId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Testimonial_TestimonialSource">
+    <End Role="TestimonialSource" Type="Self.TestimonialSource" Multiplicity="1" />
+    <End Role="Testimonial" Type="Self.Testimonial" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="TestimonialSource">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="Testimonial">
+        <PropertyRef Name="TestimonialSourceId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <EntityContainer Name="SharedKernelModelStoreContainer">
+    <EntitySet Name="Album" EntityType="Self.Album" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="AlbumLocalized" EntityType="Self.AlbumLocalized" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="AlbumPhoto" EntityType="Self.AlbumPhoto" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="aspnet_Applications" EntityType="Self.aspnet_Applications" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="aspnet_Membership" EntityType="Self.aspnet_Membership" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="aspnet_Roles" EntityType="Self.aspnet_Roles" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="aspnet_SchemaVersions" EntityType="Self.aspnet_SchemaVersions" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="aspnet_Users" EntityType="Self.aspnet_Users" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="aspnet_UsersInRoles" EntityType="Self.aspnet_UsersInRoles" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Banner" EntityType="Self.Banner" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="BannerLocalized" EntityType="Self.BannerLocalized" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Career" EntityType="Self.Career" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="CareerLocalized" EntityType="Self.CareerLocalized" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="City" EntityType="Self.City" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="CityLocalized" EntityType="Self.CityLocalized" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Country" EntityType="Self.Country" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Faq" EntityType="Self.Faq" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="FaqCategory" EntityType="Self.FaqCategory" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="FaqCategoryLocalized" EntityType="Self.FaqCategoryLocalized" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="FaqLocalized" EntityType="Self.FaqLocalized" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="HomeBanner" EntityType="Self.HomeBanner" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="HomeBannerLocalized" EntityType="Self.HomeBannerLocalized" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="InfoPage" EntityType="Self.InfoPage" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="InfoPageCategory" EntityType="Self.InfoPageCategory" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="InfoPageCategoryLocalized" EntityType="Self.InfoPageCategoryLocalized" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="InfoPageLocalized" EntityType="Self.InfoPageLocalized" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Language" EntityType="Self.Language" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="MediaCollection" EntityType="Self.MediaCollection" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="MediaItem" EntityType="Self.MediaItem" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="MetaTag" EntityType="Self.MetaTag" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="MetaTagLocalized" EntityType="Self.MetaTagLocalized" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="News" EntityType="Self.News" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="NewsletterSubscription" EntityType="Self.NewsletterSubscription" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="NewsLocalized" EntityType="Self.NewsLocalized" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Setting" EntityType="Self.Setting" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="SettingCategory" EntityType="Self.SettingCategory" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="SitePage" EntityType="Self.SitePage" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="SocialLink" EntityType="Self.SocialLink" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="TeamMember" EntityType="Self.TeamMember" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Testimonial" EntityType="Self.Testimonial" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="TestimonialSource" EntityType="Self.TestimonialSource" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="User" EntityType="Self.User" Schema="dbo" store:Type="Tables" />
+    <AssociationSet Name="FK__aspnet_Me__Appli__6BAEFA67" Association="Self.FK__aspnet_Me__Appli__6BAEFA67">
+      <End Role="aspnet_Applications" EntitySet="aspnet_Applications" />
+      <End Role="aspnet_Membership" EntitySet="aspnet_Membership" />
+    </AssociationSet>
+    <AssociationSet Name="FK__aspnet_Me__UserI__6CA31EA0" Association="Self.FK__aspnet_Me__UserI__6CA31EA0">
+      <End Role="aspnet_Users" EntitySet="aspnet_Users" />
+      <End Role="aspnet_Membership" EntitySet="aspnet_Membership" />
+    </AssociationSet>
+    <AssociationSet Name="FK__aspnet_Ro__Appli__00AA174D" Association="Self.FK__aspnet_Ro__Appli__00AA174D">
+      <End Role="aspnet_Applications" EntitySet="aspnet_Applications" />
+      <End Role="aspnet_Roles" EntitySet="aspnet_Roles" />
+    </AssociationSet>
+    <AssociationSet Name="FK__aspnet_Us__Appli__5B78929E" Association="Self.FK__aspnet_Us__Appli__5B78929E">
+      <End Role="aspnet_Applications" EntitySet="aspnet_Applications" />
+      <End Role="aspnet_Users" EntitySet="aspnet_Users" />
+    </AssociationSet>
+    <AssociationSet Name="FK__aspnet_Us__RoleI__056ECC6A" Association="Self.FK__aspnet_Us__RoleI__056ECC6A">
+      <End Role="aspnet_Roles" EntitySet="aspnet_Roles" />
+      <End Role="aspnet_UsersInRoles" EntitySet="aspnet_UsersInRoles" />
+    </AssociationSet>
+    <AssociationSet Name="FK__aspnet_Us__UserI__047AA831" Association="Self.FK__aspnet_Us__UserI__047AA831">
+      <End Role="aspnet_Users" EntitySet="aspnet_Users" />
+      <End Role="aspnet_UsersInRoles" EntitySet="aspnet_UsersInRoles" />
+    </AssociationSet>
+    <AssociationSet Name="FK_AlbumPhotos_Albums" Association="Self.FK_AlbumPhotos_Albums">
+      <End Role="Album" EntitySet="Album" />
+      <End Role="AlbumPhoto" EntitySet="AlbumPhoto" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Banner_SitePages" Association="Self.FK_Banner_SitePages">
+      <End Role="SitePage" EntitySet="SitePage" />
+      <End Role="Banner" EntitySet="Banner" />
+    </AssociationSet>
+    <AssociationSet Name="FK_BannerLocalized_Banner" Association="Self.FK_BannerLocalized_Banner">
+      <End Role="Banner" EntitySet="Banner" />
+      <End Role="BannerLocalized" EntitySet="BannerLocalized" />
+    </AssociationSet>
+    <AssociationSet Name="FK_BannerLocalized_Language" Association="Self.FK_BannerLocalized_Language">
+      <End Role="Language" EntitySet="Language" />
+      <End Role="BannerLocalized" EntitySet="BannerLocalized" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Career_City" Association="Self.FK_Career_City">
+      <End Role="City" EntitySet="City" />
+      <End Role="Career" EntitySet="Career" />
+    </AssociationSet>
+    <AssociationSet Name="FK_CityLocalized_City" Association="Self.FK_CityLocalized_City">
+      <End Role="City" EntitySet="City" />
+      <End Role="CityLocalized" EntitySet="CityLocalized" />
+    </AssociationSet>
+    <AssociationSet Name="FK_CityLocalized_Language" Association="Self.FK_CityLocalized_Language">
+      <End Role="Language" EntitySet="Language" />
+      <End Role="CityLocalized" EntitySet="CityLocalized" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Faqs_FaqCategories" Association="Self.FK_Faqs_FaqCategories">
+      <End Role="FaqCategory" EntitySet="FaqCategory" />
+      <End Role="Faq" EntitySet="Faq" />
+    </AssociationSet>
+    <AssociationSet Name="FK_HomeBannerLocalized_HomeBanner" Association="Self.FK_HomeBannerLocalized_HomeBanner">
+      <End Role="HomeBanner" EntitySet="HomeBanner" />
+      <End Role="HomeBannerLocalized" EntitySet="HomeBannerLocalized" />
+    </AssociationSet>
+    <AssociationSet Name="FK_HomeBannerLocalized_Language" Association="Self.FK_HomeBannerLocalized_Language">
+      <End Role="Language" EntitySet="Language" />
+      <End Role="HomeBannerLocalized" EntitySet="HomeBannerLocalized" />
+    </AssociationSet>
+    <AssociationSet Name="FK_InfoPage_InfoPageCategory" Association="Self.FK_InfoPage_InfoPageCategory">
+      <End Role="InfoPageCategory" EntitySet="InfoPageCategory" />
+      <End Role="InfoPage" EntitySet="InfoPage" />
+    </AssociationSet>
+    <AssociationSet Name="FK_JobLocalized_Job" Association="Self.FK_JobLocalized_Job">
+      <End Role="Career" EntitySet="Career" />
+      <End Role="CareerLocalized" EntitySet="CareerLocalized" />
+    </AssociationSet>
+    <AssociationSet Name="FK_JobLocalized_Language" Association="Self.FK_JobLocalized_Language">
+      <End Role="Language" EntitySet="Language" />
+      <End Role="CareerLocalized" EntitySet="CareerLocalized" />
+    </AssociationSet>
+    <AssociationSet Name="FK_LocalizedAlbums_Albums" Association="Self.FK_LocalizedAlbums_Albums">
+      <End Role="Album" EntitySet="Album" />
+      <End Role="AlbumLocalized" EntitySet="AlbumLocalized" />
+    </AssociationSet>
+    <AssociationSet Name="FK_LocalizedAlbums_LocalizedAlbums" Association="Self.FK_LocalizedAlbums_LocalizedAlbums">
+      <End Role="Language" EntitySet="Language" />
+      <End Role="AlbumLocalized" EntitySet="AlbumLocalized" />
+    </AssociationSet>
+    <AssociationSet Name="FK_LocalizedFaq_Faqs" Association="Self.FK_LocalizedFaq_Faqs">
+      <End Role="Faq" EntitySet="Faq" />
+      <End Role="FaqLocalized" EntitySet="FaqLocalized" />
+    </AssociationSet>
+    <AssociationSet Name="FK_LocalizedFaq_Languages" Association="Self.FK_LocalizedFaq_Languages">
+      <End Role="Language" EntitySet="Language" />
+      <End Role="FaqLocalized" EntitySet="FaqLocalized" />
+    </AssociationSet>
+    <AssociationSet Name="FK_LocalizedFaqCategories_FaqCategories" Association="Self.FK_LocalizedFaqCategories_FaqCategories">
+      <End Role="FaqCategory" EntitySet="FaqCategory" />
+      <End Role="FaqCategoryLocalized" EntitySet="FaqCategoryLocalized" />
+    </AssociationSet>
+    <AssociationSet Name="FK_LocalizedFaqCategories_Languages1" Association="Self.FK_LocalizedFaqCategories_Languages1">
+      <End Role="Language" EntitySet="Language" />
+      <End Role="FaqCategoryLocalized" EntitySet="FaqCategoryLocalized" />
+    </AssociationSet>
+    <AssociationSet Name="FK_LocalizedInfoPageCategories_InfoPageCategories" Association="Self.FK_LocalizedInfoPageCategories_InfoPageCategories">
+      <End Role="InfoPageCategory" EntitySet="InfoPageCategory" />
+      <End Role="InfoPageCategoryLocalized" EntitySet="InfoPageCategoryLocalized" />
+    </AssociationSet>
+    <AssociationSet Name="FK_LocalizedInfoPageCategories_Languages" Association="Self.FK_LocalizedInfoPageCategories_Languages">
+      <End Role="Language" EntitySet="Language" />
+      <End Role="InfoPageCategoryLocalized" EntitySet="InfoPageCategoryLocalized" />
+    </AssociationSet>
+    <AssociationSet Name="FK_LocalizedInfoPages_InfoPages" Association="Self.FK_LocalizedInfoPages_InfoPages">
+      <End Role="InfoPage" EntitySet="InfoPage" />
+      <End Role="InfoPageLocalized" EntitySet="InfoPageLocalized" />
+    </AssociationSet>
+    <AssociationSet Name="FK_LocalizedInfoPages_Languages" Association="Self.FK_LocalizedInfoPages_Languages">
+      <End Role="Language" EntitySet="Language" />
+      <End Role="InfoPageLocalized" EntitySet="InfoPageLocalized" />
+    </AssociationSet>
+    <AssociationSet Name="FK_LocalizedNew_Languages" Association="Self.FK_LocalizedNew_Languages">
+      <End Role="Language" EntitySet="Language" />
+      <End Role="NewsLocalized" EntitySet="NewsLocalized" />
+    </AssociationSet>
+    <AssociationSet Name="FK_LocalizedNew_News" Association="Self.FK_LocalizedNew_News">
+      <End Role="News" EntitySet="News" />
+      <End Role="NewsLocalized" EntitySet="NewsLocalized" />
+    </AssociationSet>
+    <AssociationSet Name="FK_MediaCollection_MediaItemPage" Association="Self.FK_MediaCollection_MediaItemPage">
+      <End Role="SitePage" EntitySet="SitePage" />
+      <End Role="MediaCollection" EntitySet="MediaCollection" />
+    </AssociationSet>
+    <AssociationSet Name="FK_MediaItem_SitePages" Association="Self.FK_MediaItem_SitePages">
+      <End Role="SitePage" EntitySet="SitePage" />
+      <End Role="MediaItem" EntitySet="MediaItem" />
+    </AssociationSet>
+    <AssociationSet Name="FK_MetaTag_SitePage" Association="Self.FK_MetaTag_SitePage">
+      <End Role="SitePage" EntitySet="SitePage" />
+      <End Role="MetaTag" EntitySet="MetaTag" />
+    </AssociationSet>
+    <AssociationSet Name="FK_MetaTagLocalized_Language" Association="Self.FK_MetaTagLocalized_Language">
+      <End Role="Language" EntitySet="Language" />
+      <End Role="MetaTagLocalized" EntitySet="MetaTagLocalized" />
+    </AssociationSet>
+    <AssociationSet Name="FK_MetaTagLocalized_MetaTag" Association="Self.FK_MetaTagLocalized_MetaTag">
+      <End Role="MetaTag" EntitySet="MetaTag" />
+      <End Role="MetaTagLocalized" EntitySet="MetaTagLocalized" />
+    </AssociationSet>
+    <AssociationSet Name="FK_SettingsKeys_SettingsCategories" Association="Self.FK_SettingsKeys_SettingsCategories">
+      <End Role="SettingCategory" EntitySet="SettingCategory" />
+      <End Role="Setting" EntitySet="Setting" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Testimonial_TestimonialSource" Association="Self.FK_Testimonial_TestimonialSource">
+      <End Role="TestimonialSource" EntitySet="TestimonialSource" />
+      <End Role="Testimonial" EntitySet="Testimonial" />
+    </AssociationSet>
+  </EntityContainer>
+</Schema>

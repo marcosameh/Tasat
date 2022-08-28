@@ -1,0 +1,1187 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="SharedKernelModel" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+  <EntityContainer Name="AdminEntities" annotation:LazyLoadingEnabled="true">
+    <EntitySet Name="Albums" EntityType="SharedKernelModel.Album" />
+    <EntitySet Name="AlbumLocalizeds" EntityType="SharedKernelModel.AlbumLocalized" />
+    <EntitySet Name="AlbumPhotoes" EntityType="SharedKernelModel.AlbumPhoto" />
+    <EntitySet Name="aspnet_Applications" EntityType="SharedKernelModel.aspnet_Applications" />
+    <EntitySet Name="aspnet_Membership" EntityType="SharedKernelModel.aspnet_Membership" />
+    <EntitySet Name="aspnet_Roles" EntityType="SharedKernelModel.aspnet_Roles" />
+    <EntitySet Name="aspnet_SchemaVersions" EntityType="SharedKernelModel.aspnet_SchemaVersions" />
+    <EntitySet Name="aspnet_Users" EntityType="SharedKernelModel.aspnet_Users" />
+    <EntitySet Name="Banners" EntityType="SharedKernelModel.Banner" />
+    <EntitySet Name="BannerLocalizeds" EntityType="SharedKernelModel.BannerLocalized" />
+    <EntitySet Name="Careers" EntityType="SharedKernelModel.Career" />
+    <EntitySet Name="CareerLocalizeds" EntityType="SharedKernelModel.CareerLocalized" />
+    <EntitySet Name="Cities" EntityType="SharedKernelModel.City" />
+    <EntitySet Name="CityLocalizeds" EntityType="SharedKernelModel.CityLocalized" />
+    <EntitySet Name="Countries" EntityType="SharedKernelModel.Country" />
+    <EntitySet Name="Faqs" EntityType="SharedKernelModel.Faq" />
+    <EntitySet Name="FaqCategories" EntityType="SharedKernelModel.FaqCategory" />
+    <EntitySet Name="FaqCategoryLocalizeds" EntityType="SharedKernelModel.FaqCategoryLocalized" />
+    <EntitySet Name="FaqLocalizeds" EntityType="SharedKernelModel.FaqLocalized" />
+    <EntitySet Name="HomeBanners" EntityType="SharedKernelModel.HomeBanner" />
+    <EntitySet Name="HomeBannerLocalizeds" EntityType="SharedKernelModel.HomeBannerLocalized" />
+    <EntitySet Name="InfoPages" EntityType="SharedKernelModel.InfoPage" />
+    <EntitySet Name="InfoPageCategories" EntityType="SharedKernelModel.InfoPageCategory" />
+    <EntitySet Name="InfoPageCategoryLocalizeds" EntityType="SharedKernelModel.InfoPageCategoryLocalized" />
+    <EntitySet Name="InfoPageLocalizeds" EntityType="SharedKernelModel.InfoPageLocalized" />
+    <EntitySet Name="Languages" EntityType="SharedKernelModel.Language" />
+    <EntitySet Name="MediaCollections" EntityType="SharedKernelModel.MediaCollection" />
+    <EntitySet Name="MediaItems" EntityType="SharedKernelModel.MediaItem" />
+    <EntitySet Name="MetaTags" EntityType="SharedKernelModel.MetaTag" />
+    <EntitySet Name="MetaTagLocalizeds" EntityType="SharedKernelModel.MetaTagLocalized" />
+    <EntitySet Name="News" EntityType="SharedKernelModel.News" />
+    <EntitySet Name="NewsletterSubscriptions" EntityType="SharedKernelModel.NewsletterSubscription" />
+    <EntitySet Name="NewsLocalizeds" EntityType="SharedKernelModel.NewsLocalized" />
+    <EntitySet Name="Settings" EntityType="SharedKernelModel.Setting" />
+    <EntitySet Name="SettingCategories" EntityType="SharedKernelModel.SettingCategory" />
+    <EntitySet Name="SitePages" EntityType="SharedKernelModel.SitePage" />
+    <EntitySet Name="SocialLinks" EntityType="SharedKernelModel.SocialLink" />
+    <EntitySet Name="TeamMembers" EntityType="SharedKernelModel.TeamMember" />
+    <EntitySet Name="Testimonials" EntityType="SharedKernelModel.Testimonial" />
+    <EntitySet Name="TestimonialSources" EntityType="SharedKernelModel.TestimonialSource" />
+    <EntitySet Name="Users" EntityType="SharedKernelModel.User" />
+    <AssociationSet Name="FK_AlbumPhotos_Albums" Association="SharedKernelModel.FK_AlbumPhotos_Albums">
+      <End Role="Album" EntitySet="Albums" />
+      <End Role="AlbumPhoto" EntitySet="AlbumPhotoes" />
+    </AssociationSet>
+    <AssociationSet Name="FK_LocalizedAlbums_Albums" Association="SharedKernelModel.FK_LocalizedAlbums_Albums">
+      <End Role="Album" EntitySet="Albums" />
+      <End Role="AlbumLocalized" EntitySet="AlbumLocalizeds" />
+    </AssociationSet>
+    <AssociationSet Name="FK_LocalizedAlbums_LocalizedAlbums" Association="SharedKernelModel.FK_LocalizedAlbums_LocalizedAlbums">
+      <End Role="Language" EntitySet="Languages" />
+      <End Role="AlbumLocalized" EntitySet="AlbumLocalizeds" />
+    </AssociationSet>
+    <AssociationSet Name="FK__aspnet_Me__Appli__6BAEFA67" Association="SharedKernelModel.FK__aspnet_Me__Appli__6BAEFA67">
+      <End Role="aspnet_Applications" EntitySet="aspnet_Applications" />
+      <End Role="aspnet_Membership" EntitySet="aspnet_Membership" />
+    </AssociationSet>
+    <AssociationSet Name="FK__aspnet_Ro__Appli__00AA174D" Association="SharedKernelModel.FK__aspnet_Ro__Appli__00AA174D">
+      <End Role="aspnet_Applications" EntitySet="aspnet_Applications" />
+      <End Role="aspnet_Roles" EntitySet="aspnet_Roles" />
+    </AssociationSet>
+    <AssociationSet Name="FK__aspnet_Us__Appli__5B78929E" Association="SharedKernelModel.FK__aspnet_Us__Appli__5B78929E">
+      <End Role="aspnet_Applications" EntitySet="aspnet_Applications" />
+      <End Role="aspnet_Users" EntitySet="aspnet_Users" />
+    </AssociationSet>
+    <AssociationSet Name="FK__aspnet_Me__UserI__6CA31EA0" Association="SharedKernelModel.FK__aspnet_Me__UserI__6CA31EA0">
+      <End Role="aspnet_Users" EntitySet="aspnet_Users" />
+      <End Role="aspnet_Membership" EntitySet="aspnet_Membership" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Banner_SitePages" Association="SharedKernelModel.FK_Banner_SitePages">
+      <End Role="SitePage" EntitySet="SitePages" />
+      <End Role="Banner" EntitySet="Banners" />
+    </AssociationSet>
+    <AssociationSet Name="FK_BannerLocalized_Banner" Association="SharedKernelModel.FK_BannerLocalized_Banner">
+      <End Role="Banner" EntitySet="Banners" />
+      <End Role="BannerLocalized" EntitySet="BannerLocalizeds" />
+    </AssociationSet>
+    <AssociationSet Name="FK_BannerLocalized_Language" Association="SharedKernelModel.FK_BannerLocalized_Language">
+      <End Role="Language" EntitySet="Languages" />
+      <End Role="BannerLocalized" EntitySet="BannerLocalizeds" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Career_City" Association="SharedKernelModel.FK_Career_City">
+      <End Role="City" EntitySet="Cities" />
+      <End Role="Career" EntitySet="Careers" />
+    </AssociationSet>
+    <AssociationSet Name="FK_JobLocalized_Job" Association="SharedKernelModel.FK_JobLocalized_Job">
+      <End Role="Career" EntitySet="Careers" />
+      <End Role="CareerLocalized" EntitySet="CareerLocalizeds" />
+    </AssociationSet>
+    <AssociationSet Name="FK_JobLocalized_Language" Association="SharedKernelModel.FK_JobLocalized_Language">
+      <End Role="Language" EntitySet="Languages" />
+      <End Role="CareerLocalized" EntitySet="CareerLocalizeds" />
+    </AssociationSet>
+    <AssociationSet Name="FK_CityLocalized_City" Association="SharedKernelModel.FK_CityLocalized_City">
+      <End Role="City" EntitySet="Cities" />
+      <End Role="CityLocalized" EntitySet="CityLocalizeds" />
+    </AssociationSet>
+    <AssociationSet Name="FK_CityLocalized_Language" Association="SharedKernelModel.FK_CityLocalized_Language">
+      <End Role="Language" EntitySet="Languages" />
+      <End Role="CityLocalized" EntitySet="CityLocalizeds" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Faqs_FaqCategories" Association="SharedKernelModel.FK_Faqs_FaqCategories">
+      <End Role="FaqCategory" EntitySet="FaqCategories" />
+      <End Role="Faq" EntitySet="Faqs" />
+    </AssociationSet>
+    <AssociationSet Name="FK_LocalizedFaq_Faqs" Association="SharedKernelModel.FK_LocalizedFaq_Faqs">
+      <End Role="Faq" EntitySet="Faqs" />
+      <End Role="FaqLocalized" EntitySet="FaqLocalizeds" />
+    </AssociationSet>
+    <AssociationSet Name="FK_LocalizedFaqCategories_FaqCategories" Association="SharedKernelModel.FK_LocalizedFaqCategories_FaqCategories">
+      <End Role="FaqCategory" EntitySet="FaqCategories" />
+      <End Role="FaqCategoryLocalized" EntitySet="FaqCategoryLocalizeds" />
+    </AssociationSet>
+    <AssociationSet Name="FK_LocalizedFaqCategories_Languages1" Association="SharedKernelModel.FK_LocalizedFaqCategories_Languages1">
+      <End Role="Language" EntitySet="Languages" />
+      <End Role="FaqCategoryLocalized" EntitySet="FaqCategoryLocalizeds" />
+    </AssociationSet>
+    <AssociationSet Name="FK_LocalizedFaq_Languages" Association="SharedKernelModel.FK_LocalizedFaq_Languages">
+      <End Role="Language" EntitySet="Languages" />
+      <End Role="FaqLocalized" EntitySet="FaqLocalizeds" />
+    </AssociationSet>
+    <AssociationSet Name="FK_HomeBannerLocalized_HomeBanner" Association="SharedKernelModel.FK_HomeBannerLocalized_HomeBanner">
+      <End Role="HomeBanner" EntitySet="HomeBanners" />
+      <End Role="HomeBannerLocalized" EntitySet="HomeBannerLocalizeds" />
+    </AssociationSet>
+    <AssociationSet Name="FK_HomeBannerLocalized_Language" Association="SharedKernelModel.FK_HomeBannerLocalized_Language">
+      <End Role="Language" EntitySet="Languages" />
+      <End Role="HomeBannerLocalized" EntitySet="HomeBannerLocalizeds" />
+    </AssociationSet>
+    <AssociationSet Name="FK_InfoPage_InfoPageCategory" Association="SharedKernelModel.FK_InfoPage_InfoPageCategory">
+      <End Role="InfoPageCategory" EntitySet="InfoPageCategories" />
+      <End Role="InfoPage" EntitySet="InfoPages" />
+    </AssociationSet>
+    <AssociationSet Name="FK_LocalizedInfoPages_InfoPages" Association="SharedKernelModel.FK_LocalizedInfoPages_InfoPages">
+      <End Role="InfoPage" EntitySet="InfoPages" />
+      <End Role="InfoPageLocalized" EntitySet="InfoPageLocalizeds" />
+    </AssociationSet>
+    <AssociationSet Name="FK_LocalizedInfoPageCategories_InfoPageCategories" Association="SharedKernelModel.FK_LocalizedInfoPageCategories_InfoPageCategories">
+      <End Role="InfoPageCategory" EntitySet="InfoPageCategories" />
+      <End Role="InfoPageCategoryLocalized" EntitySet="InfoPageCategoryLocalizeds" />
+    </AssociationSet>
+    <AssociationSet Name="FK_LocalizedInfoPageCategories_Languages" Association="SharedKernelModel.FK_LocalizedInfoPageCategories_Languages">
+      <End Role="Language" EntitySet="Languages" />
+      <End Role="InfoPageCategoryLocalized" EntitySet="InfoPageCategoryLocalizeds" />
+    </AssociationSet>
+    <AssociationSet Name="FK_LocalizedInfoPages_Languages" Association="SharedKernelModel.FK_LocalizedInfoPages_Languages">
+      <End Role="Language" EntitySet="Languages" />
+      <End Role="InfoPageLocalized" EntitySet="InfoPageLocalizeds" />
+    </AssociationSet>
+    <AssociationSet Name="FK_LocalizedNew_Languages" Association="SharedKernelModel.FK_LocalizedNew_Languages">
+      <End Role="Language" EntitySet="Languages" />
+      <End Role="NewsLocalized" EntitySet="NewsLocalizeds" />
+    </AssociationSet>
+    <AssociationSet Name="FK_MetaTagLocalized_Language" Association="SharedKernelModel.FK_MetaTagLocalized_Language">
+      <End Role="Language" EntitySet="Languages" />
+      <End Role="MetaTagLocalized" EntitySet="MetaTagLocalizeds" />
+    </AssociationSet>
+    <AssociationSet Name="FK_MediaCollection_MediaItemPage" Association="SharedKernelModel.FK_MediaCollection_MediaItemPage">
+      <End Role="SitePage" EntitySet="SitePages" />
+      <End Role="MediaCollection" EntitySet="MediaCollections" />
+    </AssociationSet>
+    <AssociationSet Name="FK_MediaItem_SitePages" Association="SharedKernelModel.FK_MediaItem_SitePages">
+      <End Role="SitePage" EntitySet="SitePages" />
+      <End Role="MediaItem" EntitySet="MediaItems" />
+    </AssociationSet>
+    <AssociationSet Name="FK_MetaTag_SitePage" Association="SharedKernelModel.FK_MetaTag_SitePage">
+      <End Role="SitePage" EntitySet="SitePages" />
+      <End Role="MetaTag" EntitySet="MetaTags" />
+    </AssociationSet>
+    <AssociationSet Name="FK_MetaTagLocalized_MetaTag" Association="SharedKernelModel.FK_MetaTagLocalized_MetaTag">
+      <End Role="MetaTag" EntitySet="MetaTags" />
+      <End Role="MetaTagLocalized" EntitySet="MetaTagLocalizeds" />
+    </AssociationSet>
+    <AssociationSet Name="FK_LocalizedNew_News" Association="SharedKernelModel.FK_LocalizedNew_News">
+      <End Role="News" EntitySet="News" />
+      <End Role="NewsLocalized" EntitySet="NewsLocalizeds" />
+    </AssociationSet>
+    <AssociationSet Name="FK_SettingsKeys_SettingsCategories" Association="SharedKernelModel.FK_SettingsKeys_SettingsCategories">
+      <End Role="SettingCategory" EntitySet="SettingCategories" />
+      <End Role="Setting" EntitySet="Settings" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Testimonial_TestimonialSource" Association="SharedKernelModel.FK_Testimonial_TestimonialSource">
+      <End Role="TestimonialSource" EntitySet="TestimonialSources" />
+      <End Role="Testimonial" EntitySet="Testimonials" />
+    </AssociationSet>
+    <AssociationSet Name="aspnet_UsersInRoles" Association="SharedKernelModel.aspnet_UsersInRoles">
+      <End Role="aspnet_Roles" EntitySet="aspnet_Roles" />
+      <End Role="aspnet_Users" EntitySet="aspnet_Users" />
+    </AssociationSet>
+  </EntityContainer>
+  <EnumType Name="SocialLinkTypes">
+    <Member Name="Facebook" Value="1" />
+    <Member Name="LinkedIn" Value="2" />
+    <Member Name="GooglePlus" Value="3" />
+    <Member Name="Twitter" Value="4" />
+    <Member Name="YouTube" Value="5" />
+    <Member Name="Skype" Value="6" />
+  </EnumType>
+  <EntityType Name="Album">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="Name" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="DisplayOrder" Type="Int32" Nullable="false" />
+    <Property Name="Active" Type="Boolean" Nullable="false" />
+    <NavigationProperty Name="AlbumPhotoes" Relationship="SharedKernelModel.FK_AlbumPhotos_Albums" FromRole="Album" ToRole="AlbumPhoto" />
+    <NavigationProperty Name="AlbumLocalizeds" Relationship="SharedKernelModel.FK_LocalizedAlbums_Albums" FromRole="Album" ToRole="AlbumLocalized" />
+  </EntityType>
+  <EntityType Name="AlbumLocalized">
+    <Key>
+      <PropertyRef Name="AlbumId" />
+      <PropertyRef Name="LanguageId" />
+    </Key>
+    <Property Name="AlbumId" Type="Int32" Nullable="false" />
+    <Property Name="LanguageId" Type="Int32" Nullable="false" />
+    <Property Name="Name" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="Description" Type="String" MaxLength="500" FixedLength="false" Unicode="true" />
+    <Property Name="MetaTitle" Type="String" MaxLength="65" FixedLength="false" Unicode="true" />
+    <Property Name="MetaDescription" Type="String" MaxLength="160" FixedLength="false" Unicode="true" />
+    <NavigationProperty Name="Album" Relationship="SharedKernelModel.FK_LocalizedAlbums_Albums" FromRole="AlbumLocalized" ToRole="Album" />
+    <NavigationProperty Name="Language" Relationship="SharedKernelModel.FK_LocalizedAlbums_LocalizedAlbums" FromRole="AlbumLocalized" ToRole="Language" />
+  </EntityType>
+  <EntityType Name="AlbumPhoto">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="AlbumId" Type="Int32" Nullable="false" />
+    <Property Name="Photo" Type="String" Nullable="false" MaxLength="100" FixedLength="false" Unicode="true" />
+    <Property Name="DisplayOrder" Type="Int32" Nullable="false" />
+    <NavigationProperty Name="Album" Relationship="SharedKernelModel.FK_AlbumPhotos_Albums" FromRole="AlbumPhoto" ToRole="Album" />
+  </EntityType>
+  <EntityType Name="aspnet_Applications">
+    <Key>
+      <PropertyRef Name="ApplicationId" />
+    </Key>
+    <Property Name="ApplicationName" Type="String" Nullable="false" MaxLength="256" FixedLength="false" Unicode="true" />
+    <Property Name="LoweredApplicationName" Type="String" Nullable="false" MaxLength="256" FixedLength="false" Unicode="true" />
+    <Property Name="ApplicationId" Type="Guid" Nullable="false" />
+    <Property Name="Description" Type="String" MaxLength="256" FixedLength="false" Unicode="true" />
+    <NavigationProperty Name="aspnet_Membership" Relationship="SharedKernelModel.FK__aspnet_Me__Appli__6BAEFA67" FromRole="aspnet_Applications" ToRole="aspnet_Membership" />
+    <NavigationProperty Name="aspnet_Roles" Relationship="SharedKernelModel.FK__aspnet_Ro__Appli__00AA174D" FromRole="aspnet_Applications" ToRole="aspnet_Roles" />
+    <NavigationProperty Name="aspnet_Users" Relationship="SharedKernelModel.FK__aspnet_Us__Appli__5B78929E" FromRole="aspnet_Applications" ToRole="aspnet_Users" />
+  </EntityType>
+  <EntityType Name="aspnet_Membership">
+    <Key>
+      <PropertyRef Name="UserId" />
+    </Key>
+    <Property Name="ApplicationId" Type="Guid" Nullable="false" />
+    <Property Name="UserId" Type="Guid" Nullable="false" />
+    <Property Name="Password" Type="String" Nullable="false" MaxLength="128" FixedLength="false" Unicode="true" />
+    <Property Name="PasswordFormat" Type="Int32" Nullable="false" />
+    <Property Name="PasswordSalt" Type="String" Nullable="false" MaxLength="128" FixedLength="false" Unicode="true" />
+    <Property Name="MobilePIN" Type="String" MaxLength="16" FixedLength="false" Unicode="true" />
+    <Property Name="Email" Type="String" MaxLength="256" FixedLength="false" Unicode="true" />
+    <Property Name="LoweredEmail" Type="String" MaxLength="256" FixedLength="false" Unicode="true" />
+    <Property Name="PasswordQuestion" Type="String" MaxLength="256" FixedLength="false" Unicode="true" />
+    <Property Name="PasswordAnswer" Type="String" MaxLength="128" FixedLength="false" Unicode="true" />
+    <Property Name="IsApproved" Type="Boolean" Nullable="false" />
+    <Property Name="IsLockedOut" Type="Boolean" Nullable="false" />
+    <Property Name="CreateDate" Type="DateTime" Nullable="false" Precision="3" />
+    <Property Name="LastLoginDate" Type="DateTime" Nullable="false" Precision="3" />
+    <Property Name="LastPasswordChangedDate" Type="DateTime" Nullable="false" Precision="3" />
+    <Property Name="LastLockoutDate" Type="DateTime" Nullable="false" Precision="3" />
+    <Property Name="FailedPasswordAttemptCount" Type="Int32" Nullable="false" />
+    <Property Name="FailedPasswordAttemptWindowStart" Type="DateTime" Nullable="false" Precision="3" />
+    <Property Name="FailedPasswordAnswerAttemptCount" Type="Int32" Nullable="false" />
+    <Property Name="FailedPasswordAnswerAttemptWindowStart" Type="DateTime" Nullable="false" Precision="3" />
+    <Property Name="Comment" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <NavigationProperty Name="aspnet_Applications" Relationship="SharedKernelModel.FK__aspnet_Me__Appli__6BAEFA67" FromRole="aspnet_Membership" ToRole="aspnet_Applications" />
+    <NavigationProperty Name="aspnet_Users" Relationship="SharedKernelModel.FK__aspnet_Me__UserI__6CA31EA0" FromRole="aspnet_Membership" ToRole="aspnet_Users" />
+  </EntityType>
+  <EntityType Name="aspnet_Roles">
+    <Key>
+      <PropertyRef Name="RoleId" />
+    </Key>
+    <Property Name="ApplicationId" Type="Guid" Nullable="false" />
+    <Property Name="RoleId" Type="Guid" Nullable="false" />
+    <Property Name="RoleName" Type="String" Nullable="false" MaxLength="256" FixedLength="false" Unicode="true" />
+    <Property Name="LoweredRoleName" Type="String" Nullable="false" MaxLength="256" FixedLength="false" Unicode="true" />
+    <Property Name="Description" Type="String" MaxLength="256" FixedLength="false" Unicode="true" />
+    <NavigationProperty Name="aspnet_Applications" Relationship="SharedKernelModel.FK__aspnet_Ro__Appli__00AA174D" FromRole="aspnet_Roles" ToRole="aspnet_Applications" />
+    <NavigationProperty Name="aspnet_Users" Relationship="SharedKernelModel.aspnet_UsersInRoles" FromRole="aspnet_Roles" ToRole="aspnet_Users" />
+  </EntityType>
+  <EntityType Name="aspnet_SchemaVersions">
+    <Key>
+      <PropertyRef Name="Feature" />
+      <PropertyRef Name="CompatibleSchemaVersion" />
+    </Key>
+    <Property Name="Feature" Type="String" Nullable="false" MaxLength="128" FixedLength="false" Unicode="true" />
+    <Property Name="CompatibleSchemaVersion" Type="String" Nullable="false" MaxLength="128" FixedLength="false" Unicode="true" />
+    <Property Name="IsCurrentVersion" Type="Boolean" Nullable="false" />
+  </EntityType>
+  <EntityType Name="aspnet_Users">
+    <Key>
+      <PropertyRef Name="UserId" />
+    </Key>
+    <Property Name="ApplicationId" Type="Guid" Nullable="false" />
+    <Property Name="UserId" Type="Guid" Nullable="false" />
+    <Property Name="UserName" Type="String" Nullable="false" MaxLength="256" FixedLength="false" Unicode="true" />
+    <Property Name="LoweredUserName" Type="String" Nullable="false" MaxLength="256" FixedLength="false" Unicode="true" />
+    <Property Name="MobileAlias" Type="String" MaxLength="16" FixedLength="false" Unicode="true" />
+    <Property Name="IsAnonymous" Type="Boolean" Nullable="false" />
+    <Property Name="LastActivityDate" Type="DateTime" Nullable="false" Precision="3" />
+    <NavigationProperty Name="aspnet_Applications" Relationship="SharedKernelModel.FK__aspnet_Us__Appli__5B78929E" FromRole="aspnet_Users" ToRole="aspnet_Applications" />
+    <NavigationProperty Name="aspnet_Membership" Relationship="SharedKernelModel.FK__aspnet_Me__UserI__6CA31EA0" FromRole="aspnet_Users" ToRole="aspnet_Membership" />
+    <NavigationProperty Name="aspnet_Roles" Relationship="SharedKernelModel.aspnet_UsersInRoles" FromRole="aspnet_Users" ToRole="aspnet_Roles" />
+  </EntityType>
+  <EntityType Name="Banner">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="PageId" Type="Int32" Nullable="false" />
+    <Property Name="Photo" Type="String" Nullable="false" MaxLength="100" FixedLength="false" Unicode="true" />
+    <Property Name="CustomField" Type="String" MaxLength="500" FixedLength="false" Unicode="true" />
+    <Property Name="DisplayOrder" Type="Int32" Nullable="false" />
+    <Property Name="Active" Type="Boolean" Nullable="false" />
+    <NavigationProperty Name="SitePage" Relationship="SharedKernelModel.FK_Banner_SitePages" FromRole="Banner" ToRole="SitePage" />
+    <NavigationProperty Name="BannerLocalizeds" Relationship="SharedKernelModel.FK_BannerLocalized_Banner" FromRole="Banner" ToRole="BannerLocalized" />
+  </EntityType>
+  <EntityType Name="BannerLocalized">
+    <Key>
+      <PropertyRef Name="BannerId" />
+      <PropertyRef Name="LanguageId" />
+    </Key>
+    <Property Name="BannerId" Type="Int32" Nullable="false" />
+    <Property Name="LanguageId" Type="Int32" Nullable="false" />
+    <Property Name="Title" Type="String" Nullable="false" MaxLength="250" FixedLength="false" Unicode="true" />
+    <Property Name="SubTitle" Type="String" Nullable="false" MaxLength="500" FixedLength="false" Unicode="true" />
+    <Property Name="Link" Type="String" MaxLength="250" FixedLength="false" Unicode="true" />
+    <NavigationProperty Name="Banner" Relationship="SharedKernelModel.FK_BannerLocalized_Banner" FromRole="BannerLocalized" ToRole="Banner" />
+    <NavigationProperty Name="Language" Relationship="SharedKernelModel.FK_BannerLocalized_Language" FromRole="BannerLocalized" ToRole="Language" />
+  </EntityType>
+  <EntityType Name="Career">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="CityId" Type="Int32" Nullable="false" />
+    <Property Name="Name" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="Active" Type="Boolean" Nullable="false" />
+    <Property Name="DisplayOrder" Type="Int32" Nullable="false" />
+    <Property Name="DateSubmitted" Type="DateTime" Nullable="false" Precision="0" />
+    <NavigationProperty Name="City" Relationship="SharedKernelModel.FK_Career_City" FromRole="Career" ToRole="City" />
+    <NavigationProperty Name="CareerLocalizeds" Relationship="SharedKernelModel.FK_JobLocalized_Job" FromRole="Career" ToRole="CareerLocalized" />
+  </EntityType>
+  <EntityType Name="CareerLocalized">
+    <Key>
+      <PropertyRef Name="CareerId" />
+      <PropertyRef Name="LanguageId" />
+    </Key>
+    <Property Name="CareerId" Type="Int32" Nullable="false" />
+    <Property Name="LanguageId" Type="Int32" Nullable="false" />
+    <Property Name="Title" Type="String" Nullable="false" MaxLength="100" FixedLength="false" Unicode="true" />
+    <Property Name="Description" Type="String" Nullable="false" MaxLength="1000" FixedLength="false" Unicode="true" />
+    <NavigationProperty Name="Career" Relationship="SharedKernelModel.FK_JobLocalized_Job" FromRole="CareerLocalized" ToRole="Career" />
+    <NavigationProperty Name="Language" Relationship="SharedKernelModel.FK_JobLocalized_Language" FromRole="CareerLocalized" ToRole="Language" />
+  </EntityType>
+  <EntityType Name="City">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="Name" Type="String" Nullable="false" MaxLength="100" FixedLength="false" Unicode="true" />
+    <NavigationProperty Name="Careers" Relationship="SharedKernelModel.FK_Career_City" FromRole="City" ToRole="Career" />
+    <NavigationProperty Name="CityLocalizeds" Relationship="SharedKernelModel.FK_CityLocalized_City" FromRole="City" ToRole="CityLocalized" />
+  </EntityType>
+  <EntityType Name="CityLocalized">
+    <Key>
+      <PropertyRef Name="LanguageId" />
+      <PropertyRef Name="CityId" />
+    </Key>
+    <Property Name="LanguageId" Type="Int32" Nullable="false" />
+    <Property Name="CityId" Type="Int32" Nullable="false" />
+    <Property Name="Title" Type="String" Nullable="false" MaxLength="100" FixedLength="false" Unicode="true" />
+    <NavigationProperty Name="City" Relationship="SharedKernelModel.FK_CityLocalized_City" FromRole="CityLocalized" ToRole="City" />
+    <NavigationProperty Name="Language" Relationship="SharedKernelModel.FK_CityLocalized_Language" FromRole="CityLocalized" ToRole="Language" />
+  </EntityType>
+  <EntityType Name="Country">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="Name" Type="String" Nullable="false" MaxLength="80" FixedLength="false" Unicode="false" />
+    <Property Name="ItalianName" Type="String" MaxLength="80" FixedLength="false" Unicode="true" />
+    <Property Name="GermanName" Type="String" MaxLength="80" FixedLength="false" Unicode="true" />
+    <Property Name="FrenchName" Type="String" MaxLength="80" FixedLength="false" Unicode="true" />
+    <Property Name="PolishName" Type="String" MaxLength="80" FixedLength="false" Unicode="true" />
+    <Property Name="RussianName" Type="String" MaxLength="80" FixedLength="false" Unicode="true" />
+    <Property Name="ArabicName" Type="String" MaxLength="80" FixedLength="false" Unicode="true" />
+    <Property Name="Iso2" Type="String" Nullable="false" MaxLength="2" FixedLength="true" Unicode="false" />
+    <Property Name="Iso3" Type="String" MaxLength="3" FixedLength="true" Unicode="false" />
+    <Property Name="CountryCode" Type="Int32" />
+  </EntityType>
+  <EntityType Name="Faq">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="CategoryId" Type="Int32" />
+    <Property Name="Name" Type="String" Nullable="false" MaxLength="250" FixedLength="false" Unicode="true" />
+    <Property Name="Active" Type="Boolean" Nullable="false" />
+    <Property Name="DisplayOrder" Type="Int32" Nullable="false" />
+    <NavigationProperty Name="FaqCategory" Relationship="SharedKernelModel.FK_Faqs_FaqCategories" FromRole="Faq" ToRole="FaqCategory" />
+    <NavigationProperty Name="FaqLocalizeds" Relationship="SharedKernelModel.FK_LocalizedFaq_Faqs" FromRole="Faq" ToRole="FaqLocalized" />
+  </EntityType>
+  <EntityType Name="FaqCategory">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="UrlName" Type="String" Nullable="false" MaxLength="200" FixedLength="false" Unicode="false" />
+    <NavigationProperty Name="Faqs" Relationship="SharedKernelModel.FK_Faqs_FaqCategories" FromRole="FaqCategory" ToRole="Faq" />
+    <NavigationProperty Name="FaqCategoryLocalizeds" Relationship="SharedKernelModel.FK_LocalizedFaqCategories_FaqCategories" FromRole="FaqCategory" ToRole="FaqCategoryLocalized" />
+  </EntityType>
+  <EntityType Name="FaqCategoryLocalized">
+    <Key>
+      <PropertyRef Name="CategoryId" />
+      <PropertyRef Name="LanguageId" />
+    </Key>
+    <Property Name="CategoryId" Type="Int32" Nullable="false" />
+    <Property Name="LanguageId" Type="Int32" Nullable="false" />
+    <Property Name="Name" Type="String" Nullable="false" MaxLength="200" FixedLength="false" Unicode="true" />
+    <NavigationProperty Name="FaqCategory" Relationship="SharedKernelModel.FK_LocalizedFaqCategories_FaqCategories" FromRole="FaqCategoryLocalized" ToRole="FaqCategory" />
+    <NavigationProperty Name="Language" Relationship="SharedKernelModel.FK_LocalizedFaqCategories_Languages1" FromRole="FaqCategoryLocalized" ToRole="Language" />
+  </EntityType>
+  <EntityType Name="FaqLocalized">
+    <Key>
+      <PropertyRef Name="FaqId" />
+      <PropertyRef Name="LanguageId" />
+    </Key>
+    <Property Name="FaqId" Type="Int32" Nullable="false" />
+    <Property Name="LanguageId" Type="Int32" Nullable="false" />
+    <Property Name="Question" Type="String" Nullable="false" MaxLength="1000" FixedLength="false" Unicode="true" />
+    <Property Name="Answer" Type="String" Nullable="false" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <NavigationProperty Name="Faq" Relationship="SharedKernelModel.FK_LocalizedFaq_Faqs" FromRole="FaqLocalized" ToRole="Faq" />
+    <NavigationProperty Name="Language" Relationship="SharedKernelModel.FK_LocalizedFaq_Languages" FromRole="FaqLocalized" ToRole="Language" />
+  </EntityType>
+  <EntityType Name="HomeBanner">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="Photo" Type="String" Nullable="false" MaxLength="100" FixedLength="false" Unicode="true" />
+    <Property Name="DisplayOrder" Type="Int32" Nullable="false" />
+    <Property Name="Active" Type="Boolean" Nullable="false" />
+    <Property Name="VideoUrl" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
+    <Property Name="Link" Type="String" MaxLength="500" FixedLength="false" Unicode="true" />
+    <NavigationProperty Name="HomeBannerLocalizeds" Relationship="SharedKernelModel.FK_HomeBannerLocalized_HomeBanner" FromRole="HomeBanner" ToRole="HomeBannerLocalized" />
+  </EntityType>
+  <EntityType Name="HomeBannerLocalized">
+    <Key>
+      <PropertyRef Name="LanguageId" />
+      <PropertyRef Name="HomeBannerId" />
+    </Key>
+    <Property Name="LanguageId" Type="Int32" Nullable="false" />
+    <Property Name="HomeBannerId" Type="Int32" Nullable="false" />
+    <Property Name="Title" Type="String" Nullable="false" MaxLength="100" FixedLength="false" Unicode="true" />
+    <Property Name="SubTitle" Type="String" MaxLength="200" FixedLength="false" Unicode="true" />
+    <Property Name="LinkText" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
+    <NavigationProperty Name="HomeBanner" Relationship="SharedKernelModel.FK_HomeBannerLocalized_HomeBanner" FromRole="HomeBannerLocalized" ToRole="HomeBanner" />
+    <NavigationProperty Name="Language" Relationship="SharedKernelModel.FK_HomeBannerLocalized_Language" FromRole="HomeBannerLocalized" ToRole="Language" />
+  </EntityType>
+  <EntityType Name="InfoPage">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="CategoryId" Type="Int32" />
+    <Property Name="UrlName" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="Active" Type="Boolean" Nullable="false" />
+    <Property Name="Banner" Type="String" MaxLength="250" FixedLength="false" Unicode="true" />
+    <Property Name="DisplayOrder" Type="Int32" Nullable="false" />
+    <NavigationProperty Name="InfoPageCategory" Relationship="SharedKernelModel.FK_InfoPage_InfoPageCategory" FromRole="InfoPage" ToRole="InfoPageCategory" />
+    <NavigationProperty Name="InfoPageLocalizeds" Relationship="SharedKernelModel.FK_LocalizedInfoPages_InfoPages" FromRole="InfoPage" ToRole="InfoPageLocalized" />
+  </EntityType>
+  <EntityType Name="InfoPageCategory">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="UrlName" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="Active" Type="Boolean" Nullable="false" />
+    <NavigationProperty Name="InfoPages" Relationship="SharedKernelModel.FK_InfoPage_InfoPageCategory" FromRole="InfoPageCategory" ToRole="InfoPage" />
+    <NavigationProperty Name="InfoPageCategoryLocalizeds" Relationship="SharedKernelModel.FK_LocalizedInfoPageCategories_InfoPageCategories" FromRole="InfoPageCategory" ToRole="InfoPageCategoryLocalized" />
+  </EntityType>
+  <EntityType Name="InfoPageCategoryLocalized">
+    <Key>
+      <PropertyRef Name="CategoryId" />
+      <PropertyRef Name="LanguageId" />
+    </Key>
+    <Property Name="CategoryId" Type="Int32" Nullable="false" />
+    <Property Name="LanguageId" Type="Int32" Nullable="false" />
+    <Property Name="Name" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="true" />
+    <NavigationProperty Name="InfoPageCategory" Relationship="SharedKernelModel.FK_LocalizedInfoPageCategories_InfoPageCategories" FromRole="InfoPageCategoryLocalized" ToRole="InfoPageCategory" />
+    <NavigationProperty Name="Language" Relationship="SharedKernelModel.FK_LocalizedInfoPageCategories_Languages" FromRole="InfoPageCategoryLocalized" ToRole="Language" />
+  </EntityType>
+  <EntityType Name="InfoPageLocalized">
+    <Key>
+      <PropertyRef Name="PageId" />
+      <PropertyRef Name="LanguageId" />
+    </Key>
+    <Property Name="PageId" Type="Int32" Nullable="false" />
+    <Property Name="LanguageId" Type="Int32" Nullable="false" />
+    <Property Name="Title" Type="String" Nullable="false" MaxLength="100" FixedLength="false" Unicode="true" />
+    <Property Name="SubTitle" Type="String" MaxLength="250" FixedLength="false" Unicode="true" />
+    <Property Name="Body" Type="String" Nullable="false" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Name="MetaTitle" Type="String" MaxLength="65" FixedLength="false" Unicode="true" />
+    <Property Name="MetaDescription" Type="String" MaxLength="160" FixedLength="false" Unicode="true" />
+    <NavigationProperty Name="InfoPage" Relationship="SharedKernelModel.FK_LocalizedInfoPages_InfoPages" FromRole="InfoPageLocalized" ToRole="InfoPage" />
+    <NavigationProperty Name="Language" Relationship="SharedKernelModel.FK_LocalizedInfoPages_Languages" FromRole="InfoPageLocalized" ToRole="Language" />
+  </EntityType>
+  <EntityType Name="Language">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="Int32" Nullable="false" />
+    <Property Name="LocalName" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="CultureName" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="FriendlyName" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="Active" Type="Boolean" Nullable="false" />
+    <Property Name="DisplayOrder" Type="Int32" Nullable="false" />
+    <NavigationProperty Name="AlbumLocalizeds" Relationship="SharedKernelModel.FK_LocalizedAlbums_LocalizedAlbums" FromRole="Language" ToRole="AlbumLocalized" />
+    <NavigationProperty Name="BannerLocalizeds" Relationship="SharedKernelModel.FK_BannerLocalized_Language" FromRole="Language" ToRole="BannerLocalized" />
+    <NavigationProperty Name="CareerLocalizeds" Relationship="SharedKernelModel.FK_JobLocalized_Language" FromRole="Language" ToRole="CareerLocalized" />
+    <NavigationProperty Name="CityLocalizeds" Relationship="SharedKernelModel.FK_CityLocalized_Language" FromRole="Language" ToRole="CityLocalized" />
+    <NavigationProperty Name="FaqCategoryLocalizeds" Relationship="SharedKernelModel.FK_LocalizedFaqCategories_Languages1" FromRole="Language" ToRole="FaqCategoryLocalized" />
+    <NavigationProperty Name="FaqLocalizeds" Relationship="SharedKernelModel.FK_LocalizedFaq_Languages" FromRole="Language" ToRole="FaqLocalized" />
+    <NavigationProperty Name="HomeBannerLocalizeds" Relationship="SharedKernelModel.FK_HomeBannerLocalized_Language" FromRole="Language" ToRole="HomeBannerLocalized" />
+    <NavigationProperty Name="InfoPageCategoryLocalizeds" Relationship="SharedKernelModel.FK_LocalizedInfoPageCategories_Languages" FromRole="Language" ToRole="InfoPageCategoryLocalized" />
+    <NavigationProperty Name="InfoPageLocalizeds" Relationship="SharedKernelModel.FK_LocalizedInfoPages_Languages" FromRole="Language" ToRole="InfoPageLocalized" />
+    <NavigationProperty Name="NewsLocalizeds" Relationship="SharedKernelModel.FK_LocalizedNew_Languages" FromRole="Language" ToRole="NewsLocalized" />
+    <NavigationProperty Name="MetaTagLocalizeds" Relationship="SharedKernelModel.FK_MetaTagLocalized_Language" FromRole="Language" ToRole="MetaTagLocalized" />
+  </EntityType>
+  <EntityType Name="MediaCollection">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="PageId" Type="Int32" Nullable="false" />
+    <Property Name="Name" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="Width" Type="Int32" Nullable="false" />
+    <Property Name="Height" Type="Int32" Nullable="false" />
+    <NavigationProperty Name="SitePage" Relationship="SharedKernelModel.FK_MediaCollection_MediaItemPage" FromRole="MediaCollection" ToRole="SitePage" />
+  </EntityType>
+  <EntityType Name="MediaItem">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="Photo" Type="String" Nullable="false" MaxLength="200" FixedLength="false" Unicode="true" />
+    <Property Name="Alt" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="VedioUrl" Type="String" MaxLength="200" FixedLength="false" Unicode="true" />
+    <Property Name="DisplayOrder" Type="Int32" />
+    <Property Name="ItemKey" Type="String" Nullable="false" MaxLength="20" FixedLength="false" Unicode="false" />
+    <Property Name="PageId" Type="Int32" Nullable="false" />
+    <Property Name="Width" Type="Int32" Nullable="false" />
+    <Property Name="Height" Type="Int32" Nullable="false" />
+    <NavigationProperty Name="SitePage" Relationship="SharedKernelModel.FK_MediaItem_SitePages" FromRole="MediaItem" ToRole="SitePage" />
+  </EntityType>
+  <EntityType Name="MetaTag">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="PageId" Type="Int32" Nullable="false" />
+    <NavigationProperty Name="SitePage" Relationship="SharedKernelModel.FK_MetaTag_SitePage" FromRole="MetaTag" ToRole="SitePage" />
+    <NavigationProperty Name="MetaTagLocalizeds" Relationship="SharedKernelModel.FK_MetaTagLocalized_MetaTag" FromRole="MetaTag" ToRole="MetaTagLocalized" />
+  </EntityType>
+  <EntityType Name="MetaTagLocalized">
+    <Key>
+      <PropertyRef Name="MetaTagId" />
+      <PropertyRef Name="LanguageId" />
+    </Key>
+    <Property Name="MetaTagId" Type="Int32" Nullable="false" />
+    <Property Name="LanguageId" Type="Int32" Nullable="false" />
+    <Property Name="MetaTitle" Type="String" Nullable="false" MaxLength="60" FixedLength="false" Unicode="true" />
+    <Property Name="MetaDescription" Type="String" Nullable="false" MaxLength="160" FixedLength="false" Unicode="true" />
+    <Property Name="MetaKeywords" Type="String" MaxLength="500" FixedLength="false" Unicode="true" />
+    <NavigationProperty Name="Language" Relationship="SharedKernelModel.FK_MetaTagLocalized_Language" FromRole="MetaTagLocalized" ToRole="Language" />
+    <NavigationProperty Name="MetaTag" Relationship="SharedKernelModel.FK_MetaTagLocalized_MetaTag" FromRole="MetaTagLocalized" ToRole="MetaTag" />
+  </EntityType>
+  <EntityType Name="News">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="NewsDate" Type="DateTime" Nullable="false" Precision="0" />
+    <Property Name="GroupId" Type="Int32" />
+    <Property Name="UrlName" Type="String" Nullable="false" MaxLength="100" FixedLength="false" Unicode="true" />
+    <Property Name="Photo" Type="String" Nullable="false" MaxLength="200" FixedLength="false" Unicode="true" />
+    <Property Name="Thumbnail" Type="String" MaxLength="250" FixedLength="false" Unicode="true" />
+    <Property Name="Active" Type="Boolean" Nullable="false" />
+    <NavigationProperty Name="NewsLocalizeds" Relationship="SharedKernelModel.FK_LocalizedNew_News" FromRole="News" ToRole="NewsLocalized" />
+  </EntityType>
+  <EntityType Name="NewsletterSubscription">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="Email" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="SubscriptionDate" Type="DateTime" Nullable="false" Precision="0" />
+  </EntityType>
+  <EntityType Name="NewsLocalized">
+    <Key>
+      <PropertyRef Name="NewsId" />
+      <PropertyRef Name="LanguageId" />
+    </Key>
+    <Property Name="NewsId" Type="Int32" Nullable="false" />
+    <Property Name="LanguageId" Type="Int32" Nullable="false" />
+    <Property Name="Title" Type="String" Nullable="false" MaxLength="150" FixedLength="false" Unicode="true" />
+    <Property Name="Body" Type="String" Nullable="false" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Name="MetaTitle" Type="String" MaxLength="60" FixedLength="false" Unicode="true" />
+    <Property Name="MetaDescription" Type="String" MaxLength="160" FixedLength="false" Unicode="true" />
+    <Property Name="ShortDescription" Type="String" Nullable="false" MaxLength="500" FixedLength="false" Unicode="true" />
+    <NavigationProperty Name="Language" Relationship="SharedKernelModel.FK_LocalizedNew_Languages" FromRole="NewsLocalized" ToRole="Language" />
+    <NavigationProperty Name="News" Relationship="SharedKernelModel.FK_LocalizedNew_News" FromRole="NewsLocalized" ToRole="News" />
+  </EntityType>
+  <EntityType Name="Setting">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="CategoryId" Type="Int32" Nullable="false" />
+    <Property Name="Key" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="Value" Type="String" Nullable="false" MaxLength="1000" FixedLength="false" Unicode="true" />
+    <Property Name="Description" Type="String" MaxLength="250" FixedLength="false" Unicode="false" />
+    <Property Name="DataType" Type="Int32" Nullable="false" />
+    <NavigationProperty Name="SettingCategory" Relationship="SharedKernelModel.FK_SettingsKeys_SettingsCategories" FromRole="Setting" ToRole="SettingCategory" />
+  </EntityType>
+  <EntityType Name="SettingCategory">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="Int32" Nullable="false" />
+    <Property Name="Name" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="false" />
+    <NavigationProperty Name="Settings" Relationship="SharedKernelModel.FK_SettingsKeys_SettingsCategories" FromRole="SettingCategory" ToRole="Setting" />
+  </EntityType>
+  <EntityType Name="SitePage">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="Int32" Nullable="false" />
+    <Property Name="Name" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="true" />
+    <NavigationProperty Name="Banners" Relationship="SharedKernelModel.FK_Banner_SitePages" FromRole="SitePage" ToRole="Banner" />
+    <NavigationProperty Name="MediaCollections" Relationship="SharedKernelModel.FK_MediaCollection_MediaItemPage" FromRole="SitePage" ToRole="MediaCollection" />
+    <NavigationProperty Name="MediaItems" Relationship="SharedKernelModel.FK_MediaItem_SitePages" FromRole="SitePage" ToRole="MediaItem" />
+    <NavigationProperty Name="MetaTags" Relationship="SharedKernelModel.FK_MetaTag_SitePage" FromRole="SitePage" ToRole="MetaTag" />
+  </EntityType>
+  <EntityType Name="SocialLink">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="Type" Type="Int32" Nullable="false" />
+    <Property Name="GroupId" Type="Int32" />
+    <Property Name="Link" Type="String" Nullable="false" MaxLength="250" FixedLength="false" Unicode="true" />
+    <Property Name="CssClass" Type="String" MaxLength="20" FixedLength="false" Unicode="true" />
+    <Property Name="Active" Type="Boolean" Nullable="false" />
+  </EntityType>
+  <EntityType Name="TeamMember">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="Name" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="Email" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="Photo" Type="String" Nullable="false" MaxLength="60" FixedLength="false" Unicode="true" />
+    <Property Name="DisplayOrder" Type="Int32" Nullable="false" />
+    <Property Name="IsActive" Type="Boolean" />
+    <Property Name="Featured" Type="Boolean" Nullable="false" />
+  </EntityType>
+  <EntityType Name="Testimonial">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="TestimonialSourceId" Type="Int32" Nullable="false" />
+    <Property Name="Date" Type="DateTime" Nullable="false" Precision="0" />
+    <Property Name="Title" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="Description" Type="String" Nullable="false" MaxLength="500" FixedLength="false" Unicode="true" />
+    <Property Name="Name" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="Location" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="DisplayOrder" Type="Int32" Nullable="false" />
+    <Property Name="Active" Type="Boolean" Nullable="false" />
+    <NavigationProperty Name="TestimonialSource" Relationship="SharedKernelModel.FK_Testimonial_TestimonialSource" FromRole="Testimonial" ToRole="TestimonialSource" />
+  </EntityType>
+  <EntityType Name="TestimonialSource">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="Name" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="Photo" Type="String" MaxLength="150" FixedLength="false" Unicode="true" />
+    <NavigationProperty Name="Testimonials" Relationship="SharedKernelModel.FK_Testimonial_TestimonialSource" FromRole="TestimonialSource" ToRole="Testimonial" />
+  </EntityType>
+  <EntityType Name="User">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="AspNetUserId" Type="Guid" Nullable="false" />
+    <Property Name="PasswordResetKey" Type="Guid" />
+    <Property Name="PasswordResetTime" Type="DateTime" Precision="0" />
+  </EntityType>
+  <Association Name="FK_AlbumPhotos_Albums">
+    <End Type="SharedKernelModel.Album" Role="Album" Multiplicity="1">
+      <OnDelete Action="Cascade" />
+    </End>
+    <End Type="SharedKernelModel.AlbumPhoto" Role="AlbumPhoto" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Album">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="AlbumPhoto">
+        <PropertyRef Name="AlbumId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_LocalizedAlbums_Albums">
+    <End Type="SharedKernelModel.Album" Role="Album" Multiplicity="1">
+      <OnDelete Action="Cascade" />
+    </End>
+    <End Type="SharedKernelModel.AlbumLocalized" Role="AlbumLocalized" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Album">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="AlbumLocalized">
+        <PropertyRef Name="AlbumId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_LocalizedAlbums_LocalizedAlbums">
+    <End Type="SharedKernelModel.Language" Role="Language" Multiplicity="1" />
+    <End Type="SharedKernelModel.AlbumLocalized" Role="AlbumLocalized" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Language">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="AlbumLocalized">
+        <PropertyRef Name="LanguageId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK__aspnet_Me__Appli__6BAEFA67">
+    <End Type="SharedKernelModel.aspnet_Applications" Role="aspnet_Applications" Multiplicity="1" />
+    <End Type="SharedKernelModel.aspnet_Membership" Role="aspnet_Membership" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="aspnet_Applications">
+        <PropertyRef Name="ApplicationId" />
+      </Principal>
+      <Dependent Role="aspnet_Membership">
+        <PropertyRef Name="ApplicationId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK__aspnet_Ro__Appli__00AA174D">
+    <End Type="SharedKernelModel.aspnet_Applications" Role="aspnet_Applications" Multiplicity="1" />
+    <End Type="SharedKernelModel.aspnet_Roles" Role="aspnet_Roles" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="aspnet_Applications">
+        <PropertyRef Name="ApplicationId" />
+      </Principal>
+      <Dependent Role="aspnet_Roles">
+        <PropertyRef Name="ApplicationId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK__aspnet_Us__Appli__5B78929E">
+    <End Type="SharedKernelModel.aspnet_Applications" Role="aspnet_Applications" Multiplicity="1" />
+    <End Type="SharedKernelModel.aspnet_Users" Role="aspnet_Users" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="aspnet_Applications">
+        <PropertyRef Name="ApplicationId" />
+      </Principal>
+      <Dependent Role="aspnet_Users">
+        <PropertyRef Name="ApplicationId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK__aspnet_Me__UserI__6CA31EA0">
+    <End Type="SharedKernelModel.aspnet_Users" Role="aspnet_Users" Multiplicity="1" />
+    <End Type="SharedKernelModel.aspnet_Membership" Role="aspnet_Membership" Multiplicity="0..1" />
+    <ReferentialConstraint>
+      <Principal Role="aspnet_Users">
+        <PropertyRef Name="UserId" />
+      </Principal>
+      <Dependent Role="aspnet_Membership">
+        <PropertyRef Name="UserId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Banner_SitePages">
+    <End Type="SharedKernelModel.SitePage" Role="SitePage" Multiplicity="1">
+      <OnDelete Action="Cascade" />
+    </End>
+    <End Type="SharedKernelModel.Banner" Role="Banner" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="SitePage">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="Banner">
+        <PropertyRef Name="PageId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_BannerLocalized_Banner">
+    <End Type="SharedKernelModel.Banner" Role="Banner" Multiplicity="1">
+      <OnDelete Action="Cascade" />
+    </End>
+    <End Type="SharedKernelModel.BannerLocalized" Role="BannerLocalized" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Banner">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="BannerLocalized">
+        <PropertyRef Name="BannerId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_BannerLocalized_Language">
+    <End Type="SharedKernelModel.Language" Role="Language" Multiplicity="1">
+      <OnDelete Action="Cascade" />
+    </End>
+    <End Type="SharedKernelModel.BannerLocalized" Role="BannerLocalized" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Language">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="BannerLocalized">
+        <PropertyRef Name="LanguageId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Career_City">
+    <End Type="SharedKernelModel.City" Role="City" Multiplicity="1">
+      <OnDelete Action="Cascade" />
+    </End>
+    <End Type="SharedKernelModel.Career" Role="Career" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="City">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="Career">
+        <PropertyRef Name="CityId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_JobLocalized_Job">
+    <End Type="SharedKernelModel.Career" Role="Career" Multiplicity="1">
+      <OnDelete Action="Cascade" />
+    </End>
+    <End Type="SharedKernelModel.CareerLocalized" Role="CareerLocalized" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Career">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="CareerLocalized">
+        <PropertyRef Name="CareerId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_JobLocalized_Language">
+    <End Type="SharedKernelModel.Language" Role="Language" Multiplicity="1" />
+    <End Type="SharedKernelModel.CareerLocalized" Role="CareerLocalized" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Language">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="CareerLocalized">
+        <PropertyRef Name="LanguageId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_CityLocalized_City">
+    <End Type="SharedKernelModel.City" Role="City" Multiplicity="1">
+      <OnDelete Action="Cascade" />
+    </End>
+    <End Type="SharedKernelModel.CityLocalized" Role="CityLocalized" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="City">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="CityLocalized">
+        <PropertyRef Name="CityId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_CityLocalized_Language">
+    <End Type="SharedKernelModel.Language" Role="Language" Multiplicity="1" />
+    <End Type="SharedKernelModel.CityLocalized" Role="CityLocalized" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Language">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="CityLocalized">
+        <PropertyRef Name="LanguageId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Faqs_FaqCategories">
+    <End Type="SharedKernelModel.FaqCategory" Role="FaqCategory" Multiplicity="0..1">
+      <OnDelete Action="Cascade" />
+    </End>
+    <End Type="SharedKernelModel.Faq" Role="Faq" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="FaqCategory">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="Faq">
+        <PropertyRef Name="CategoryId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_LocalizedFaq_Faqs">
+    <End Type="SharedKernelModel.Faq" Role="Faq" Multiplicity="1">
+      <OnDelete Action="Cascade" />
+    </End>
+    <End Type="SharedKernelModel.FaqLocalized" Role="FaqLocalized" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Faq">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="FaqLocalized">
+        <PropertyRef Name="FaqId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_LocalizedFaqCategories_FaqCategories">
+    <End Type="SharedKernelModel.FaqCategory" Role="FaqCategory" Multiplicity="1">
+      <OnDelete Action="Cascade" />
+    </End>
+    <End Type="SharedKernelModel.FaqCategoryLocalized" Role="FaqCategoryLocalized" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="FaqCategory">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="FaqCategoryLocalized">
+        <PropertyRef Name="CategoryId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_LocalizedFaqCategories_Languages1">
+    <End Type="SharedKernelModel.Language" Role="Language" Multiplicity="1" />
+    <End Type="SharedKernelModel.FaqCategoryLocalized" Role="FaqCategoryLocalized" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Language">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="FaqCategoryLocalized">
+        <PropertyRef Name="LanguageId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_LocalizedFaq_Languages">
+    <End Type="SharedKernelModel.Language" Role="Language" Multiplicity="1" />
+    <End Type="SharedKernelModel.FaqLocalized" Role="FaqLocalized" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Language">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="FaqLocalized">
+        <PropertyRef Name="LanguageId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_HomeBannerLocalized_HomeBanner">
+    <End Type="SharedKernelModel.HomeBanner" Role="HomeBanner" Multiplicity="1">
+      <OnDelete Action="Cascade" />
+    </End>
+    <End Type="SharedKernelModel.HomeBannerLocalized" Role="HomeBannerLocalized" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="HomeBanner">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="HomeBannerLocalized">
+        <PropertyRef Name="HomeBannerId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_HomeBannerLocalized_Language">
+    <End Type="SharedKernelModel.Language" Role="Language" Multiplicity="1" />
+    <End Type="SharedKernelModel.HomeBannerLocalized" Role="HomeBannerLocalized" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Language">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="HomeBannerLocalized">
+        <PropertyRef Name="LanguageId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_InfoPage_InfoPageCategory">
+    <End Type="SharedKernelModel.InfoPageCategory" Role="InfoPageCategory" Multiplicity="0..1">
+      <OnDelete Action="Cascade" />
+    </End>
+    <End Type="SharedKernelModel.InfoPage" Role="InfoPage" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="InfoPageCategory">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="InfoPage">
+        <PropertyRef Name="CategoryId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_LocalizedInfoPages_InfoPages">
+    <End Type="SharedKernelModel.InfoPage" Role="InfoPage" Multiplicity="1">
+      <OnDelete Action="Cascade" />
+    </End>
+    <End Type="SharedKernelModel.InfoPageLocalized" Role="InfoPageLocalized" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="InfoPage">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="InfoPageLocalized">
+        <PropertyRef Name="PageId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_LocalizedInfoPageCategories_InfoPageCategories">
+    <End Type="SharedKernelModel.InfoPageCategory" Role="InfoPageCategory" Multiplicity="1">
+      <OnDelete Action="Cascade" />
+    </End>
+    <End Type="SharedKernelModel.InfoPageCategoryLocalized" Role="InfoPageCategoryLocalized" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="InfoPageCategory">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="InfoPageCategoryLocalized">
+        <PropertyRef Name="CategoryId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_LocalizedInfoPageCategories_Languages">
+    <End Type="SharedKernelModel.Language" Role="Language" Multiplicity="1" />
+    <End Type="SharedKernelModel.InfoPageCategoryLocalized" Role="InfoPageCategoryLocalized" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Language">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="InfoPageCategoryLocalized">
+        <PropertyRef Name="LanguageId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_LocalizedInfoPages_Languages">
+    <End Type="SharedKernelModel.Language" Role="Language" Multiplicity="1" />
+    <End Type="SharedKernelModel.InfoPageLocalized" Role="InfoPageLocalized" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Language">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="InfoPageLocalized">
+        <PropertyRef Name="LanguageId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_LocalizedNew_Languages">
+    <End Type="SharedKernelModel.Language" Role="Language" Multiplicity="1" />
+    <End Type="SharedKernelModel.NewsLocalized" Role="NewsLocalized" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Language">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="NewsLocalized">
+        <PropertyRef Name="LanguageId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_MetaTagLocalized_Language">
+    <End Type="SharedKernelModel.Language" Role="Language" Multiplicity="1" />
+    <End Type="SharedKernelModel.MetaTagLocalized" Role="MetaTagLocalized" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Language">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="MetaTagLocalized">
+        <PropertyRef Name="LanguageId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_MediaCollection_MediaItemPage">
+    <End Type="SharedKernelModel.SitePage" Role="SitePage" Multiplicity="1">
+      <OnDelete Action="Cascade" />
+    </End>
+    <End Type="SharedKernelModel.MediaCollection" Role="MediaCollection" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="SitePage">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="MediaCollection">
+        <PropertyRef Name="PageId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_MediaItem_SitePages">
+    <End Type="SharedKernelModel.SitePage" Role="SitePage" Multiplicity="1">
+      <OnDelete Action="Cascade" />
+    </End>
+    <End Type="SharedKernelModel.MediaItem" Role="MediaItem" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="SitePage">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="MediaItem">
+        <PropertyRef Name="PageId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_MetaTag_SitePage">
+    <End Type="SharedKernelModel.SitePage" Role="SitePage" Multiplicity="1">
+      <OnDelete Action="Cascade" />
+    </End>
+    <End Type="SharedKernelModel.MetaTag" Role="MetaTag" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="SitePage">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="MetaTag">
+        <PropertyRef Name="PageId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_MetaTagLocalized_MetaTag">
+    <End Type="SharedKernelModel.MetaTag" Role="MetaTag" Multiplicity="1">
+      <OnDelete Action="Cascade" />
+    </End>
+    <End Type="SharedKernelModel.MetaTagLocalized" Role="MetaTagLocalized" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="MetaTag">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="MetaTagLocalized">
+        <PropertyRef Name="MetaTagId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_LocalizedNew_News">
+    <End Type="SharedKernelModel.News" Role="News" Multiplicity="1">
+      <OnDelete Action="Cascade" />
+    </End>
+    <End Type="SharedKernelModel.NewsLocalized" Role="NewsLocalized" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="News">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="NewsLocalized">
+        <PropertyRef Name="NewsId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_SettingsKeys_SettingsCategories">
+    <End Type="SharedKernelModel.SettingCategory" Role="SettingCategory" Multiplicity="1" />
+    <End Type="SharedKernelModel.Setting" Role="Setting" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="SettingCategory">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="Setting">
+        <PropertyRef Name="CategoryId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Testimonial_TestimonialSource">
+    <End Type="SharedKernelModel.TestimonialSource" Role="TestimonialSource" Multiplicity="1" />
+    <End Type="SharedKernelModel.Testimonial" Role="Testimonial" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="TestimonialSource">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="Testimonial">
+        <PropertyRef Name="TestimonialSourceId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="aspnet_UsersInRoles">
+    <End Type="SharedKernelModel.aspnet_Roles" Role="aspnet_Roles" Multiplicity="*" />
+    <End Type="SharedKernelModel.aspnet_Users" Role="aspnet_Users" Multiplicity="*" />
+  </Association>
+</Schema>

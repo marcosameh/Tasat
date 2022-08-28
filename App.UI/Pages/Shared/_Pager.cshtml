@@ -1,0 +1,40 @@
+﻿@model App.UI.InfraStructure.PagingData
+
+@{
+    var currentPath = ViewContext.HttpContext.Request.Path.ToString();
+}
+<div class="col-12 mt-2">
+    <ul class="pagination">
+        @if (Model.HasPrevious)
+        {
+            <li class="page-item">
+                <a href="@($"{currentPath}?pageNumber={Model.CurrentPage - 1}")"
+                   class="page-link"
+                   aria-label="Previous">
+                    <span aria-hidden="true">« <localize key="Previous" default-text="Previous" /></span>
+                </a>
+            </li>
+        }
+
+        @for (var pageNumber = Model.FromPage; pageNumber <= Model.ToPage; pageNumber++)
+        {
+            <li class="page-item @(pageNumber == Model.CurrentPage ? "active" : "")">
+            <a href="@($"{currentPath}?pageNumber={pageNumber}")"
+               class="page-link"
+               aria-label="@pageNumber">
+                @pageNumber
+            </a>
+            </li>
+        }
+
+        <if is-true="Model.HasNext">
+            <li class="page-item">
+                <a href="@($"{currentPath}?pageNumber={Model.CurrentPage + 1}")"
+                   class="page-link" 
+                   aria-label="Next">
+                    <span aria-hidden="true"><localize key="Next" default-text="Next" /> »</span>
+                </a>
+            </li>
+        </if>
+    </ul>
+</div>

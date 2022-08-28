@@ -1,0 +1,90 @@
+﻿@using System.Globalization
+@using AppCore.Utilities
+@using App.UI.Models
+@model PageModelBase
+
+<!DOCTYPE html>
+<html lang="@CultureInfo.CurrentCulture.IetfLanguageTag">
+<head>
+    <meta charset="utf-8" />
+    <title>@ViewData["Title"]</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="description" content="@ViewData["MetaDescription"]" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <partial name="_Favicon" />
+    <!---->
+    <environment include="Development">
+        <link href="/lib/twitter-bootstrap/css/bootstrap.min.css" rel="stylesheet" />
+        <link href="/lib/bootstrap-datepicker/css/bootstrap-datepicker.css" rel="stylesheet" />
+        <link href="/lib/jQuery.mmenu/mmenu.min.css" rel="stylesheet" />
+        <link href="/lib/jQuery-Validation-Engine/validationEngine.jquery.min.css" rel="stylesheet" />
+        <link href="/lib/OwlCarousel2/assets/owl.carousel.min.css" rel="stylesheet" />
+        <link href="/lib/OwlCarousel2/assets/owl.theme.default.min.css" rel="stylesheet" />
+        <link href="/lib/magnific-popup.js/magnific-popup.min.css" rel="stylesheet" />
+        <link href="/lib/toastr.js/toastr.min.css" rel="stylesheet" />
+        <link href="/css/site.min.css" rel="stylesheet" asp-append-version="true" />
+    </environment>
+    <environment include="Staging, Production">
+        <link href="/css/bundle.min.css" asp-append-version="true" rel="stylesheet" />
+    </environment>
+</head>
+<body>
+
+
+    <h1>Innovix Project</h1>
+    @RenderBody()
+
+    <!-- back-to-top link -->
+    <a href="#0" class="go-top"><i class='material-icons'></i></a>
+
+    <environment include="Development">
+        <script src="/lib/jquery/jquery.min.js"></script>
+        <script src="/lib/twitter-bootstrap/js/bootstrap.min.js"></script>
+        <script src="/lib/bootstrap-datepicker/js/bootstrap-datepicker.min.js"></script>
+        <script src="/lib/OwlCarousel2/owl.carousel.min.js"></script>
+        <script src="/lib/magnific-popup.js/jquery.magnific-popup.min.js"></script>
+        <script src="/lib/jQuery.mmenu/mmenu.min.js"></script>
+        <script src="/lib/toastr.js/toastr.min.js"></script>
+        <script src="/lib/jQuery-Validation-Engine/jquery.validationEngine.min.js"></script>
+        <script src="/js/vendors/back-to-top.js"></script>
+        <script src="~/lib/vue/vue.min.js"></script>
+        <script src="~/js/innovix/instagram-feed.js"></script>
+        <script src="/js/app/ui.js" asp-append-version="true"></script>
+    </environment>
+    <environment include="Staging,Production">
+        <script src="/js/bundle.min.js" asp-append-version="true"></script>
+        <script src="/lib/jQuery-Validation-Engine/languages/jquery.validationEngine-@(CultureInfo.CurrentCulture.TwoLetterISOLanguageName).min.js"></script>
+        <script src="/lib/jQuery-Validation-Engine/jquery.validationEngine.min.js"></script>
+    </environment>
+
+    <script async src="//www.google.com/recaptcha/api.js"></script>
+
+    @if (TempData.ContainsKey("Notify"))
+    {
+        var Notify = TempData.Get<NotificationDetails>("Notify");
+        <script>
+            toastr.options = {
+                timeOut: 0,
+                extendedTimeOut: 0
+            };
+            $(document).ready(function () {
+                toastr.@Notify.NotificationType (" @Notify.Message ", " @Notify.Title ");
+            });
+        </script>
+    }
+
+    <script>
+        function setCookie(event, cultureValue) {
+            event.preventDefault();
+            var d = new Date();
+            d.setTime(d.getTime() + (30 * 24 * 60 * 60 * 1000));
+            var expires = "expires=" + d.toUTCString();
+            document.cookie = "culture=" + cultureValue + ";" + expires + ";path=/";
+
+            window.location.href = event.target.href;
+        }
+    </script>
+    @RenderSection("Scripts", required: false)
+
+</body>
+</html>

@@ -1,0 +1,171 @@
+﻿{
+   "CodeGenerationMode": 0,
+   "ContextClassName": "AppCoreContext",
+   "ContextNamespace": "Models",
+   "DefaultDacpacSchema": null,
+   "FilterSchemas": false,
+   "IncludeConnectionString": false,
+   "ModelNamespace": "Models",
+   "OutputContextPath": "Models",
+   "OutputPath": "Models",
+   "ProjectRootNamespace": "AppCore",
+   "Schemas": null,
+   "SelectedHandlebarsLanguage": 0,
+   "SelectedToBeGenerated": 0,
+   "Tables": [
+      {
+         "Name": "[dbo].[Album]",
+         "ObjectType": 0
+      },
+      {
+         "Name": "[dbo].[AlbumLocalized]",
+         "ObjectType": 0
+      },
+      {
+         "Name": "[dbo].[AlbumPhoto]",
+         "ObjectType": 0
+      },
+      {
+         "Name": "[dbo].[Banner]",
+         "ObjectType": 0
+      },
+      {
+         "Name": "[dbo].[BannerLocalized]",
+         "ObjectType": 0
+      },
+      {
+         "Name": "[dbo].[Career]",
+         "ObjectType": 0
+      },
+      {
+         "Name": "[dbo].[CareerLocalized]",
+         "ObjectType": 0
+      },
+      {
+         "Name": "[dbo].[City]",
+         "ObjectType": 0
+      },
+      {
+         "Name": "[dbo].[CityLocalized]",
+         "ObjectType": 0
+      },
+      {
+         "Name": "[dbo].[Country]",
+         "ObjectType": 0
+      },
+      {
+         "Name": "[dbo].[Faq]",
+         "ObjectType": 0
+      },
+      {
+         "Name": "[dbo].[FaqCategory]",
+         "ObjectType": 0
+      },
+      {
+         "Name": "[dbo].[FaqCategoryLocalized]",
+         "ObjectType": 0
+      },
+      {
+         "Name": "[dbo].[FaqLocalized]",
+         "ObjectType": 0
+      },
+      {
+         "Name": "[dbo].[HomeBanner]",
+         "ObjectType": 0
+      },
+      {
+         "Name": "[dbo].[HomeBannerLocalized]",
+         "ObjectType": 0
+      },
+      {
+         "Name": "[dbo].[InfoPage]",
+         "ObjectType": 0
+      },
+      {
+         "Name": "[dbo].[InfoPageCategory]",
+         "ObjectType": 0
+      },
+      {
+         "Name": "[dbo].[InfoPageCategoryLocalized]",
+         "ObjectType": 0
+      },
+      {
+         "Name": "[dbo].[InfoPageLocalized]",
+         "ObjectType": 0
+      },
+      {
+         "Name": "[dbo].[Language]",
+         "ObjectType": 0
+      },
+      {
+         "Name": "[dbo].[MediaCollection]",
+         "ObjectType": 0
+      },
+      {
+         "Name": "[dbo].[MediaItem]",
+         "ObjectType": 0
+      },
+      {
+         "Name": "[dbo].[MetaTag]",
+         "ObjectType": 0
+      },
+      {
+         "Name": "[dbo].[MetaTagLocalized]",
+         "ObjectType": 0
+      },
+      {
+         "Name": "[dbo].[News]",
+         "ObjectType": 0
+      },
+      {
+         "Name": "[dbo].[NewsletterSubscription]",
+         "ObjectType": 0
+      },
+      {
+         "Name": "[dbo].[NewsLocalized]",
+         "ObjectType": 0
+      },
+      {
+         "Name": "[dbo].[Setting]",
+         "ObjectType": 0
+      },
+      {
+         "Name": "[dbo].[SettingCategory]",
+         "ObjectType": 0
+      },
+      {
+         "Name": "[dbo].[SitePage]",
+         "ObjectType": 0
+      },
+      {
+         "Name": "[dbo].[SocialLink]",
+         "ObjectType": 0
+      },
+      {
+         "Name": "[dbo].[Testimonial]",
+         "ObjectType": 0
+      },
+      {
+         "Name": "[dbo].[TestimonialSource]",
+         "ObjectType": 0
+      }
+   ],
+   "UiHint": "RAFIK.SharedKernel",
+   "UseBoolPropertiesWithoutDefaultSql": false,
+   "UseDatabaseNames": false,
+   "UseDbContextSplitting": false,
+   "UseFluentApiOnly": true,
+   "UseHandleBars": false,
+   "UseHierarchyId": false,
+   "UseInflector": true,
+   "UseLegacyPluralizer": false,
+   "UseManyToManyEntity": false,
+   "UseNoConstructor": false,
+   "UseNoDefaultConstructor": false,
+   "UseNoNavigations": false,
+   "UseNoObjectFilter": false,
+   "UseNodaTime": false,
+   "UseNullableReferences": false,
+   "UseSchemaFolders": false,
+   "UseSpatial": true
+}

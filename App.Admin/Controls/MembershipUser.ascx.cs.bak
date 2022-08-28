@@ -1,0 +1,79 @@
+﻿using DynamicData.Admin.Infrastructure.Services;
+using DynamicData.Admin.Model;
+using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Web;
+using System.Web.UI;
+using System.Web.UI.WebControls;
+
+namespace DynamicData.Admin.Controls
+{
+    public partial class MembershipUser : System.Web.UI.UserControl
+    {
+        public Guid AspNetId { get; set; }
+
+        private bool IsEditMode
+        {
+            get
+            {
+                return Request.Path.ToLower().Contains("edit.aspx");
+            }
+        }
+
+        private UserService userService;
+        private User currentUser;
+
+        protected void Page_Load(object sender, EventArgs e)
+        {
+            userService = new UserService();
+
+            txtEmail.ReadOnly = IsEditMode;
+            btnGeneratePassword.Visible = chkSendPasswordByEmail.Visible = lblSendPasswordByEmail.Visible = !IsEditMode;
+
+        }
+
+        protected void Page_PreRender(object sender, EventArgs e)
+        {
+            if (IsEditMode && AspNetId != Guid.Empty)
+            {
+                currentUser = userService.GetUser(AspNetId);
+                txtEmail.Text = currentUser.Email;
+                txtPassword.Text = currentUser.Password;
+                chkActive.Checked = currentUser.Active;
+                ucUserRoleSelect.SelectedRoleId = currentUser.Roles.RoleId;
+            }
+        }
+
+        public void SaveUser(Guid? aspNetUserId = null)
+        {
+            try
+            {
+                if (IsEditMode && aspNetUserId != null)
+                {
+                    currentUser = userService.GetUser(aspNetUserId.Value);
+                    userService.Modify(currentUser.Id, txtPassword.Text, chkActive.Checked, ucUserRoleSelect.SelectedRoleName);
+                }
+                else
+                {
+                    User user = userService.CreateUser(txtEmail.Text, txtPassword.Text);
+
+                    if (chkActive.Checked)
+                        userService.VerifyUser(user.AspNetUserId);
+
+                    //Save user roles
+                    System.Web.Security.Roles.AddUserToRoles(user.Email, new string[] { ucUserRoleSelect.SelectedRoleName });
+
+                    if (chkSendPasswordByEmail.Checked)
+                        userService.SendPasswordByMail(user, Request.Url.AbsoluteUri, txtPassword.Text);
+
+                    AspNetId = user.AspNetUserId;
+                }
+            }
+            catch (Exception ex)
+            {
+                throw new Exception(ex.Message);
+            }
+        }
+    }
+}

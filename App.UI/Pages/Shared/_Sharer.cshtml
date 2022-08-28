@@ -1,0 +1,37 @@
+﻿@model App.UI.Models.SocialSharing
+@* Call ui.js in the layout partial view for the sharer to work *@
+<div>
+    <if is-true="!string.IsNullOrEmpty(Model.FacebookSharerUrl)">
+        <a class="social" href="@(Model.FacebookSharerUrl)u=@Model.UrlToShare&t=@Model.Title"
+           onclick="popupWindowAtCenter(this.href);return false;">Facebook
+            <i class="fa fa-facebook m-0"></i>
+        </a>
+    </if>
+
+    <if is-true="!string.IsNullOrEmpty(Model.TwitterSharerUrl)">
+        <a class="social" href="@(Model.TwitterSharerUrl)url=@Model.UrlToShare&text=@Model.Title"
+           onclick="popupWindowAtCenter(this.href);return false;">
+            <i class="fa fa-twitter m-0"></i>Twitter
+        </a>
+    </if>
+
+
+    <if is-true="!string.IsNullOrEmpty(Model.LinkedInSharerUrl)">
+        <a class="social" href="@Model.LinkedInSharerUrl&url=@Model.UrlToShare&title=@Model.Title"
+           onclick="popupWindowAtCenter(this.href);return false;">
+            <i class="fa fa-linkedin m-0"></i>LinkedIn
+        </a>
+    </if>
+
+</div>
+
+<script>
+    function popupWindowAtCenter(url) {
+        popupWindow = window.open(
+            url, 'popUpWindow', 'height=600,width=600,left=10,top=10,resizable=yes,scrollbars=yes,toolbar=yes,menubar=no,location=no,directories=no,status=yes')
+    }
+</script>
+
+
+
+

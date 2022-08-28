@@ -1,0 +1,100 @@
+{
+  "version": "1.0",
+  "defaultProvider": "cdnjs",
+  "libraries": [
+    {
+      "library": "jquery.isotope@3.0.6",
+      "destination": "wwwroot/lib/jquery.isotope/"
+    },
+    {
+      "library": "jquery.blockUI@2.70",
+      "destination": "wwwroot/lib/jquery/jquery.blockUI/"
+    },
+    {
+      "library": "wow@1.1.2",
+      "destination": "wwwroot/lib/jquery/wow/"
+    },
+    {
+      "library": "bootstrap-datepicker@1.9.0",
+      "destination": "wwwroot/lib/bootstrap-datepicker/"
+    },
+    {
+      "library": "animate.css@3.7.2",
+      "destination": "wwwroot/lib/animate.css/",
+      "files": [
+        "animate.min.css"
+      ]
+    },
+    {
+      "library": "toastr.js@2.1.4",
+      "destination": "wwwroot/lib/toastr.js/",
+      "files": [
+        "toastr.min.js",
+        "toastr.min.css"
+      ]
+    },
+    {
+      "library": "jquery-validation-unobtrusive@3.2.11",
+      "destination": "wwwroot/lib/jquery-validation-unobtrusive/",
+      "files": [
+        "jquery.validate.unobtrusive.min.js",
+        "jquery.validate.unobtrusive.js"
+      ]
+    },
+    {
+      "library": "jQuery-Validation-Engine@2.6.4",
+      "destination": "wwwroot/lib/jQuery-Validation-Engine/"
+    },
+    {
+      "library": "vue@2.6.10",
+      "destination": "wwwroot/lib/vue/",
+      "files": [
+        "vue.min.js"
+      ]
+    },
+    {
+      "library": "jquery@3.4.1",
+      "destination": "wwwroot/lib/jquery/",
+      "files": [
+        "jquery.min.js"
+      ]
+    },
+    {
+      "library": "twitter-bootstrap@4.4.1",
+      "destination": "wwwroot/lib/twitter-bootstrap/",
+      "files": [
+        "js/bootstrap.min.js",
+        "css/bootstrap.min.css"
+      ]
+    },
+    {
+      "library": "jQuery.mmenu@8.5.0",
+      "destination": "wwwroot/lib/jQuery.mmenu/",
+      "files": [
+        "wrappers/bootstrap/mmenu.bootstrap.min.js",
+        "wrappers/bootstrap/mmenu.bootstrap.css",
+        "mmenu.min.css",
+        "mmenu.min.js"
+      ]
+    },
+    {
+      "library": "magnific-popup.js@1.1.0",
+      "destination": "wwwroot/lib/magnific-popup.js/",
+      "files": [
+        "jquery.magnific-popup.min.js",
+        "magnific-popup.min.css"
+      ]
+    },
+    {
+      "library": "OwlCarousel2@2.3.4",
+      "destination": "wwwroot/lib/OwlCarousel2/",
+      "files": [
+        "owl.carousel.min.js",
+        "assets/owl.carousel.min.css",
+        "assets/ajax-loader.gif",
+        "assets/owl.theme.default.min.css",
+        "assets/owl.video.play.png"
+      ]
+    }
+  ]
+}

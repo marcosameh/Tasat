@@ -1,0 +1,2 @@
+﻿<%@ Control Language="C#" AutoEventWireup="true" CodeBehind="File.ascx.cs" Inherits="DynamicData.Admin.FileField" %>
+<asp:HyperLink ID="HyperLink1" Visible="false" Target="_blank" runat="server"><%# FieldValueString %></asp:HyperLink>

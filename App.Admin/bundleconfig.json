@@ -1,0 +1,41 @@
+[
+  {
+    "outputFileName": "Content/bundle.css",
+    "inputFiles": [
+      "Content/vendors/bootstrap.min.css",
+      "Content/bootstrap-override.css",
+      "Content/vendors/font-awesome.min.css",
+      "Content/plugins/animate.min.css",
+      "Content/plugins/animate.delay.css",
+      "Content/plugins/toggles.css",
+      "Content/plugins/pace.css",
+      "Content/plugins/select2.css",
+      "Content/plugins/dataTables.bootstrap.css",
+      "Content/main.css"
+    ]
+  },
+  {
+    "outputFileName": "Content/bundle.js",
+    "inputFiles": [
+      "Scripts/vendors/jquery-migrate-1.2.1.min.js",
+      "Scripts/vendors/bootstrap.min.js",
+      "Scripts/vendors/modernizr.min.js",
+      "Scripts/plugins/pace.min.js",
+      "Scripts/plugins/jquery.cookies.js",
+      "Scripts/plugins/summernote.min.js",
+      "Scripts/plugins/jquery.prettyPhoto.js",
+      "Scripts/plugins/zebra_datepicker.js",
+      "Scripts/plugins/select2.min.js",
+      "Scripts/plugins/jstree.min.js",
+      "Scripts/plugins/jquery.dataTables.min.js",
+      "Scripts/plugins/dataTables.bootstrap.min.js",
+      "Scripts/plugins/dataTables.responsive.js",
+      "Scripts/app/google-maps.js",
+      "Scripts/app/validation.js",
+      "Scripts/app/summernote.js",
+      "Scripts/app/custom.js",
+      "Scripts/app/app.js"
+    ]
+
+  }
+]

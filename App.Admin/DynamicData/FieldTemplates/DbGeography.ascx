@@ -1,0 +1,2 @@
+﻿<%@ Control Language="C#" AutoEventWireup="true" CodeBehind="DbGeography.ascx.cs" Inherits="DynamicData.Admin.DbGeography" %>
+<asp:TextBox runat="server" ID="location" CssClass="display-for-dbgeography form-control input-sm" />

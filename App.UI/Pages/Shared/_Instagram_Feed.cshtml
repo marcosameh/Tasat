@@ -1,0 +1,10 @@
+﻿@model (string ProfileName, int DisplayCount)
+
+@*This plugni will work only if Instagram Profile is public *@
+@*Include /js/innovix/instagram-feed.js and /lib/Vue/ into the layout *@
+
+<div class="instagram-feed-container col-4" id="instagram-feed" ref="instagram" data-profile-name="@Model.ProfileName" data-image-count="@Model.DisplayCount">
+    <a @@click="windowPopup" v-for="feedItem in feed" :href="feedItem.node.display_url" target="_blank">
+        <img :src="feedItem.node.display_url" alt="">
+    </a>
+</div>

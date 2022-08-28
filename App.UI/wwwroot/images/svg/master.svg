@@ -1,0 +1,5 @@
+<svg xmlns="http://www.w3.org/2000/svg">
+  <!--add every svg paths and content in <g>tag</g> with id of it's name with viewBox attribute without SVG tag-->
+  <svg id="logo" viewBox="0 0 0 0">
+  </svg>
+</svg>

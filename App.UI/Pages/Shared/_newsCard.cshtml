@@ -1,0 +1,29 @@
+﻿@using Microsoft.Extensions.Configuration
+@using AppCore.Utilities 
+@inject IConfiguration Configuration
+@model IEnumerable<AppCore.DTO.NewsArchive>
+
+
+@foreach (var item in Model)
+{
+    <!------ Card ------>
+    <div class="card">
+        <!------ Card Header------>
+        <div class="card-header">
+            <button class="btn" type="button" data-toggle="collapse" data-target="@item.Year" aria-expanded="true" aria-controls="@item.Year">
+                @item.Year <i class="flaticon-minus-symbol float-right"></i>
+                <i class="flaticon-add float-right"></i>
+            </button>
+        </div>
+        <!------ Collapse ------>
+        <div class="collapse show" id="@item.Year">
+            <div class="card-body">
+                @foreach (var month in item.Months)
+                {
+                    <a asp-href="/news/@month.Year/@month.Month">@month.Month.ToMonthName() <span>(@month.NewsCount)</span></a>
+                }
+
+            </div>
+        </div>
+    </div>
+}

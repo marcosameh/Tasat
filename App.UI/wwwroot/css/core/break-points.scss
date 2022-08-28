@@ -1,0 +1,68 @@
+﻿/*Break points*/
+
+/*---------------------------------------------------------
+    Note:
+        you don't need to import the variables in here you already will import this and the variables file in main stylie sheet
+---------------------------------------------------------*/
+
+$screen-size-tiny: 375px;
+$screen-size-mini: 576px;
+$screen-size-sm: 768px;
+$screen-size-md: 992px;
+$screen-size-laptop: 1024px;
+$screen-size-lg: 1200px;
+$screen-size-xl: 1400px;
+$screen-size-xga: 1600px;
+$screen-size-fhd: 1920px;
+$screen-size-rt: 2560px;
+
+@media (max-width: $screen-size-fhd - 1) {
+}
+
+@media (max-width: $screen-size-xga - 1) {
+}
+
+@media (max-width: $screen-size-xl - 1) {
+}
+
+@media (max-width: $screen-size-lg - 1) {
+}
+
+@media (max-width: $screen-size-laptop - 1) {
+}
+
+@media (max-width: $screen-size-md - 1) {
+}
+
+@media (max-width: $screen-size-sm - 1) {
+}
+
+@media (max-width: $screen-size-mini - 1) {
+}
+
+@media (max-width: $screen-size-tiny) {
+}
+
+@media (min-width: $screen-size-mini) {
+}
+
+@media (min-width: $screen-size-sm) {
+}
+
+@media (min-width: $screen-size-md) {
+}
+
+@media (min-width: $screen-size-laptop) {
+}
+
+@media (min-width: $screen-size-lg) {
+}
+
+@media (min-width: $screen-size-xl) {
+}
+
+@media (min-width: $screen-size-xga) {
+}
+
+@media (min-width: $screen-size-fhd) {
+}

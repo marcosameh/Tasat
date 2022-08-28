@@ -1,0 +1,104 @@
+﻿/*---------------------------------------------------------
+here you can import variables and common tags styling 
+---------------------------------------------------------*/
+/*@import "mixins";*/
+/* Color Variables */
+/* Fonts */
+/* Basic Typography */
+html, body, main {
+  position: relative;
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+  width: 100%;
+  max-width: 100%;
+  height: 100%;
+  max-height: 100%;
+  overflow-x: hidden; }
+
+h1, h2, h3, h4, .h1, .h2, .h3, .h4 {
+  font-weight: bold; }
+
+/* Headings */
+h1 {
+  font-size: 4.5rem;
+  letter-spacing: -6px;
+  line-height: 6rem;
+  color: #000; }
+
+h2 {
+  font-size: 2.5rem; }
+
+h3 {
+  letter-spacing: -2px; }
+
+h4, .h4 {
+  letter-spacing: -1px; }
+
+/* Text */
+ul {
+  list-style: none;
+  padding: 0; }
+  ul:hover a {
+    text-decoration: none; }
+
+select {
+  position: relative;
+  -moz-appearance: none;
+  /* Firefox */
+  -webkit-appearance: none;
+  /* Safari and Chrome */
+  appearance: none;
+  background: url("https://api.iconify.design/ic:round-arrow-drop-down.svg") no-repeat right center/contain; }
+  select:focus {
+    background: url("https://api.iconify.design/ic:round-arrow-drop-up.svg") no-repeat right center/contain; }
+
+/* Error Pages */
+.error-page {
+  padding-top: 30px;
+  padding-bottom: 50px; }
+  .error-page h1 {
+    font-size: 66px;
+    font-weight: bold;
+    color: #494949; }
+
+.error-template {
+  padding: 40px 15px;
+  text-align: center; }
+
+.error-actions {
+  margin-top: 15px;
+  margin-bottom: 15px; }
+  .error-actions .btn {
+    margin-right: 10px; }
+
+/*---------------------------------------------------------
+here you can add your general styling
+---------------------------------------------------------*/
+/*---------------------------------------------------------
+here you can import pages styling 
+---------------------------------------------------------*/
+/*---------------------------------------------------------
+here you can import break points styling 
+    please let this at the end of this file
+---------------------------------------------------------*/
+/*Break points*/
+/*---------------------------------------------------------
+    Note:
+        you don't need to import the variables in here you already will import this and the variables file in main stylie sheet
+---------------------------------------------------------*/
+/*---------------------------------------------------------
+Instagram Feed Plugin, don't forget to include instagram-feed.js in layout page 
+---------------------------------------------------------*/
+.instagram-feed-container {
+  list-style: none;
+  display: flex;
+  flex-wrap: wrap; }
+  .instagram-feed-container a {
+    width: 33%;
+    height: 100px;
+    display: block; }
+    .instagram-feed-container a img {
+      object-fit: cover;
+      width: 100%;
+      height: 100%; }
