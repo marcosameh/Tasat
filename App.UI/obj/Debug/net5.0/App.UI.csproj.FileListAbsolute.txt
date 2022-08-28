@@ -275,12 +275,6 @@ D:\Clients\Tasat\App.UI\obj\Debug\net5.0\staticwebassets\App.UI.StaticWebAssets.
 D:\Clients\Tasat\App.UI\obj\Debug\net5.0\App.UI.TagHelpers.input.cache
 D:\Clients\Tasat\App.UI\obj\Debug\net5.0\App.UI.TagHelpers.output.cache
 D:\Clients\Tasat\App.UI\obj\Debug\net5.0\App.Ui.RazorCoreGenerate.cache
-D:\Clients\Tasat\App.UI\obj\Debug\net5.0\Razor\Pages\about-us.cshtml.g.cs
-D:\Clients\Tasat\App.UI\obj\Debug\net5.0\Razor\Pages\article.cshtml.g.cs
-D:\Clients\Tasat\App.UI\obj\Debug\net5.0\Razor\Pages\blog.cshtml.g.cs
-D:\Clients\Tasat\App.UI\obj\Debug\net5.0\Razor\Pages\contact-us.cshtml.g.cs
-D:\Clients\Tasat\App.UI\obj\Debug\net5.0\Razor\Pages\error.cshtml.g.cs
-D:\Clients\Tasat\App.UI\obj\Debug\net5.0\Razor\Pages\faqs.cshtml.g.cs
 D:\Clients\Tasat\App.UI\obj\Debug\net5.0\Razor\Pages\Index.cshtml.g.cs
 D:\Clients\Tasat\App.UI\obj\Debug\net5.0\Razor\Pages\MailTemplates\CareerContactUs.cshtml.g.cs
 D:\Clients\Tasat\App.UI\obj\Debug\net5.0\Razor\Pages\MailTemplates\ContactUs.cshtml.g.cs
