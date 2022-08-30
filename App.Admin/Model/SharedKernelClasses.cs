@@ -8,6 +8,33 @@ using System.Web.Security;
 
 namespace DynamicData.Admin.Model
 {
+    #region MediaItems
+
+    [MetadataType(typeof(MediaItemMetadata))]
+    //[DisableActions(DisableEditing = false)]
+    public partial class MediaItem
+    {
+    }
+
+    public class MediaItemMetadata
+    {
+        [UIHint("Photo")]
+        [Photo("/photos/media-items/originals/", "/photos/media-items/")]
+        [PhotoThumbnail(1, 0, "200,200,false,sm,.jpg", "6000,6000,false,lg,.jpg")]
+        [Hint(Hint = "Please upload a Width X Height photo")]
+
+        public object Photo { get; set; }
+
+    
+        //[ReadOnly(true)]
+        public object Width { get; set; }
+        //[ReadOnly(true)]
+        public object Height { get; set; }
+        //[ReadOnly(true)]
+        public object ItemKey { get; set; }
+    }
+
+    #endregion
     #region Banners
 
     [MetadataType(typeof(BannerMetadata))]

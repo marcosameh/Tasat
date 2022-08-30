@@ -506,6 +506,13 @@
     <Compile Include="DynamicData\FieldTemplates\DbGeography_Edit.ascx.designer.cs">
       <DependentUpon>DbGeography_Edit.ascx</DependentUpon>
     </Compile>
+    <Compile Include="DynamicData\FieldTemplates\Decimal.ascx.cs">
+      <DependentUpon>Decimal.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="DynamicData\FieldTemplates\Decimal.ascx.designer.cs">
+      <DependentUpon>Decimal.ascx</DependentUpon>
+    </Compile>
     <Compile Include="DynamicData\FieldTemplates\Decimal_Edit.ascx.cs">
       <DependentUpon>Decimal_Edit.ascx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
@@ -818,21 +825,6 @@
     <Compile Include="Model\AlbumPhoto.cs">
       <DependentUpon>AdminModel.tt</DependentUpon>
     </Compile>
-    <Compile Include="Model\aspnet_Applications.cs">
-      <DependentUpon>AdminModel.tt</DependentUpon>
-    </Compile>
-    <Compile Include="Model\aspnet_Membership.cs">
-      <DependentUpon>AdminModel.tt</DependentUpon>
-    </Compile>
-    <Compile Include="Model\aspnet_Roles.cs">
-      <DependentUpon>AdminModel.tt</DependentUpon>
-    </Compile>
-    <Compile Include="Model\aspnet_SchemaVersions.cs">
-      <DependentUpon>AdminModel.tt</DependentUpon>
-    </Compile>
-    <Compile Include="Model\aspnet_Users.cs">
-      <DependentUpon>AdminModel.tt</DependentUpon>
-    </Compile>
     <Compile Include="Model\Banner.cs">
       <DependentUpon>AdminModel.tt</DependentUpon>
     </Compile>
@@ -854,6 +846,9 @@
     <Compile Include="Model\Country.cs">
       <DependentUpon>AdminModel.tt</DependentUpon>
     </Compile>
+    <Compile Include="Model\Event.cs">
+      <DependentUpon>AdminModel.tt</DependentUpon>
+    </Compile>
     <Compile Include="Model\Faq.cs">
       <DependentUpon>AdminModel.tt</DependentUpon>
     </Compile>
@@ -864,6 +859,9 @@
       <DependentUpon>AdminModel.tt</DependentUpon>
     </Compile>
     <Compile Include="Model\FaqLocalized.cs">
+      <DependentUpon>AdminModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Model\Gallery.cs">
       <DependentUpon>AdminModel.tt</DependentUpon>
     </Compile>
     <Compile Include="Model\HomeBanner.cs">
@@ -891,6 +889,12 @@
       <DependentUpon>AdminModel.tt</DependentUpon>
     </Compile>
     <Compile Include="Model\MediaItem.cs">
+      <DependentUpon>AdminModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Model\MenuItem.cs">
+      <DependentUpon>AdminModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Model\MenuSection.cs">
       <DependentUpon>AdminModel.tt</DependentUpon>
     </Compile>
     <Compile Include="Model\MetaTag.cs">
@@ -1009,6 +1013,7 @@
     <Content Include="DynamicData\FieldTemplates\DateTime_Edit.ascx" />
     <Content Include="DynamicData\FieldTemplates\DbGeography.ascx" />
     <Content Include="DynamicData\FieldTemplates\DbGeography_Edit.ascx" />
+    <Content Include="DynamicData\FieldTemplates\Decimal.ascx" />
     <Content Include="DynamicData\FieldTemplates\Decimal_Edit.ascx" />
     <Content Include="DynamicData\FieldTemplates\EmailAddress.ascx" />
     <Content Include="DynamicData\FieldTemplates\Enumeration.ascx" />
@@ -1121,7 +1126,7 @@
     <Content Include="Default.aspx" />
     <Compile Include="Infrastructure\ArrayToString.cs" />
     <Compile Include="Infrastructure\Attribute.cs" />
-    <Compile Include="Model\DataPartialClasses.cs" />
+    <Compile Include="Model\TasatClasses.cs" />
     <Compile Include="Infrastructure\PhotosUtility.cs" />
     <Compile Include="Infrastructure\Setting.cs" />
     <Compile Include="Infrastructure\Utility.cs" />

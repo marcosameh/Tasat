@@ -15,15 +15,9 @@ namespace DynamicData.Admin.Model
     public partial class Testimonial
     {
         public int Id { get; set; }
-        public int TestimonialSourceId { get; set; }
-        public System.DateTime Date { get; set; }
-        public string Title { get; set; }
-        public string Description { get; set; }
         public string Name { get; set; }
-        public string Location { get; set; }
+        public string Comment { get; set; }
         public int DisplayOrder { get; set; }
         public bool Active { get; set; }
-    
-        public virtual TestimonialSource TestimonialSource { get; set; }
     }
 }

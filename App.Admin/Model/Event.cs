@@ -12,10 +12,13 @@ namespace DynamicData.Admin.Model
     using System;
     using System.Collections.Generic;
     
-    public partial class aspnet_SchemaVersions
+    public partial class Event
     {
-        public string Feature { get; set; }
-        public string CompatibleSchemaVersion { get; set; }
-        public bool IsCurrentVersion { get; set; }
+        public int Id { get; set; }
+        public string Photo { get; set; }
+        public string Alt { get; set; }
+        public bool Active { get; set; }
+        public string Title { get; set; }
+        public string Body { get; set; }
     }
 }

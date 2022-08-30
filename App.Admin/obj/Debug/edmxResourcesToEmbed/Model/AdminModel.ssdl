@@ -30,80 +30,6 @@
     <Property Name="Photo" Type="nvarchar" MaxLength="100" Nullable="false" />
     <Property Name="DisplayOrder" Type="int" Nullable="false" />
   </EntityType>
-  <EntityType Name="aspnet_Applications">
-    <Key>
-      <PropertyRef Name="ApplicationId" />
-    </Key>
-    <Property Name="ApplicationName" Type="nvarchar" MaxLength="256" Nullable="false" />
-    <Property Name="LoweredApplicationName" Type="nvarchar" MaxLength="256" Nullable="false" />
-    <Property Name="ApplicationId" Type="uniqueidentifier" Nullable="false" />
-    <Property Name="Description" Type="nvarchar" MaxLength="256" />
-  </EntityType>
-  <EntityType Name="aspnet_Membership">
-    <Key>
-      <PropertyRef Name="UserId" />
-    </Key>
-    <Property Name="ApplicationId" Type="uniqueidentifier" Nullable="false" />
-    <Property Name="UserId" Type="uniqueidentifier" Nullable="false" />
-    <Property Name="Password" Type="nvarchar" MaxLength="128" Nullable="false" />
-    <Property Name="PasswordFormat" Type="int" Nullable="false" />
-    <Property Name="PasswordSalt" Type="nvarchar" MaxLength="128" Nullable="false" />
-    <Property Name="MobilePIN" Type="nvarchar" MaxLength="16" />
-    <Property Name="Email" Type="nvarchar" MaxLength="256" />
-    <Property Name="LoweredEmail" Type="nvarchar" MaxLength="256" />
-    <Property Name="PasswordQuestion" Type="nvarchar" MaxLength="256" />
-    <Property Name="PasswordAnswer" Type="nvarchar" MaxLength="128" />
-    <Property Name="IsApproved" Type="bit" Nullable="false" />
-    <Property Name="IsLockedOut" Type="bit" Nullable="false" />
-    <Property Name="CreateDate" Type="datetime" Nullable="false" />
-    <Property Name="LastLoginDate" Type="datetime" Nullable="false" />
-    <Property Name="LastPasswordChangedDate" Type="datetime" Nullable="false" />
-    <Property Name="LastLockoutDate" Type="datetime" Nullable="false" />
-    <Property Name="FailedPasswordAttemptCount" Type="int" Nullable="false" />
-    <Property Name="FailedPasswordAttemptWindowStart" Type="datetime" Nullable="false" />
-    <Property Name="FailedPasswordAnswerAttemptCount" Type="int" Nullable="false" />
-    <Property Name="FailedPasswordAnswerAttemptWindowStart" Type="datetime" Nullable="false" />
-    <Property Name="Comment" Type="ntext" />
-  </EntityType>
-  <EntityType Name="aspnet_Roles">
-    <Key>
-      <PropertyRef Name="RoleId" />
-    </Key>
-    <Property Name="ApplicationId" Type="uniqueidentifier" Nullable="false" />
-    <Property Name="RoleId" Type="uniqueidentifier" Nullable="false" />
-    <Property Name="RoleName" Type="nvarchar" MaxLength="256" Nullable="false" />
-    <Property Name="LoweredRoleName" Type="nvarchar" MaxLength="256" Nullable="false" />
-    <Property Name="Description" Type="nvarchar" MaxLength="256" />
-  </EntityType>
-  <EntityType Name="aspnet_SchemaVersions">
-    <Key>
-      <PropertyRef Name="Feature" />
-      <PropertyRef Name="CompatibleSchemaVersion" />
-    </Key>
-    <Property Name="Feature" Type="nvarchar" MaxLength="128" Nullable="false" />
-    <Property Name="CompatibleSchemaVersion" Type="nvarchar" MaxLength="128" Nullable="false" />
-    <Property Name="IsCurrentVersion" Type="bit" Nullable="false" />
-  </EntityType>
-  <EntityType Name="aspnet_Users">
-    <Key>
-      <PropertyRef Name="UserId" />
-    </Key>
-    <Property Name="ApplicationId" Type="uniqueidentifier" Nullable="false" />
-    <Property Name="UserId" Type="uniqueidentifier" Nullable="false" />
-    <Property Name="UserName" Type="nvarchar" MaxLength="256" Nullable="false" />
-    <Property Name="LoweredUserName" Type="nvarchar" MaxLength="256" Nullable="false" />
-    <Property Name="MobileAlias" Type="nvarchar" MaxLength="16" />
-    <Property Name="IsAnonymous" Type="bit" Nullable="false" />
-    <Property Name="LastActivityDate" Type="datetime" Nullable="false" />
-  </EntityType>
-  <EntityType Name="aspnet_UsersInRoles">
-    <Key>
-      <PropertyRef Name="UserId" />
-      <PropertyRef Name="RoleId" />
-    </Key>
-    <Property Name="UserId" Type="uniqueidentifier" Nullable="false" />
-    <Property Name="RoleId" Type="uniqueidentifier" Nullable="false" />
-  </EntityType>
   <EntityType Name="Banner">
     <Key>
       <PropertyRef Name="Id" />
@@ -179,6 +105,17 @@
     <Property Name="Iso3" Type="char" MaxLength="3" />
     <Property Name="CountryCode" Type="int" />
   </EntityType>
+  <EntityType Name="Events">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="Photo" Type="nvarchar" MaxLength="100" Nullable="false" />
+    <Property Name="Alt" Type="nvarchar" MaxLength="80" />
+    <Property Name="Active" Type="bit" Nullable="false" />
+    <Property Name="Title" Type="nvarchar" MaxLength="150" Nullable="false" />
+    <Property Name="Body" Type="nvarchar(max)" Nullable="false" />
+  </EntityType>
   <EntityType Name="Faq">
     <Key>
       <PropertyRef Name="Id" />
@@ -214,6 +151,15 @@
     <Property Name="LanguageId" Type="int" Nullable="false" />
     <Property Name="Question" Type="nvarchar" MaxLength="1000" Nullable="false" />
     <Property Name="Answer" Type="nvarchar(max)" Nullable="false" />
+  </EntityType>
+  <EntityType Name="Gallery">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="Photo" Type="nvarchar" MaxLength="80" Nullable="false" />
+    <Property Name="DisplayOrder" Type="int" Nullable="false" />
+    <Property Name="Alt" Type="nvarchar" MaxLength="80" />
   </EntityType>
   <EntityType Name="HomeBanner">
     <Key>
@@ -306,12 +252,31 @@
     <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
     <Property Name="Photo" Type="nvarchar" MaxLength="200" Nullable="false" />
     <Property Name="Alt" Type="nvarchar" MaxLength="50" />
-    <Property Name="VedioUrl" Type="nvarchar" MaxLength="200" />
-    <Property Name="DisplayOrder" Type="int" />
     <Property Name="ItemKey" Type="varchar" MaxLength="20" Nullable="false" />
-    <Property Name="PageId" Type="int" Nullable="false" />
     <Property Name="Width" Type="int" Nullable="false" />
     <Property Name="Height" Type="int" Nullable="false" />
+  </EntityType>
+  <EntityType Name="MenuItems">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="SectionId" Type="int" />
+    <Property Name="Name" Type="nvarchar" MaxLength="80" Nullable="false" />
+    <Property Name="Description" Type="nvarchar" MaxLength="120" Nullable="false" />
+    <Property Name="Photo" Type="nvarchar" MaxLength="80" Nullable="false" />
+    <Property Name="Price" Type="decimal" Precision="5" Scale="2" Nullable="false" />
+    <Property Name="DisplayOrder" Type="int" />
+    <Property Name="Active" Type="bit" Nullable="false" />
+  </EntityType>
+  <EntityType Name="MenuSections">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="Name" Type="nvarchar" MaxLength="70" Nullable="false" />
+    <Property Name="DisplayOrder" Type="int" Nullable="false" />
+    <Property Name="Active" Type="bit" Nullable="false" />
   </EntityType>
   <EntityType Name="MetaTag">
     <Key>
@@ -348,7 +313,7 @@
       <PropertyRef Name="Id" />
     </Key>
     <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
-    <Property Name="Email" Type="nvarchar" MaxLength="50" Nullable="false" />
+    <Property Name="email" Type="nvarchar" MaxLength="50" Nullable="false" />
     <Property Name="SubscriptionDate" Type="smalldatetime" Nullable="false" />
   </EntityType>
   <EntityType Name="NewsLocalized">
@@ -405,24 +370,19 @@
       <PropertyRef Name="Id" />
     </Key>
     <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
-    <Property Name="Name" Type="nvarchar" MaxLength="50" Nullable="false" />
-    <Property Name="Email" Type="nvarchar" MaxLength="50" Nullable="false" />
-    <Property Name="Photo" Type="nvarchar" MaxLength="60" Nullable="false" />
+    <Property Name="Name" Type="nvarchar" MaxLength="80" Nullable="false" />
+    <Property Name="Photo" Type="nvarchar" MaxLength="80" Nullable="false" />
+    <Property Name="Alt" Type="nvarchar" MaxLength="50" />
+    <Property Name="Posistion" Type="nvarchar" MaxLength="80" Nullable="false" />
     <Property Name="DisplayOrder" Type="int" Nullable="false" />
-    <Property Name="IsActive" Type="bit" />
-    <Property Name="Featured" Type="bit" Nullable="false" />
   </EntityType>
   <EntityType Name="Testimonial">
     <Key>
       <PropertyRef Name="Id" />
     </Key>
     <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
-    <Property Name="TestimonialSourceId" Type="int" Nullable="false" />
-    <Property Name="Date" Type="smalldatetime" Nullable="false" />
-    <Property Name="Title" Type="nvarchar" MaxLength="50" />
-    <Property Name="Description" Type="nvarchar" MaxLength="500" Nullable="false" />
     <Property Name="Name" Type="nvarchar" MaxLength="50" Nullable="false" />
-    <Property Name="Location" Type="nvarchar" MaxLength="50" Nullable="false" />
+    <Property Name="Comment" Type="nvarchar" MaxLength="1500" Nullable="false" />
     <Property Name="DisplayOrder" Type="int" Nullable="false" />
     <Property Name="Active" Type="bit" Nullable="false" />
   </EntityType>
@@ -443,78 +403,6 @@
     <Property Name="PasswordResetKey" Type="uniqueidentifier" />
     <Property Name="PasswordResetTime" Type="smalldatetime" />
   </EntityType>
-  <Association Name="FK__aspnet_Me__Appli__6BAEFA67">
-    <End Role="aspnet_Applications" Type="Self.aspnet_Applications" Multiplicity="1" />
-    <End Role="aspnet_Membership" Type="Self.aspnet_Membership" Multiplicity="*" />
-    <ReferentialConstraint>
-      <Principal Role="aspnet_Applications">
-        <PropertyRef Name="ApplicationId" />
-      </Principal>
-      <Dependent Role="aspnet_Membership">
-        <PropertyRef Name="ApplicationId" />
-      </Dependent>
-    </ReferentialConstraint>
-  </Association>
-  <Association Name="FK__aspnet_Me__UserI__6CA31EA0">
-    <End Role="aspnet_Users" Type="Self.aspnet_Users" Multiplicity="1" />
-    <End Role="aspnet_Membership" Type="Self.aspnet_Membership" Multiplicity="0..1" />
-    <ReferentialConstraint>
-      <Principal Role="aspnet_Users">
-        <PropertyRef Name="UserId" />
-      </Principal>
-      <Dependent Role="aspnet_Membership">
-        <PropertyRef Name="UserId" />
-      </Dependent>
-    </ReferentialConstraint>
-  </Association>
-  <Association Name="FK__aspnet_Ro__Appli__00AA174D">
-    <End Role="aspnet_Applications" Type="Self.aspnet_Applications" Multiplicity="1" />
-    <End Role="aspnet_Roles" Type="Self.aspnet_Roles" Multiplicity="*" />
-    <ReferentialConstraint>
-      <Principal Role="aspnet_Applications">
-        <PropertyRef Name="ApplicationId" />
-      </Principal>
-      <Dependent Role="aspnet_Roles">
-        <PropertyRef Name="ApplicationId" />
-      </Dependent>
-    </ReferentialConstraint>
-  </Association>
-  <Association Name="FK__aspnet_Us__Appli__5B78929E">
-    <End Role="aspnet_Applications" Type="Self.aspnet_Applications" Multiplicity="1" />
-    <End Role="aspnet_Users" Type="Self.aspnet_Users" Multiplicity="*" />
-    <ReferentialConstraint>
-      <Principal Role="aspnet_Applications">
-        <PropertyRef Name="ApplicationId" />
-      </Principal>
-      <Dependent Role="aspnet_Users">
-        <PropertyRef Name="ApplicationId" />
-      </Dependent>
-    </ReferentialConstraint>
-  </Association>
-  <Association Name="FK__aspnet_Us__RoleI__056ECC6A">
-    <End Role="aspnet_Roles" Type="Self.aspnet_Roles" Multiplicity="1" />
-    <End Role="aspnet_UsersInRoles" Type="Self.aspnet_UsersInRoles" Multiplicity="*" />
-    <ReferentialConstraint>
-      <Principal Role="aspnet_Roles">
-        <PropertyRef Name="RoleId" />
-      </Principal>
-      <Dependent Role="aspnet_UsersInRoles">
-        <PropertyRef Name="RoleId" />
-      </Dependent>
-    </ReferentialConstraint>
-  </Association>
-  <Association Name="FK__aspnet_Us__UserI__047AA831">
-    <End Role="aspnet_Users" Type="Self.aspnet_Users" Multiplicity="1" />
-    <End Role="aspnet_UsersInRoles" Type="Self.aspnet_UsersInRoles" Multiplicity="*" />
-    <ReferentialConstraint>
-      <Principal Role="aspnet_Users">
-        <PropertyRef Name="UserId" />
-      </Principal>
-      <Dependent Role="aspnet_UsersInRoles">
-        <PropertyRef Name="UserId" />
-      </Dependent>
-    </ReferentialConstraint>
-  </Association>
   <Association Name="FK_AlbumPhotos_Albums">
     <End Role="Album" Type="Self.Album" Multiplicity="1">
       <OnDelete Action="Cascade" />
@@ -861,17 +749,15 @@
       </Dependent>
     </ReferentialConstraint>
   </Association>
-  <Association Name="FK_MediaItem_SitePages">
-    <End Role="SitePage" Type="Self.SitePage" Multiplicity="1">
-      <OnDelete Action="Cascade" />
-    </End>
-    <End Role="MediaItem" Type="Self.MediaItem" Multiplicity="*" />
+  <Association Name="FK_MenuItems_MenuSections">
+    <End Role="MenuSections" Type="Self.MenuSections" Multiplicity="0..1" />
+    <End Role="MenuItems" Type="Self.MenuItems" Multiplicity="*" />
     <ReferentialConstraint>
-      <Principal Role="SitePage">
+      <Principal Role="MenuSections">
         <PropertyRef Name="Id" />
       </Principal>
-      <Dependent Role="MediaItem">
-        <PropertyRef Name="PageId" />
+      <Dependent Role="MenuItems">
+        <PropertyRef Name="SectionId" />
       </Dependent>
     </ReferentialConstraint>
   </Association>
@@ -927,28 +813,10 @@
       </Dependent>
     </ReferentialConstraint>
   </Association>
-  <Association Name="FK_Testimonial_TestimonialSource">
-    <End Role="TestimonialSource" Type="Self.TestimonialSource" Multiplicity="1" />
-    <End Role="Testimonial" Type="Self.Testimonial" Multiplicity="*" />
-    <ReferentialConstraint>
-      <Principal Role="TestimonialSource">
-        <PropertyRef Name="Id" />
-      </Principal>
-      <Dependent Role="Testimonial">
-        <PropertyRef Name="TestimonialSourceId" />
-      </Dependent>
-    </ReferentialConstraint>
-  </Association>
   <EntityContainer Name="SharedKernelModelStoreContainer">
     <EntitySet Name="Album" EntityType="Self.Album" Schema="dbo" store:Type="Tables" />
     <EntitySet Name="AlbumLocalized" EntityType="Self.AlbumLocalized" Schema="dbo" store:Type="Tables" />
     <EntitySet Name="AlbumPhoto" EntityType="Self.AlbumPhoto" Schema="dbo" store:Type="Tables" />
-    <EntitySet Name="aspnet_Applications" EntityType="Self.aspnet_Applications" Schema="dbo" store:Type="Tables" />
-    <EntitySet Name="aspnet_Membership" EntityType="Self.aspnet_Membership" Schema="dbo" store:Type="Tables" />
-    <EntitySet Name="aspnet_Roles" EntityType="Self.aspnet_Roles" Schema="dbo" store:Type="Tables" />
-    <EntitySet Name="aspnet_SchemaVersions" EntityType="Self.aspnet_SchemaVersions" Schema="dbo" store:Type="Tables" />
-    <EntitySet Name="aspnet_Users" EntityType="Self.aspnet_Users" Schema="dbo" store:Type="Tables" />
-    <EntitySet Name="aspnet_UsersInRoles" EntityType="Self.aspnet_UsersInRoles" Schema="dbo" store:Type="Tables" />
     <EntitySet Name="Banner" EntityType="Self.Banner" Schema="dbo" store:Type="Tables" />
     <EntitySet Name="BannerLocalized" EntityType="Self.BannerLocalized" Schema="dbo" store:Type="Tables" />
     <EntitySet Name="Career" EntityType="Self.Career" Schema="dbo" store:Type="Tables" />
@@ -956,10 +824,12 @@
     <EntitySet Name="City" EntityType="Self.City" Schema="dbo" store:Type="Tables" />
     <EntitySet Name="CityLocalized" EntityType="Self.CityLocalized" Schema="dbo" store:Type="Tables" />
     <EntitySet Name="Country" EntityType="Self.Country" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Events" EntityType="Self.Events" Schema="dbo" store:Type="Tables" />
     <EntitySet Name="Faq" EntityType="Self.Faq" Schema="dbo" store:Type="Tables" />
     <EntitySet Name="FaqCategory" EntityType="Self.FaqCategory" Schema="dbo" store:Type="Tables" />
     <EntitySet Name="FaqCategoryLocalized" EntityType="Self.FaqCategoryLocalized" Schema="dbo" store:Type="Tables" />
     <EntitySet Name="FaqLocalized" EntityType="Self.FaqLocalized" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Gallery" EntityType="Self.Gallery" Schema="dbo" store:Type="Tables" />
     <EntitySet Name="HomeBanner" EntityType="Self.HomeBanner" Schema="dbo" store:Type="Tables" />
     <EntitySet Name="HomeBannerLocalized" EntityType="Self.HomeBannerLocalized" Schema="dbo" store:Type="Tables" />
     <EntitySet Name="InfoPage" EntityType="Self.InfoPage" Schema="dbo" store:Type="Tables" />
@@ -969,6 +839,8 @@
     <EntitySet Name="Language" EntityType="Self.Language" Schema="dbo" store:Type="Tables" />
     <EntitySet Name="MediaCollection" EntityType="Self.MediaCollection" Schema="dbo" store:Type="Tables" />
     <EntitySet Name="MediaItem" EntityType="Self.MediaItem" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="MenuItems" EntityType="Self.MenuItems" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="MenuSections" EntityType="Self.MenuSections" Schema="dbo" store:Type="Tables" />
     <EntitySet Name="MetaTag" EntityType="Self.MetaTag" Schema="dbo" store:Type="Tables" />
     <EntitySet Name="MetaTagLocalized" EntityType="Self.MetaTagLocalized" Schema="dbo" store:Type="Tables" />
     <EntitySet Name="News" EntityType="Self.News" Schema="dbo" store:Type="Tables" />
@@ -982,30 +854,6 @@
     <EntitySet Name="Testimonial" EntityType="Self.Testimonial" Schema="dbo" store:Type="Tables" />
     <EntitySet Name="TestimonialSource" EntityType="Self.TestimonialSource" Schema="dbo" store:Type="Tables" />
     <EntitySet Name="User" EntityType="Self.User" Schema="dbo" store:Type="Tables" />
-    <AssociationSet Name="FK__aspnet_Me__Appli__6BAEFA67" Association="Self.FK__aspnet_Me__Appli__6BAEFA67">
-      <End Role="aspnet_Applications" EntitySet="aspnet_Applications" />
-      <End Role="aspnet_Membership" EntitySet="aspnet_Membership" />
-    </AssociationSet>
-    <AssociationSet Name="FK__aspnet_Me__UserI__6CA31EA0" Association="Self.FK__aspnet_Me__UserI__6CA31EA0">
-      <End Role="aspnet_Users" EntitySet="aspnet_Users" />
-      <End Role="aspnet_Membership" EntitySet="aspnet_Membership" />
-    </AssociationSet>
-    <AssociationSet Name="FK__aspnet_Ro__Appli__00AA174D" Association="Self.FK__aspnet_Ro__Appli__00AA174D">
-      <End Role="aspnet_Applications" EntitySet="aspnet_Applications" />
-      <End Role="aspnet_Roles" EntitySet="aspnet_Roles" />
-    </AssociationSet>
-    <AssociationSet Name="FK__aspnet_Us__Appli__5B78929E" Association="Self.FK__aspnet_Us__Appli__5B78929E">
-      <End Role="aspnet_Applications" EntitySet="aspnet_Applications" />
-      <End Role="aspnet_Users" EntitySet="aspnet_Users" />
-    </AssociationSet>
-    <AssociationSet Name="FK__aspnet_Us__RoleI__056ECC6A" Association="Self.FK__aspnet_Us__RoleI__056ECC6A">
-      <End Role="aspnet_Roles" EntitySet="aspnet_Roles" />
-      <End Role="aspnet_UsersInRoles" EntitySet="aspnet_UsersInRoles" />
-    </AssociationSet>
-    <AssociationSet Name="FK__aspnet_Us__UserI__047AA831" Association="Self.FK__aspnet_Us__UserI__047AA831">
-      <End Role="aspnet_Users" EntitySet="aspnet_Users" />
-      <End Role="aspnet_UsersInRoles" EntitySet="aspnet_UsersInRoles" />
-    </AssociationSet>
     <AssociationSet Name="FK_AlbumPhotos_Albums" Association="Self.FK_AlbumPhotos_Albums">
       <End Role="Album" EntitySet="Album" />
       <End Role="AlbumPhoto" EntitySet="AlbumPhoto" />
@@ -1110,9 +958,9 @@
       <End Role="SitePage" EntitySet="SitePage" />
       <End Role="MediaCollection" EntitySet="MediaCollection" />
     </AssociationSet>
-    <AssociationSet Name="FK_MediaItem_SitePages" Association="Self.FK_MediaItem_SitePages">
-      <End Role="SitePage" EntitySet="SitePage" />
-      <End Role="MediaItem" EntitySet="MediaItem" />
+    <AssociationSet Name="FK_MenuItems_MenuSections" Association="Self.FK_MenuItems_MenuSections">
+      <End Role="MenuSections" EntitySet="MenuSections" />
+      <End Role="MenuItems" EntitySet="MenuItems" />
     </AssociationSet>
     <AssociationSet Name="FK_MetaTag_SitePage" Association="Self.FK_MetaTag_SitePage">
       <End Role="SitePage" EntitySet="SitePage" />
@@ -1129,10 +977,6 @@
     <AssociationSet Name="FK_SettingsKeys_SettingsCategories" Association="Self.FK_SettingsKeys_SettingsCategories">
       <End Role="SettingCategory" EntitySet="SettingCategory" />
       <End Role="Setting" EntitySet="Setting" />
-    </AssociationSet>
-    <AssociationSet Name="FK_Testimonial_TestimonialSource" Association="Self.FK_Testimonial_TestimonialSource">
-      <End Role="TestimonialSource" EntitySet="TestimonialSource" />
-      <End Role="Testimonial" EntitySet="Testimonial" />
     </AssociationSet>
   </EntityContainer>
 </Schema>

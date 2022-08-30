@@ -19,7 +19,6 @@ namespace DynamicData.Admin.Model
         {
             this.Banners = new HashSet<Banner>();
             this.MediaCollections = new HashSet<MediaCollection>();
-            this.MediaItems = new HashSet<MediaItem>();
             this.MetaTags = new HashSet<MetaTag>();
         }
     
@@ -30,8 +29,6 @@ namespace DynamicData.Admin.Model
         public virtual ICollection<Banner> Banners { get; set; }
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
         public virtual ICollection<MediaCollection> MediaCollections { get; set; }
-        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
-        public virtual ICollection<MediaItem> MediaItems { get; set; }
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
         public virtual ICollection<MetaTag> MetaTags { get; set; }
     }

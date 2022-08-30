@@ -33,76 +33,6 @@
         </MappingFragment>
       </EntityTypeMapping>
     </EntitySetMapping>
-    <EntitySetMapping Name="aspnet_Applications">
-      <EntityTypeMapping TypeName="SharedKernelModel.aspnet_Applications">
-        <MappingFragment StoreEntitySet="aspnet_Applications">
-          <ScalarProperty Name="Description" ColumnName="Description" />
-          <ScalarProperty Name="ApplicationId" ColumnName="ApplicationId" />
-          <ScalarProperty Name="LoweredApplicationName" ColumnName="LoweredApplicationName" />
-          <ScalarProperty Name="ApplicationName" ColumnName="ApplicationName" />
-        </MappingFragment>
-      </EntityTypeMapping>
-    </EntitySetMapping>
-    <EntitySetMapping Name="aspnet_Membership">
-      <EntityTypeMapping TypeName="SharedKernelModel.aspnet_Membership">
-        <MappingFragment StoreEntitySet="aspnet_Membership">
-          <ScalarProperty Name="Comment" ColumnName="Comment" />
-          <ScalarProperty Name="FailedPasswordAnswerAttemptWindowStart" ColumnName="FailedPasswordAnswerAttemptWindowStart" />
-          <ScalarProperty Name="FailedPasswordAnswerAttemptCount" ColumnName="FailedPasswordAnswerAttemptCount" />
-          <ScalarProperty Name="FailedPasswordAttemptWindowStart" ColumnName="FailedPasswordAttemptWindowStart" />
-          <ScalarProperty Name="FailedPasswordAttemptCount" ColumnName="FailedPasswordAttemptCount" />
-          <ScalarProperty Name="LastLockoutDate" ColumnName="LastLockoutDate" />
-          <ScalarProperty Name="LastPasswordChangedDate" ColumnName="LastPasswordChangedDate" />
-          <ScalarProperty Name="LastLoginDate" ColumnName="LastLoginDate" />
-          <ScalarProperty Name="CreateDate" ColumnName="CreateDate" />
-          <ScalarProperty Name="IsLockedOut" ColumnName="IsLockedOut" />
-          <ScalarProperty Name="IsApproved" ColumnName="IsApproved" />
-          <ScalarProperty Name="PasswordAnswer" ColumnName="PasswordAnswer" />
-          <ScalarProperty Name="PasswordQuestion" ColumnName="PasswordQuestion" />
-          <ScalarProperty Name="LoweredEmail" ColumnName="LoweredEmail" />
-          <ScalarProperty Name="Email" ColumnName="Email" />
-          <ScalarProperty Name="MobilePIN" ColumnName="MobilePIN" />
-          <ScalarProperty Name="PasswordSalt" ColumnName="PasswordSalt" />
-          <ScalarProperty Name="PasswordFormat" ColumnName="PasswordFormat" />
-          <ScalarProperty Name="Password" ColumnName="Password" />
-          <ScalarProperty Name="UserId" ColumnName="UserId" />
-          <ScalarProperty Name="ApplicationId" ColumnName="ApplicationId" />
-        </MappingFragment>
-      </EntityTypeMapping>
-    </EntitySetMapping>
-    <EntitySetMapping Name="aspnet_Roles">
-      <EntityTypeMapping TypeName="SharedKernelModel.aspnet_Roles">
-        <MappingFragment StoreEntitySet="aspnet_Roles">
-          <ScalarProperty Name="Description" ColumnName="Description" />
-          <ScalarProperty Name="LoweredRoleName" ColumnName="LoweredRoleName" />
-          <ScalarProperty Name="RoleName" ColumnName="RoleName" />
-          <ScalarProperty Name="RoleId" ColumnName="RoleId" />
-          <ScalarProperty Name="ApplicationId" ColumnName="ApplicationId" />
-        </MappingFragment>
-      </EntityTypeMapping>
-    </EntitySetMapping>
-    <EntitySetMapping Name="aspnet_SchemaVersions">
-      <EntityTypeMapping TypeName="SharedKernelModel.aspnet_SchemaVersions">
-        <MappingFragment StoreEntitySet="aspnet_SchemaVersions">
-          <ScalarProperty Name="IsCurrentVersion" ColumnName="IsCurrentVersion" />
-          <ScalarProperty Name="CompatibleSchemaVersion" ColumnName="CompatibleSchemaVersion" />
-          <ScalarProperty Name="Feature" ColumnName="Feature" />
-        </MappingFragment>
-      </EntityTypeMapping>
-    </EntitySetMapping>
-    <EntitySetMapping Name="aspnet_Users">
-      <EntityTypeMapping TypeName="SharedKernelModel.aspnet_Users">
-        <MappingFragment StoreEntitySet="aspnet_Users">
-          <ScalarProperty Name="LastActivityDate" ColumnName="LastActivityDate" />
-          <ScalarProperty Name="IsAnonymous" ColumnName="IsAnonymous" />
-          <ScalarProperty Name="MobileAlias" ColumnName="MobileAlias" />
-          <ScalarProperty Name="LoweredUserName" ColumnName="LoweredUserName" />
-          <ScalarProperty Name="UserName" ColumnName="UserName" />
-          <ScalarProperty Name="UserId" ColumnName="UserId" />
-          <ScalarProperty Name="ApplicationId" ColumnName="ApplicationId" />
-        </MappingFragment>
-      </EntityTypeMapping>
-    </EntitySetMapping>
     <EntitySetMapping Name="Banners">
       <EntityTypeMapping TypeName="SharedKernelModel.Banner">
         <MappingFragment StoreEntitySet="Banner">
@@ -178,6 +108,18 @@
           <ScalarProperty Name="GermanName" ColumnName="GermanName" />
           <ScalarProperty Name="ItalianName" ColumnName="ItalianName" />
           <ScalarProperty Name="Name" ColumnName="Name" />
+          <ScalarProperty Name="Id" ColumnName="Id" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Events">
+      <EntityTypeMapping TypeName="SharedKernelModel.Event">
+        <MappingFragment StoreEntitySet="Events">
+          <ScalarProperty Name="Body" ColumnName="Body" />
+          <ScalarProperty Name="Title" ColumnName="Title" />
+          <ScalarProperty Name="Active" ColumnName="Active" />
+          <ScalarProperty Name="Alt" ColumnName="Alt" />
+          <ScalarProperty Name="Photo" ColumnName="Photo" />
           <ScalarProperty Name="Id" ColumnName="Id" />
         </MappingFragment>
       </EntityTypeMapping>
@@ -309,17 +251,12 @@
         </MappingFragment>
       </EntityTypeMapping>
     </EntitySetMapping>
-    <EntitySetMapping Name="MediaItems">
-      <EntityTypeMapping TypeName="SharedKernelModel.MediaItem">
-        <MappingFragment StoreEntitySet="MediaItem">
-          <ScalarProperty Name="Height" ColumnName="Height" />
-          <ScalarProperty Name="Width" ColumnName="Width" />
-          <ScalarProperty Name="PageId" ColumnName="PageId" />
-          <ScalarProperty Name="ItemKey" ColumnName="ItemKey" />
+    <EntitySetMapping Name="MenuSections">
+      <EntityTypeMapping TypeName="SharedKernelModel.MenuSection">
+        <MappingFragment StoreEntitySet="MenuSections">
+          <ScalarProperty Name="Active" ColumnName="Active" />
           <ScalarProperty Name="DisplayOrder" ColumnName="DisplayOrder" />
-          <ScalarProperty Name="VedioUrl" ColumnName="VedioUrl" />
-          <ScalarProperty Name="Alt" ColumnName="Alt" />
-          <ScalarProperty Name="Photo" ColumnName="Photo" />
+          <ScalarProperty Name="Name" ColumnName="Name" />
           <ScalarProperty Name="Id" ColumnName="Id" />
         </MappingFragment>
       </EntityTypeMapping>
@@ -360,7 +297,7 @@
       <EntityTypeMapping TypeName="SharedKernelModel.NewsletterSubscription">
         <MappingFragment StoreEntitySet="NewsletterSubscription">
           <ScalarProperty Name="SubscriptionDate" ColumnName="SubscriptionDate" />
-          <ScalarProperty Name="Email" ColumnName="Email" />
+          <ScalarProperty Name="email" ColumnName="email" />
           <ScalarProperty Name="Id" ColumnName="Id" />
         </MappingFragment>
       </EntityTypeMapping>
@@ -418,30 +355,13 @@
         </MappingFragment>
       </EntityTypeMapping>
     </EntitySetMapping>
-    <EntitySetMapping Name="TeamMembers">
-      <EntityTypeMapping TypeName="SharedKernelModel.TeamMember">
-        <MappingFragment StoreEntitySet="TeamMember">
-          <ScalarProperty Name="Featured" ColumnName="Featured" />
-          <ScalarProperty Name="IsActive" ColumnName="IsActive" />
-          <ScalarProperty Name="DisplayOrder" ColumnName="DisplayOrder" />
-          <ScalarProperty Name="Photo" ColumnName="Photo" />
-          <ScalarProperty Name="Email" ColumnName="Email" />
-          <ScalarProperty Name="Name" ColumnName="Name" />
-          <ScalarProperty Name="Id" ColumnName="Id" />
-        </MappingFragment>
-      </EntityTypeMapping>
-    </EntitySetMapping>
     <EntitySetMapping Name="Testimonials">
       <EntityTypeMapping TypeName="SharedKernelModel.Testimonial">
         <MappingFragment StoreEntitySet="Testimonial">
           <ScalarProperty Name="Active" ColumnName="Active" />
           <ScalarProperty Name="DisplayOrder" ColumnName="DisplayOrder" />
-          <ScalarProperty Name="Location" ColumnName="Location" />
+          <ScalarProperty Name="Comment" ColumnName="Comment" />
           <ScalarProperty Name="Name" ColumnName="Name" />
-          <ScalarProperty Name="Description" ColumnName="Description" />
-          <ScalarProperty Name="Title" ColumnName="Title" />
-          <ScalarProperty Name="Date" ColumnName="Date" />
-          <ScalarProperty Name="TestimonialSourceId" ColumnName="TestimonialSourceId" />
           <ScalarProperty Name="Id" ColumnName="Id" />
         </MappingFragment>
       </EntityTypeMapping>
@@ -465,13 +385,53 @@
         </MappingFragment>
       </EntityTypeMapping>
     </EntitySetMapping>
-    <AssociationSetMapping Name="aspnet_UsersInRoles" TypeName="SharedKernelModel.aspnet_UsersInRoles" StoreEntitySet="aspnet_UsersInRoles">
-      <EndProperty Name="aspnet_Users">
-        <ScalarProperty Name="UserId" ColumnName="UserId" />
-      </EndProperty>
-      <EndProperty Name="aspnet_Roles">
-        <ScalarProperty Name="RoleId" ColumnName="RoleId" />
-      </EndProperty>
-    </AssociationSetMapping>
+    <EntitySetMapping Name="TeamMembers">
+      <EntityTypeMapping TypeName="SharedKernelModel.TeamMember">
+        <MappingFragment StoreEntitySet="TeamMember">
+          <ScalarProperty Name="DisplayOrder" ColumnName="DisplayOrder" />
+          <ScalarProperty Name="Posistion" ColumnName="Posistion" />
+          <ScalarProperty Name="Alt" ColumnName="Alt" />
+          <ScalarProperty Name="Photo" ColumnName="Photo" />
+          <ScalarProperty Name="Name" ColumnName="Name" />
+          <ScalarProperty Name="Id" ColumnName="Id" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Galleries">
+      <EntityTypeMapping TypeName="SharedKernelModel.Gallery">
+        <MappingFragment StoreEntitySet="Gallery">
+          <ScalarProperty Name="Alt" ColumnName="Alt" />
+          <ScalarProperty Name="DisplayOrder" ColumnName="DisplayOrder" />
+          <ScalarProperty Name="Photo" ColumnName="Photo" />
+          <ScalarProperty Name="Id" ColumnName="Id" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="MediaItems">
+      <EntityTypeMapping TypeName="SharedKernelModel.MediaItem">
+        <MappingFragment StoreEntitySet="MediaItem">
+          <ScalarProperty Name="Height" ColumnName="Height" />
+          <ScalarProperty Name="Width" ColumnName="Width" />
+          <ScalarProperty Name="ItemKey" ColumnName="ItemKey" />
+          <ScalarProperty Name="Alt" ColumnName="Alt" />
+          <ScalarProperty Name="Photo" ColumnName="Photo" />
+          <ScalarProperty Name="Id" ColumnName="Id" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="MenuItems">
+      <EntityTypeMapping TypeName="SharedKernelModel.MenuItem">
+        <MappingFragment StoreEntitySet="MenuItems">
+          <ScalarProperty Name="Active" ColumnName="Active" />
+          <ScalarProperty Name="DisplayOrder" ColumnName="DisplayOrder" />
+          <ScalarProperty Name="Price" ColumnName="Price" />
+          <ScalarProperty Name="Photo" ColumnName="Photo" />
+          <ScalarProperty Name="Description" ColumnName="Description" />
+          <ScalarProperty Name="Name" ColumnName="Name" />
+          <ScalarProperty Name="SectionId" ColumnName="SectionId" />
+          <ScalarProperty Name="Id" ColumnName="Id" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
   </EntityContainerMapping>
 </Mapping>

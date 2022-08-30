@@ -5,54 +5,45 @@
     <!-- Diagram content (shape and connector positions) -->
     <edmx:Diagrams>
       <Diagram DiagramId="277e5e00c9ca43caa2b8e0ddd49423da" Name="Diagram1">
-        <EntityTypeShape EntityType="SharedKernelModel.Album" Width="1.5" PointX="3.75" PointY="8.625" />
-        <EntityTypeShape EntityType="SharedKernelModel.AlbumLocalized" Width="1.5" PointX="6" PointY="14.5" />
-        <EntityTypeShape EntityType="SharedKernelModel.AlbumPhoto" Width="1.5" PointX="6" PointY="0.75" />
-        <EntityTypeShape EntityType="SharedKernelModel.aspnet_Applications" Width="1.5" PointX="8.75" PointY="5.5" />
-        <EntityTypeShape EntityType="SharedKernelModel.aspnet_Membership" Width="1.5" PointX="15.5" PointY="3.875" />
-        <EntityTypeShape EntityType="SharedKernelModel.aspnet_Roles" Width="1.5" PointX="11" PointY="5.5" />
-        <EntityTypeShape EntityType="SharedKernelModel.aspnet_SchemaVersions" Width="1.5" PointX="0.75" PointY="1.5" />
-        <EntityTypeShape EntityType="SharedKernelModel.aspnet_Users" Width="1.5" PointX="13.25" PointY="5.125" />
-        <EntityTypeShape EntityType="SharedKernelModel.Banner" Width="1.5" PointX="3.75" PointY="28.5" />
-        <EntityTypeShape EntityType="SharedKernelModel.BannerLocalized" Width="1.5" PointX="6" PointY="18.5" />
-        <EntityTypeShape EntityType="SharedKernelModel.Career" Width="1.5" PointX="6.75" PointY="4.5" />
-        <EntityTypeShape EntityType="SharedKernelModel.CareerLocalized" Width="1.5" PointX="9" PointY="14.625" />
-        <EntityTypeShape EntityType="SharedKernelModel.City" Width="1.5" PointX="4.5" PointY="4.875" />
-        <EntityTypeShape EntityType="SharedKernelModel.CityLocalized" Width="1.5" PointX="3" PointY="24.75" />
-        <EntityTypeShape EntityType="SharedKernelModel.Country" Width="1.5" PointX="0.75" PointY="4.5" />
-        <EntityTypeShape EntityType="SharedKernelModel.Faq" Width="1.5" PointX="6.75" PointY="26.5" />
-        <EntityTypeShape EntityType="SharedKernelModel.FaqCategory" Width="1.5" PointX="0.75" PointY="11.875" />
-        <EntityTypeShape EntityType="SharedKernelModel.FaqCategoryLocalized" Width="1.5" PointX="3" PointY="11.75" />
-        <EntityTypeShape EntityType="SharedKernelModel.FaqLocalized" Width="1.5" PointX="9" PointY="22.625" />
-        <EntityTypeShape EntityType="SharedKernelModel.HomeBanner" Width="1.5" PointX="0.75" PointY="23.5" />
-        <EntityTypeShape EntityType="SharedKernelModel.HomeBannerLocalized" Width="1.5" PointX="3" PointY="18.5" />
-        <EntityTypeShape EntityType="SharedKernelModel.InfoPage" Width="1.5" PointX="3.75" PointY="32.5" />
-        <EntityTypeShape EntityType="SharedKernelModel.InfoPageCategory" Width="1.5" PointX="0.75" PointY="26.75" />
-        <EntityTypeShape EntityType="SharedKernelModel.InfoPageCategoryLocalized" Width="1.5" PointX="3" PointY="21.75" />
-        <EntityTypeShape EntityType="SharedKernelModel.InfoPageLocalized" Width="1.5" PointX="6" PointY="22.375" />
-        <EntityTypeShape EntityType="SharedKernelModel.Language" Width="1.5" PointX="0.75" PointY="17.625" />
-        <EntityTypeShape EntityType="SharedKernelModel.MediaCollection" Width="1.5" PointX="3.75" PointY="36.5" />
-        <EntityTypeShape EntityType="SharedKernelModel.MediaItem" Width="1.5" PointX="3.75" PointY="0.75" />
-        <EntityTypeShape EntityType="SharedKernelModel.MetaTag" Width="1.5" PointX="0.75" PointY="14.875" />
-        <EntityTypeShape EntityType="SharedKernelModel.MetaTagLocalized" Width="1.5" PointX="3" PointY="14.5" />
-        <EntityTypeShape EntityType="SharedKernelModel.News" Width="1.5" PointX="6.75" PointY="10.5" />
-        <EntityTypeShape EntityType="SharedKernelModel.NewsletterSubscription" Width="1.5" PointX="11.75" PointY="13.5" />
-        <EntityTypeShape EntityType="SharedKernelModel.NewsLocalized" Width="1.5" PointX="9" PointY="18.375" />
-        <EntityTypeShape EntityType="SharedKernelModel.Setting" Width="1.5" PointX="11" PointY="1.75" />
-        <EntityTypeShape EntityType="SharedKernelModel.SettingCategory" Width="1.5" PointX="8.75" PointY="2.125" />
-        <EntityTypeShape EntityType="SharedKernelModel.SitePage" Width="1.5" PointX="1.5" PointY="8.625" />
-        <EntityTypeShape EntityType="SharedKernelModel.SocialLink" Width="1.5" PointX="13.75" PointY="10.5" />
-        <EntityTypeShape EntityType="SharedKernelModel.TeamMember" Width="1.5" PointX="13.75" PointY="13.5" />
-        <EntityTypeShape EntityType="SharedKernelModel.Testimonial" Width="1.5" PointX="11" PointY="9.75" />
-        <EntityTypeShape EntityType="SharedKernelModel.TestimonialSource" Width="1.5" PointX="8.75" PointY="10.375" />
-        <EntityTypeShape EntityType="SharedKernelModel.User" Width="1.5" PointX="15.75" PointY="10.5" />
+        <EntityTypeShape EntityType="SharedKernelModel.Album" Width="1.5" PointX="6.75" PointY="10.875" />
+        <EntityTypeShape EntityType="SharedKernelModel.AlbumLocalized" Width="1.5" PointX="9" PointY="17.625" />
+        <EntityTypeShape EntityType="SharedKernelModel.AlbumPhoto" Width="1.5" PointX="9" PointY="11" />
+        <EntityTypeShape EntityType="SharedKernelModel.Banner" Width="1.5" PointX="3.75" PointY="31.625" />
+        <EntityTypeShape EntityType="SharedKernelModel.BannerLocalized" Width="1.5" PointX="6" PointY="21.75" />
+        <EntityTypeShape EntityType="SharedKernelModel.Career" Width="1.5" PointX="0.75" PointY="29.625" />
+        <EntityTypeShape EntityType="SharedKernelModel.CareerLocalized" Width="1.5" PointX="3" PointY="23.875" />
+        <EntityTypeShape EntityType="SharedKernelModel.City" Width="1.5" PointX="0.75" PointY="9" />
+        <EntityTypeShape EntityType="SharedKernelModel.CityLocalized" Width="1.5" PointX="3" PointY="15" />
+        <EntityTypeShape EntityType="SharedKernelModel.Country" Width="1.5" PointX="0.75" PointY="4.75" />
+        <EntityTypeShape EntityType="SharedKernelModel.Event" Width="1.5" PointX="8.75" PointY="4.75" />
+        <EntityTypeShape EntityType="SharedKernelModel.Faq" Width="1.5" PointX="0.75" PointY="22.75" />
+        <EntityTypeShape EntityType="SharedKernelModel.FaqCategory" Width="1.5" PointX="1.5" PointY="27" />
+        <EntityTypeShape EntityType="SharedKernelModel.FaqCategoryLocalized" Width="1.5" PointX="3" PointY="21" />
+        <EntityTypeShape EntityType="SharedKernelModel.FaqLocalized" Width="1.5" PointX="3" PointY="17.875" />
+        <EntityTypeShape EntityType="SharedKernelModel.HomeBanner" Width="1.5" PointX="0.75" PointY="11.75" />
+        <EntityTypeShape EntityType="SharedKernelModel.HomeBannerLocalized" Width="1.5" PointX="3" PointY="11.75" />
+        <EntityTypeShape EntityType="SharedKernelModel.InfoPage" Width="1.5" PointX="3.75" PointY="27.625" />
+        <EntityTypeShape EntityType="SharedKernelModel.InfoPageCategory" Width="1.5" PointX="3.75" PointY="9" />
+        <EntityTypeShape EntityType="SharedKernelModel.InfoPageCategoryLocalized" Width="1.5" PointX="6" PointY="14" />
+        <EntityTypeShape EntityType="SharedKernelModel.InfoPageLocalized" Width="1.5" PointX="6" PointY="17.625" />
+        <EntityTypeShape EntityType="SharedKernelModel.Language" Width="1.5" PointX="0.75" PointY="16.75" />
+        <EntityTypeShape EntityType="SharedKernelModel.MediaCollection" Width="1.5" PointX="6.75" PointY="32.75" />
+        <EntityTypeShape EntityType="SharedKernelModel.MenuSection" Width="1.5" PointX="5.75" PointY="1.375" />
+        <EntityTypeShape EntityType="SharedKernelModel.MetaTag" Width="1.5" PointX="6.75" PointY="6" />
+        <EntityTypeShape EntityType="SharedKernelModel.MetaTagLocalized" Width="1.5" PointX="9" PointY="13.75" />
+        <EntityTypeShape EntityType="SharedKernelModel.News" Width="1.5" PointX="6.75" PointY="25.625" />
+        <EntityTypeShape EntityType="SharedKernelModel.NewsletterSubscription" Width="1.5" PointX="8.75" PointY="7.75" />
+        <EntityTypeShape EntityType="SharedKernelModel.NewsLocalized" Width="1.5" PointX="9" PointY="21.625" />
+        <EntityTypeShape EntityType="SharedKernelModel.Setting" Width="1.5" PointX="3" PointY="1" />
+        <EntityTypeShape EntityType="SharedKernelModel.SettingCategory" Width="1.5" PointX="0.75" PointY="1.375" />
+        <EntityTypeShape EntityType="SharedKernelModel.SitePage" Width="1.5" PointX="4.5" PointY="5.875" />
+        <EntityTypeShape EntityType="SharedKernelModel.SocialLink" Width="1.5" PointX="10.75" PointY="0.75" />
+        <EntityTypeShape EntityType="SharedKernelModel.Testimonial" Width="1.5" PointX="10.75" PointY="3.75" />
+        <EntityTypeShape EntityType="SharedKernelModel.TestimonialSource" Width="1.5" PointX="10.75" PointY="6.75" />
+        <EntityTypeShape EntityType="SharedKernelModel.User" Width="1.5" PointX="11.75" PointY="9.75" />
         <AssociationConnector Association="SharedKernelModel.FK_AlbumPhotos_Albums" />
         <AssociationConnector Association="SharedKernelModel.FK_LocalizedAlbums_Albums" />
         <AssociationConnector Association="SharedKernelModel.FK_LocalizedAlbums_LocalizedAlbums" />
-        <AssociationConnector Association="SharedKernelModel.FK__aspnet_Me__Appli__6BAEFA67" />
-        <AssociationConnector Association="SharedKernelModel.FK__aspnet_Ro__Appli__00AA174D" />
-        <AssociationConnector Association="SharedKernelModel.FK__aspnet_Us__Appli__5B78929E" />
-        <AssociationConnector Association="SharedKernelModel.FK__aspnet_Me__UserI__6CA31EA0" />
         <AssociationConnector Association="SharedKernelModel.FK_Banner_SitePages" />
         <AssociationConnector Association="SharedKernelModel.FK_BannerLocalized_Banner" />
         <AssociationConnector Association="SharedKernelModel.FK_BannerLocalized_Language" />
@@ -76,13 +67,15 @@
         <AssociationConnector Association="SharedKernelModel.FK_LocalizedNew_Languages" />
         <AssociationConnector Association="SharedKernelModel.FK_MetaTagLocalized_Language" />
         <AssociationConnector Association="SharedKernelModel.FK_MediaCollection_MediaItemPage" />
-        <AssociationConnector Association="SharedKernelModel.FK_MediaItem_SitePages" />
         <AssociationConnector Association="SharedKernelModel.FK_MetaTag_SitePage" />
         <AssociationConnector Association="SharedKernelModel.FK_MetaTagLocalized_MetaTag" />
         <AssociationConnector Association="SharedKernelModel.FK_LocalizedNew_News" />
         <AssociationConnector Association="SharedKernelModel.FK_SettingsKeys_SettingsCategories" />
-        <AssociationConnector Association="SharedKernelModel.FK_Testimonial_TestimonialSource" />
-        <AssociationConnector Association="SharedKernelModel.aspnet_UsersInRoles" />
+        <EntityTypeShape EntityType="SharedKernelModel.TeamMember" Width="1.5" PointX="13.375" PointY="0.75" />
+        <EntityTypeShape EntityType="SharedKernelModel.Gallery" Width="1.5" PointX="11.375" PointY="12.75" />
+        <EntityTypeShape EntityType="SharedKernelModel.MediaItem" Width="1.5" PointX="13.375" PointY="3.75" />
+        <EntityTypeShape EntityType="SharedKernelModel.MenuItem" Width="1.5" PointX="8" PointY="1" />
+        <AssociationConnector Association="SharedKernelModel.FK_MenuItems_MenuSections" />
       </Diagram>
     </edmx:Diagrams>
   </edmx:Designer>

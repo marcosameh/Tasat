@@ -7,11 +7,13 @@
 // </auto-generated>
 //------------------------------------------------------------------------------
 
-namespace DynamicData.Admin {
-    
-    
-    public partial class Site {
-        
+namespace DynamicData.Admin
+{
+
+
+    public partial class Site
+    {
+
         /// <summary>
         /// head control.
         /// </summary>
@@ -20,7 +22,7 @@ namespace DynamicData.Admin {
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.ContentPlaceHolder head;
-        
+
         /// <summary>
         /// form1 control.
         /// </summary>
@@ -29,7 +31,7 @@ namespace DynamicData.Admin {
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.HtmlControls.HtmlForm form1;
-        
+
         /// <summary>
         /// lnkLogOut control.
         /// </summary>
@@ -38,16 +40,7 @@ namespace DynamicData.Admin {
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.LinkButton lnkLogOut;
-        
-        /// <summary>
-        /// lnkUsers control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.HtmlControls.HtmlGenericControl lnkUsers;
-        
+
         /// <summary>
         /// ucNotifier control.
         /// </summary>
@@ -56,7 +49,7 @@ namespace DynamicData.Admin {
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::DynamicData.Admin.Controls.Notifier ucNotifier;
-        
+
         /// <summary>
         /// main control.
         /// </summary>
@@ -65,7 +58,7 @@ namespace DynamicData.Admin {
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.ContentPlaceHolder main;
-        
+
         /// <summary>
         /// js control.
         /// </summary>

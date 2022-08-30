@@ -16,10 +16,9 @@ namespace DynamicData.Admin.Model
     {
         public int Id { get; set; }
         public string Name { get; set; }
-        public string Email { get; set; }
         public string Photo { get; set; }
+        public string Alt { get; set; }
+        public string Posistion { get; set; }
         public int DisplayOrder { get; set; }
-        public Nullable<bool> IsActive { get; set; }
-        public bool Featured { get; set; }
     }
 }

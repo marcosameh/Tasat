@@ -15,7 +15,7 @@ namespace DynamicData.Admin.Model
     public partial class NewsletterSubscription
     {
         public int Id { get; set; }
-        public string Email { get; set; }
+        public string email { get; set; }
         public System.DateTime SubscriptionDate { get; set; }
     }
 }

@@ -34,7 +34,7 @@
                         <img src="/images/logo.png" alt="" />
                     </a>
                     <div class="pull-right">
-                        <a href="" class="menu-collapse">
+                        <a class="menu-collapse">
                             <i class="fa fa-bars"></i>
                         </a>
                     </div>
@@ -66,45 +66,38 @@
                     <ul class="nav nav-pills nav-stacked">
                         <li class="parent"><a href="javascript:;"> <i class="fa fa-camera"></i><span>Media</span></a>
                             <ul class="children">
-                                <li><a href="/Albums/list.aspx">Albums</a></li>
-                                <li><a href="/AlbumPhotoes/list.aspx">Album Photos</a></li>
-                                <li><a href="/Banners/list.aspx">Site Banners</a></li>
-                             <%--   <li><a href="/BannerGroups/list.aspx">Banner Groups</a></li>
-                                <li><a href="/BannerTypes/list.aspx">Banner Types</a></li>--%>
+                                <li><a href="/Galleries/list.aspx">Gallery</a></li>
+                                <li><a href="/mediaitems/list.aspx">Media Items</a></li>
+                               
+                             
                             </ul>
                         </li>
-                        
-
-                        <li><a href="/News/list.aspx">
-                            <i class="fa fa-newspaper"></i><span>News</span></a></li>
-
-                        <li><a href="/infoPages/list.aspx">
-                            <i class="fa fa-file"></i><span>Info Pages</span></a></li>
-
-                        <li class="parent"><a href="javascript:;"><i class="fa fa-question"></i><span>FAQs</span></a>
+                      
+                      
+                        <li class="parent"><a href="javascript:;"> <i class="fa fa-burger"></i><span>Menu</span></a>
                             <ul class="children">
-                                <li><a href="/faqCategories/list.aspx">FAQ Categories</a></li>
-                                <li><a href="/faqs/list.aspx">FAQs</a></li>
+                                <li><a href="/MenuSections/list.aspx">Menu Sections</a></li>
+                                <li><a href="/menuitems/list.aspx">Menu Items</a></li>
+                               
+                             
                             </ul>
                         </li>
 
+                        <li><a href="/Events/list.aspx">
+                            <i class="fa fa-newspaper"></i><span>Events & News</span></a></li>
+
+                      
                         <li><a href="/SocialLinks/list.aspx">
                            <i class="fa-brands fa-facebook"></i><span>Social Links</span></a></li>
 
-                        <li><a href="/metatags/list.aspx">
-                            <i class="fa fa-header"></i><span>Meta Tags</span></a></li>
-
+              
                         <li><a href="/cms.aspx">
                             <i class="fa fa-file-text"></i><span>CMS</span></a></li>
                         
-                        <li id="lnkUsers" runat="server"><a href="/Users/list.aspx">
-                            <i class="fa fa-users"></i><span>Users</span></a></li>
-
                         <li><a href="/Settings/list.aspx">
                             <i class="fa fa-gear"></i><span>Settings</span></a></li>
 
-                        <li><a href="/Account/admin-profile.aspx">
-                            <i class="fa fa-lock"></i><span>Change Password</span></a></li>
+                      
                     </ul>
                 </div>
                 <!-- leftpanel -->
@@ -125,7 +118,7 @@
         <div>
             <asp:PlaceHolder runat="server">
                
-                <script src="Content/bundle.js"></script>
+                <script src="/Content/bundle.js"></script>
                 <script src="/Scripts/plugins/dropzone.min.js"></script>
                 <script src="/Scripts/app/multi-upload.js"></script>
             </asp:PlaceHolder>

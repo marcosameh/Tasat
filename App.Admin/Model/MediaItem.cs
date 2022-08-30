@@ -17,13 +17,8 @@ namespace DynamicData.Admin.Model
         public int Id { get; set; }
         public string Photo { get; set; }
         public string Alt { get; set; }
-        public string VedioUrl { get; set; }
-        public Nullable<int> DisplayOrder { get; set; }
         public string ItemKey { get; set; }
-        public int PageId { get; set; }
         public int Width { get; set; }
         public int Height { get; set; }
-    
-        public virtual SitePage SitePage { get; set; }
     }
 }
