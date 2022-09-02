@@ -16,21 +16,7 @@ namespace AppCore.Managers
             this.context = context;
         }
 
-        public IQueryable<MediaItem> GetMediaItems()
-        {
-            return context.MediaItems.Include(x => x.MediaCollection);
-        }
-
-
-        public IQueryable<MediaItem> GetMediaItemsByPage(int pageId)
-        {
-            return context.MediaItems.Where(x => x.PageId == pageId).OrderBy(x => x.DisplayOrder);
-        }
-
-        public IQueryable<MediaItem> GetMediaItemsByCollection(int collectionId)
-        {
-            return context.MediaItems.Where(x => x.MediaCollectionId == collectionId).OrderBy(x => x.DisplayOrder);
-        }
+       
 
         public MediaItem GetMediaItem(string mediaItemKey)
         {

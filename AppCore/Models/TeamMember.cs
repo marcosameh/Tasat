@@ -5,12 +5,13 @@ using System.Collections.Generic;
 
 namespace AppCore.Models
 {
-    public partial class Testimonial
+    public partial class TeamMember
     {
         public int Id { get; set; }
         public string Name { get; set; }
-        public string Comment { get; set; }
+        public string Photo { get; set; }
+        public string Alt { get; set; }
+        public string Posistion { get; set; }
         public int DisplayOrder { get; set; }
-        public bool? Active { get; set; }
     }
 }

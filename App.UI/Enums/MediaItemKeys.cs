@@ -6,6 +6,7 @@
         LeftImage = 2,
         UpperRight = 3,
         LowerRight = 4,
-        Background
+        Background,
+        TopRight
     }
 }

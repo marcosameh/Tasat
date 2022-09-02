@@ -54,6 +54,10 @@
          "ObjectType": 0
       },
       {
+         "Name": "[dbo].[Events]",
+         "ObjectType": 0
+      },
+      {
          "Name": "[dbo].[Faq]",
          "ObjectType": 0
       },
@@ -67,6 +71,10 @@
       },
       {
          "Name": "[dbo].[FaqLocalized]",
+         "ObjectType": 0
+      },
+      {
+         "Name": "[dbo].[Gallery]",
          "ObjectType": 0
       },
       {
@@ -106,6 +114,14 @@
          "ObjectType": 0
       },
       {
+         "Name": "[dbo].[MenuItems]",
+         "ObjectType": 0
+      },
+      {
+         "Name": "[dbo].[MenuSections]",
+         "ObjectType": 0
+      },
+      {
          "Name": "[dbo].[MetaTag]",
          "ObjectType": 0
       },
@@ -142,6 +158,10 @@
          "ObjectType": 0
       },
       {
+         "Name": "[dbo].[TeamMember]",
+         "ObjectType": 0
+      },
+      {
          "Name": "[dbo].[Testimonial]",
          "ObjectType": 0
       },
@@ -150,7 +170,7 @@
          "ObjectType": 0
       }
    ],
-   "UiHint": "RAFIK.SharedKernel",
+   "UiHint": "MARCOSAMEH.Tasat",
    "UseBoolPropertiesWithoutDefaultSql": false,
    "UseDatabaseNames": false,
    "UseDbContextSplitting": false,

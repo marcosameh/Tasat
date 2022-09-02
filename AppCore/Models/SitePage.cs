@@ -11,7 +11,6 @@ namespace AppCore.Models
         {
             Banners = new HashSet<Banner>();
             MediaCollections = new HashSet<MediaCollection>();
-            MediaItems = new HashSet<MediaItem>();
             MetaTags = new HashSet<MetaTag>();
         }
 
@@ -20,7 +19,6 @@ namespace AppCore.Models
 
         public virtual ICollection<Banner> Banners { get; set; }
         public virtual ICollection<MediaCollection> MediaCollections { get; set; }
-        public virtual ICollection<MediaItem> MediaItems { get; set; }
         public virtual ICollection<MetaTag> MetaTags { get; set; }
     }
 }

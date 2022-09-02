@@ -40,6 +40,9 @@ namespace AppCore
                    .AddScoped<CurrencyConverter>()
                    .AddScoped<ISendMail, ElasticMailService>()
                    .AddScoped<MailManager>()
+                   .AddScoped<MenuManager>()
+                   .AddScoped<GalleryManager>()
+                   .AddScoped<EventManager>()
                    .AddScoped<MailChimpServiceManager>()
                    .AddScoped<IViewRenderService, ViewRenderService>();
 

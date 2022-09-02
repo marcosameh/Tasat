@@ -29,10 +29,12 @@ namespace AppCore.Models
         public virtual DbSet<City> Cities { get; set; }
         public virtual DbSet<CityLocalized> CityLocalizeds { get; set; }
         public virtual DbSet<Country> Countries { get; set; }
+        public virtual DbSet<Event> Events { get; set; }
         public virtual DbSet<Faq> Faqs { get; set; }
         public virtual DbSet<FaqCategory> FaqCategories { get; set; }
         public virtual DbSet<FaqCategoryLocalized> FaqCategoryLocalizeds { get; set; }
         public virtual DbSet<FaqLocalized> FaqLocalizeds { get; set; }
+        public virtual DbSet<Gallery> Galleries { get; set; }
         public virtual DbSet<HomeBanner> HomeBanners { get; set; }
         public virtual DbSet<HomeBannerLocalized> HomeBannerLocalizeds { get; set; }
         public virtual DbSet<InfoPage> InfoPages { get; set; }
@@ -42,6 +44,8 @@ namespace AppCore.Models
         public virtual DbSet<Language> Languages { get; set; }
         public virtual DbSet<MediaCollection> MediaCollections { get; set; }
         public virtual DbSet<MediaItem> MediaItems { get; set; }
+        public virtual DbSet<MenuItem> MenuItems { get; set; }
+        public virtual DbSet<MenuSection> MenuSections { get; set; }
         public virtual DbSet<MetaTag> MetaTags { get; set; }
         public virtual DbSet<MetaTagLocalized> MetaTagLocalizeds { get; set; }
         public virtual DbSet<News> News { get; set; }
@@ -51,6 +55,7 @@ namespace AppCore.Models
         public virtual DbSet<SettingCategory> SettingCategories { get; set; }
         public virtual DbSet<SitePage> SitePages { get; set; }
         public virtual DbSet<SocialLink> SocialLinks { get; set; }
+        public virtual DbSet<TeamMember> TeamMembers { get; set; }
         public virtual DbSet<Testimonial> Testimonials { get; set; }
         public virtual DbSet<TestimonialSource> TestimonialSources { get; set; }
 
@@ -283,6 +288,27 @@ namespace AppCore.Models
                 entity.Property(e => e.RussianName).HasMaxLength(80);
             });
 
+            modelBuilder.Entity<Event>(entity =>
+            {
+                entity.Property(e => e.Active)
+                    .IsRequired()
+                    .HasDefaultValueSql("((1))");
+
+                entity.Property(e => e.Alt).HasMaxLength(80);
+
+                entity.Property(e => e.Body).IsRequired();
+
+                entity.Property(e => e.DisplayOrder).HasDefaultValueSql("((99))");
+
+                entity.Property(e => e.Photo)
+                    .IsRequired()
+                    .HasMaxLength(100);
+
+                entity.Property(e => e.Title)
+                    .IsRequired()
+                    .HasMaxLength(150);
+            });
+
             modelBuilder.Entity<Faq>(entity =>
             {
                 entity.ToTable("Faq");
@@ -361,6 +387,20 @@ namespace AppCore.Models
                     .HasForeignKey(d => d.LanguageId)
                     .OnDelete(DeleteBehavior.ClientSetNull)
                     .HasConstraintName("FK_LocalizedFaq_Languages");
+            });
+
+            modelBuilder.Entity<Gallery>(entity =>
+            {
+                entity.ToTable("Gallery");
+
+                entity.Property(e => e.Alt).HasMaxLength(80);
+
+                entity.Property(e => e.DisplayOrder).HasDefaultValueSql("((99))");
+
+                entity.Property(e => e.Photo)
+                    .IsRequired()
+                    .HasMaxLength(80)
+                    .HasDefaultValueSql("('Albums Name')");
             });
 
             modelBuilder.Entity<HomeBanner>(entity =>
@@ -523,7 +563,7 @@ namespace AppCore.Models
                 entity.HasOne(d => d.Page)
                     .WithMany(p => p.MediaCollections)
                     .HasForeignKey(d => d.PageId)
-                    .HasConstraintName("FK_MediaCollection_SitePage");
+                    .HasConstraintName("FK_MediaCollection_MediaItemPage");
             });
 
             modelBuilder.Entity<MediaItem>(entity =>
@@ -531,8 +571,6 @@ namespace AppCore.Models
                 entity.ToTable("MediaItem");
 
                 entity.Property(e => e.Alt).HasMaxLength(50);
-
-                entity.Property(e => e.DisplayOrder).HasDefaultValueSql("((0))");
 
                 entity.Property(e => e.ItemKey)
                     .IsRequired()
@@ -543,20 +581,47 @@ namespace AppCore.Models
                 entity.Property(e => e.Photo)
                     .IsRequired()
                     .HasMaxLength(200);
+            });
 
-                entity.Property(e => e.VedioUrl).HasMaxLength(200);
+            modelBuilder.Entity<MenuItem>(entity =>
+            {
+                entity.Property(e => e.Active)
+                    .IsRequired()
+                    .HasDefaultValueSql("((1))");
 
-                entity.HasOne(d => d.MediaCollection)
-                    .WithMany(p => p.MediaItems)
-                    .HasForeignKey(d => d.MediaCollectionId)
-                    .OnDelete(DeleteBehavior.SetNull)
-                    .HasConstraintName("FK_MediaItem_MediaCollection");
+                entity.Property(e => e.Description)
+                    .IsRequired()
+                    .HasMaxLength(120);
 
-                entity.HasOne(d => d.Page)
-                    .WithMany(p => p.MediaItems)
-                    .HasForeignKey(d => d.PageId)
-                    .OnDelete(DeleteBehavior.ClientSetNull)
-                    .HasConstraintName("FK_MediaItem_SitePage");
+                entity.Property(e => e.DisplayOrder).HasDefaultValueSql("((99))");
+
+                entity.Property(e => e.Name)
+                    .IsRequired()
+                    .HasMaxLength(80);
+
+                entity.Property(e => e.Photo)
+                    .IsRequired()
+                    .HasMaxLength(80);
+
+                entity.Property(e => e.Price).HasColumnType("decimal(5, 2)");
+
+                entity.HasOne(d => d.Section)
+                    .WithMany(p => p.MenuItems)
+                    .HasForeignKey(d => d.SectionId)
+                    .HasConstraintName("FK_MenuItems_MenuSections");
+            });
+
+            modelBuilder.Entity<MenuSection>(entity =>
+            {
+                entity.Property(e => e.Active)
+                    .IsRequired()
+                    .HasDefaultValueSql("((1))");
+
+                entity.Property(e => e.DisplayOrder).HasDefaultValueSql("((99))");
+
+                entity.Property(e => e.Name)
+                    .IsRequired()
+                    .HasMaxLength(70);
             });
 
             modelBuilder.Entity<MetaTag>(entity =>
@@ -735,31 +800,44 @@ namespace AppCore.Models
                     .HasMaxLength(250);
             });
 
+            modelBuilder.Entity<TeamMember>(entity =>
+            {
+                entity.ToTable("TeamMember");
+
+                entity.Property(e => e.Alt).HasMaxLength(50);
+
+                entity.Property(e => e.DisplayOrder).HasDefaultValueSql("((99))");
+
+                entity.Property(e => e.Name)
+                    .IsRequired()
+                    .HasMaxLength(80);
+
+                entity.Property(e => e.Photo)
+                    .IsRequired()
+                    .HasMaxLength(80);
+
+                entity.Property(e => e.Posistion)
+                    .IsRequired()
+                    .HasMaxLength(80);
+            });
+
             modelBuilder.Entity<Testimonial>(entity =>
             {
                 entity.ToTable("Testimonial");
 
-                entity.Property(e => e.Date).HasColumnType("smalldatetime");
-
-                entity.Property(e => e.Description)
+                entity.Property(e => e.Active)
                     .IsRequired()
-                    .HasMaxLength(500);
+                    .HasDefaultValueSql("((1))");
 
-                entity.Property(e => e.Location)
+                entity.Property(e => e.Comment)
                     .IsRequired()
-                    .HasMaxLength(50);
+                    .HasMaxLength(1500);
+
+                entity.Property(e => e.DisplayOrder).HasDefaultValueSql("((99))");
 
                 entity.Property(e => e.Name)
                     .IsRequired()
                     .HasMaxLength(50);
-
-                entity.Property(e => e.Title).HasMaxLength(50);
-
-                entity.HasOne(d => d.TestimonialSource)
-                    .WithMany(p => p.Testimonials)
-                    .HasForeignKey(d => d.TestimonialSourceId)
-                    .OnDelete(DeleteBehavior.ClientSetNull)
-                    .HasConstraintName("FK_Testimonial_TestimonialSource");
             });
 
             modelBuilder.Entity<TestimonialSource>(entity =>

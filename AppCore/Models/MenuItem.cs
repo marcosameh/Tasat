@@ -5,12 +5,17 @@ using System.Collections.Generic;
 
 namespace AppCore.Models
 {
-    public partial class Testimonial
+    public partial class MenuItem
     {
         public int Id { get; set; }
+        public int? SectionId { get; set; }
         public string Name { get; set; }
-        public string Comment { get; set; }
-        public int DisplayOrder { get; set; }
+        public string Description { get; set; }
+        public string Photo { get; set; }
+        public decimal Price { get; set; }
+        public int? DisplayOrder { get; set; }
         public bool? Active { get; set; }
+
+        public virtual MenuSection Section { get; set; }
     }
 }

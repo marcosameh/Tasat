@@ -7,15 +7,8 @@ namespace AppCore.Models
 {
     public partial class TestimonialSource
     {
-        public TestimonialSource()
-        {
-            Testimonials = new HashSet<Testimonial>();
-        }
-
         public int Id { get; set; }
         public string Name { get; set; }
         public string Photo { get; set; }
-
-        public virtual ICollection<Testimonial> Testimonials { get; set; }
     }
 }

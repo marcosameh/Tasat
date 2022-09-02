@@ -20,9 +20,8 @@ namespace AppCore.Managers
 
         public IEnumerable<Testimonial> GetTestimonials()
         {
-            var list = _context.Testimonials.Where(x => x.Active)
-                   .AsSingleQuery()
-                   .OrderByDescending(x => x.Id).ToList();
+            var list = _context.Testimonials.Where(x => x.Active.Value)                  
+                   .OrderBy(x => x.DisplayOrder).ToList();
 
             return list;
         }

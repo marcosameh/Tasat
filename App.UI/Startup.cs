@@ -53,8 +53,7 @@ namespace App.UI
 
             services.AddDBContexts(Configuration);
 
-            services.AddLocalizations();
-
+           
             services.AddRegisteredServices();
 
             services.AddCustomizedRoutes();
@@ -91,7 +90,6 @@ namespace App.UI
 
             app.UseSession();
             app.UseCookiePolicy();
-            app.UseMiddleware<RequestCultureMiddleware>();
             app.UseRouting();
             app.UseEndpoints(endpoints =>
             {

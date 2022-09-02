@@ -7,11 +7,6 @@ namespace AppCore.Models
 {
     public partial class MediaCollection
     {
-        public MediaCollection()
-        {
-            MediaItems = new HashSet<MediaItem>();
-        }
-
         public int Id { get; set; }
         public int PageId { get; set; }
         public string Name { get; set; }
@@ -19,6 +14,5 @@ namespace AppCore.Models
         public int Height { get; set; }
 
         public virtual SitePage Page { get; set; }
-        public virtual ICollection<MediaItem> MediaItems { get; set; }
     }
 }

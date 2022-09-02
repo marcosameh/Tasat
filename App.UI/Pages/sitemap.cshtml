@@ -12,7 +12,7 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
     @*Include your static urls*@
     <url>
-        <loc>@Model.DomainName/</loc>
+       @* <loc>@Model.DomainName/</loc>*@
        @*<loc>@hostName/services</loc>*@
         
     </url>
@@ -21,7 +21,7 @@
     @foreach (var article in Model.Articles)
     {
        
-            <loc>@Model.DomainName/@article</loc>
+          @*  <loc>@Model.DomainName/@article</loc>*@
        
     }
      </url>

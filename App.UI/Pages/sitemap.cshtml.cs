@@ -5,7 +5,7 @@ using System.Collections.Generic;
 namespace App.UI.Pages
 {
 
-    public class sitemapModel : PageModelBase
+    public class sitemapModel : PageModel
     {
       //  private readonly SiteMapManager siteMapManager;
 
