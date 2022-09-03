@@ -128,7 +128,7 @@
 
             <ul class="nav nav-tabs d-flex justify-content-center" data-aos="fade-up" data-aos-delay="200">
 
-                @foreach (var (menusection,index) in Model.Menu.WithIndex())
+                @foreach (var (menusection, index) in Model.Menu.WithIndex())
                 {
 
                     <li class="nav-item">
@@ -146,7 +146,7 @@
 
             <div class="tab-content" data-aos="fade-up" data-aos-delay="300">
 
-                @foreach (var (menusection,index) in Model.Menu.WithIndex())
+                @foreach (var (menusection, index) in Model.Menu.WithIndex())
                 {
                     <div class="tab-pane fade @(index==0? "active show":"")" id="_@menusection.Id">
 
@@ -163,9 +163,9 @@
                                     <h4>@menuItem.Name</h4>
                                     @if (!string.IsNullOrEmpty(menuItem.Description))
                                     {
-                                         <p class="ingredients">
-                                        @menuItem.Description
-                                    </p>
+                                        <p class="ingredients">
+                                            @menuItem.Description
+                                        </p>
                                     }
                                     <p class="price">
                                         @menuItem.FormattedPrice
@@ -183,7 +183,7 @@
                     <!-- End Starter Menu Content -->
                 }
 
-           
+
 
             </div>
 
@@ -315,18 +315,20 @@
             <div class="slides-3 swiper" data-aos="fade-up" data-aos-delay="100">
                 <div class="swiper-wrapper">
                     @foreach (var item in Model.Events)
-                   {
-                       
-                    <div class="swiper-slide event-item d-flex flex-column justify-content-end" style="background-image: url('@item.PhotoPath')">
-                        <h3>@item.Title</h3>
-                    
-                        <p class="description">
-                            @item.Body
-                        </p>
-                    </div><!-- End Event item -->
-                   }
+                    {
 
-                   
+                        <div class="swiper-slide event-item d-flex flex-column justify-content-end" style="background-image: url('@item.PhotoPath')">
+                            <h3>@item.Title</h3>
+
+                            <p class="description">
+                                @item.Body
+                            </p>
+                        </div>
+
+                        <!-- End Event item -->
+                    }
+
+
 
                 </div>
                 <div class="swiper-pagination"></div>
@@ -417,12 +419,12 @@
 
             <div class="gallery-slider swiper">
                 <div class="swiper-wrapper align-items-center">
-                    
-                @foreach (var photo in Model.Galleries)
-               {
-                    <div class="swiper-slide"><a class="glightbox" data-gallery="images-gallery" href="@photo.LargePhotoPath"><img src="@photo.SmallPhotoPath" class="img-fluid" alt=""></a></div>
-               }
-                    
+
+                    @foreach (var photo in Model.Galleries)
+                    {
+                        <div class="swiper-slide"><a class="glightbox" data-gallery="images-gallery" href="@photo.LargePhotoPath"><img src="@photo.SmallPhotoPath" class="img-fluid" alt=""></a></div>
+                    }
+
                 </div>
                 <div class="swiper-pagination"></div>
             </div>
@@ -488,26 +490,47 @@
                 </div><!-- End Info Item -->
 
             </div>
-
-            <form action="forms/contact.php" method="post" role="form" class="php-email-form p-3 p-md-4">
+            
+            <form method="post" role="form" class="php-email-form p-3 p-md-4">
                 <div class="row">
                     <div class="col-xl-6 form-group">
-                        <input type="text" name="name" class="form-control" id="name" placeholder="Your Name" required>
+                        <input type="text" asp-for="contactUsEmail.FullName" class="form-control"  placeholder="Your Name" required>
+                        <span class="text-bg-danger" asp-validation-for="contactUsEmail.FullName"></span>
                     </div>
                     <div class="col-xl-6 form-group">
-                        <input type="email" class="form-control" name="email" id="email" placeholder="Your Email" required>
+                        <input type="email" class="form-control" asp-for="contactUsEmail.Email"  placeholder="Your Email" required>
+                        <span class="text-bg-danger" asp-validation-for="contactUsEmail.Email"></span>
                     </div>
                 </div>
                 <div class="form-group">
-                    <input type="text" class="form-control" name="subject" id="subject" placeholder="Subject" required>
+                   
+                    <select class="form-control" id="Subject" asp-for="contactUsEmail.Subject">
+                        <option value="" selected disabled>Subject</option>
+                        <option value="Contact Us">Contact Us</option>
+                        <option value="Order">Order</option>
+                        <option value="Complain">Complain</option>
+                    </select>
+                    <span class="text-bg-danger" asp-validation-for="contactUsEmail.Subject"></span>
                 </div>
                 <div class="form-group">
-                    <textarea class="form-control" name="message" rows="5" placeholder="Message" required></textarea>
+                    
+                    <select class="form-control" id="Department" asp-for="contactUsEmail.Department">
+                        <option value="" selected disabled>Select Department</option>
+                        <option value="Chefs">Chefs</option>
+                        <option value="Casher">Casher</option>
+                        <option value="Staff">Staff</option>
+                    </select>
+                   
+                </div>
+                <div class="form-group">
+                    <textarea class="form-control" asp-for="contactUsEmail.Message" rows="5" placeholder="Message" required></textarea>
+                    <span class="text-bg-danger" asp-validation-for="contactUsEmail.Message"></span>
                 </div>
                 <div class="my-3">
-                    <div class="loading">Loading</div>
+                    <alert render-mode="Bootstrap5"></alert>
+                   @* <div class="loading">Loading</div>
                     <div class="error-message"></div>
-                    <div class="sent-message">Your message has been sent. Thank you!</div>
+                    <div class="sent-message">Your message has been sent. Thank you!</div>*@
                 </div>
                 <div class="text-center"><button type="submit">Send Message</button></div>
             </form>

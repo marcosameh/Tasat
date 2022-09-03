@@ -7,6 +7,10 @@
     <RootNamespace>App.UI</RootNamespace>
     <AssemblyName>App.UI</AssemblyName>
   </PropertyGroup>
+
+  <ItemGroup>
+    <PackageReference Include="LazZiya.TagHelpers" Version="6.0.2" />
+  </ItemGroup>
   
   <ItemGroup>
     <ProjectReference Include="..\AppCore\AppCore.csproj" />

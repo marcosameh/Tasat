@@ -1,10 +1,11 @@
 {
   "version": 2,
-  "dgSpecHash": "DIRdHnnGH/ymopO4PN7PquKVRKBhx71Dpo1YDDqCXHDnsHd2tlPDHbzffHcVcciIruykZaPUis7W4LFxxvmn5A==",
+  "dgSpecHash": "mWunECsAzVc8ydR5wdFE80/Tbs5BAP174atQA1gMP7nvMzOp52IcVRxS0w1YTUkZwg09YfScZwCgdoMh0esJuA==",
   "success": true,
   "projectFilePath": "D:\\Clients\\Tasat\\App.UI\\App.Ui.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\M\\.nuget\\packages\\humanizer.core\\2.11.10\\humanizer.core.2.11.10.nupkg.sha512",
+    "C:\\Users\\M\\.nuget\\packages\\lazziya.taghelpers\\6.0.2\\lazziya.taghelpers.6.0.2.nupkg.sha512",
     "C:\\Users\\M\\.nuget\\packages\\mailchimp.net.v3\\5.2.0\\mailchimp.net.v3.5.2.0.nupkg.sha512",
     "C:\\Users\\M\\.nuget\\packages\\microsoft.aspnetcore.antiforgery\\2.2.0\\microsoft.aspnetcore.antiforgery.2.2.0.nupkg.sha512",
     "C:\\Users\\M\\.nuget\\packages\\microsoft.aspnetcore.authentication.abstractions\\2.2.0\\microsoft.aspnetcore.authentication.abstractions.2.2.0.nupkg.sha512",
