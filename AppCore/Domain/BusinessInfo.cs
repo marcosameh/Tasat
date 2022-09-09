@@ -24,6 +24,7 @@ namespace AppCore.Models
         public string ViberLink { get; set; }
         public string WhatsAppLink { get; set; }
         public string AdminEmail { get; set; }
+        public string OpeningHours { get; set; }
         public string FaxNo { get; set; }
         public string Video { get; set; }
 

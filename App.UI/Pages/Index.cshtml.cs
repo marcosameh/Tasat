@@ -8,6 +8,7 @@ using AppCore.Models;
 using LazZiya.TagHelpers.Alerts;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.RazorPages;
+using System.Collections.Generic;
 using System.Linq;
 
 namespace App.UI.Pages
@@ -28,6 +29,8 @@ namespace App.UI.Pages
         public IQueryable<MenuSection> Menu { get; set; }  
         public IQueryable<Event> Events { get; set; }  
         public IQueryable<Gallery> Galleries { get; set; }
+       
+        public BusinessInfo BusinessInfo { get; set; }
 
         [BindProperty]
         public ContactUsEmail contactUsEmail { get; set; } = new ContactUsEmail();
@@ -61,6 +64,8 @@ namespace App.UI.Pages
             Menu=menuManager.GetMenu();
             Events = eventManager.GetEvents();
             Galleries=galleryManager.GetGallery();
+            BusinessInfo=businessInfoManager.GetBusinessInfo();
+           
 
         }
         public IActionResult OnPost()
@@ -70,7 +75,7 @@ namespace App.UI.Pages
 
             MailInfo mailInfo = new MailInfo
                 {
-                    Title = "Contact Form Request",
+                    Title = contactUsEmail.Subject,
                     Model =contactUsEmail,
                     ToMail = businessInfoManager.GetSetting(SettingType.ContactUsEmail),
                     Subject = contactUsEmail.Subject,

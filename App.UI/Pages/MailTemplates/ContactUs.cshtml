@@ -181,17 +181,33 @@
                                                     The following email has been sent by:
                                                     <br />
                                                     @Model.FullName
-                                                    <br />
-                                                    <b>Country:</b> @Model.Country
-                                                    <br />
+                                                    <br />                                                  
                                                     <b>Email:</b> @Model.Email
                                                     <br />
                                                     <b>Phone:</b> @Model.Phone
                                                     <br />
-                                                    <b>Subject:</b> @Model.Subject
-                                                    <br />
-                                                    <b>Message:</b> @Model.Message
-                                                    <br />
+                                                    
+                                                    @if (!string.IsNullOrEmpty(Model.Department))
+                                                    {
+                                                        <b>Department:</b> @Model.Department
+                                                        <br />
+                                                    }
+                                                    @if (Model.Subject == "Complain")
+                                                    {
+                                                        <b>Complain:</b> @Model.Message
+                                                        <br />
+                                                    }
+                                                    @if (Model.Subject == "Order")
+                                                    {
+                                                        <b>Order:</b> @Model.Message
+                                                        <br />
+                                                    }
+                                                     @if (Model.Subject == "Contact Us")
+                                                    {
+                                                        <b>Message:</b> @Model.Message
+                                                        <br />
+                                                    }
+
                                                     <br />
                                                     Please don't reply directly to this email, this is a system generated message.
                                                 </td>
@@ -232,7 +248,7 @@
                                             <td width="10" align="center" style="line-height:0px;">
                                                 <a href="@Model.FacebookLink" target="_blank">
                                                     <img style="display:block; line-height:0px; font-size:0px; border:0px;"
-                                                         src="@Model.HostName/images/mail-templates/facebook.png" alt="img" />
+                                                     src="@Model.HostName/images/mail-templates/facebook.png" alt="img" />
                                                 </a>
                                             </td>
                                         }

@@ -20,6 +20,7 @@
         </div>
     </div>
 </section><!-- End Hero Section -->
+
 <main id="main">
 
     <!-- ======= About Section ======= -->
@@ -432,9 +433,10 @@
         </div>
     </section><!-- End Gallery Section -->
     <!-- ======= Contact Section ======= -->
+
     <section id="contact" class="contact">
         <div class="container" data-aos="fade-up">
-
+            <alert render-mode="Bootstrap5"></alert>
             <div class="section-header">
                 <h2>Contact</h2>
                 <p>Need Help? <span>Contact Us</span></p>
@@ -451,7 +453,7 @@
                         <i class="icon bi bi-map flex-shrink-0"></i>
                         <div>
                             <h3>Our Address</h3>
-                            <p>A108 Adam Street, New York, NY 535022</p>
+                            <p>@Model.BusinessInfo.Address</p>
                         </div>
                     </div>
                 </div><!-- End Info Item -->
@@ -461,7 +463,7 @@
                         <i class="icon bi bi-envelope flex-shrink-0"></i>
                         <div>
                             <h3>Email Us</h3>
-                            <p>contact@example.com</p>
+                            <p>@Model.BusinessInfo.ContactUsEmail</p>
                         </div>
                     </div>
                 </div><!-- End Info Item -->
@@ -471,10 +473,16 @@
                         <i class="icon bi bi-telephone flex-shrink-0"></i>
                         <div>
                             <h3>Call Us</h3>
-                            <p>+1 5589 55488 55</p>
+                            @foreach (var phone in Model.BusinessInfo.PhoneNumbers)
+                            {
+
+                                <p>@phone</p>
+                            }
                         </div>
                     </div>
-                </div><!-- End Info Item -->
+                </div>
+
+                <!-- End Info Item -->
 
                 <div class="col-md-6">
                     <div class="info-item  d-flex align-items-center">
@@ -482,28 +490,33 @@
                         <div>
                             <h3>Opening Hours</h3>
                             <div>
-                                <strong>Mon-Sat:</strong> 11AM - 23PM;
-                                <strong>Sunday:</strong> Closed
+                                @Model.BusinessInfo.OpeningHours
                             </div>
                         </div>
                     </div>
-                </div><!-- End Info Item -->
+                </div>
+
+                <!-- End Info Item -->
 
             </div>
-            
+
             <form method="post" role="form" class="php-email-form p-3 p-md-4">
                 <div class="row">
-                    <div class="col-xl-6 form-group">
-                        <input type="text" asp-for="contactUsEmail.FullName" class="form-control"  placeholder="Your Name" required>
+                    <div class="col-xl-4 form-group">
+                        <input type="text" asp-for="contactUsEmail.FullName" class="form-control" placeholder="Your Name" required>
                         <span class="text-bg-danger" asp-validation-for="contactUsEmail.FullName"></span>
                     </div>
-                    <div class="col-xl-6 form-group">
-                        <input type="email" class="form-control" asp-for="contactUsEmail.Email"  placeholder="Your Email" required>
+                    <div class="col-xl-4 form-group">
+                        <input type="email" class="form-control" asp-for="contactUsEmail.Email" placeholder="Your Email" required>
                         <span class="text-bg-danger" asp-validation-for="contactUsEmail.Email"></span>
+                    </div>
+                    <div class="col-xl-4 form-group">
+                        <input type="text" class="form-control" asp-for="contactUsEmail.Phone" placeholder="Your Phone Number" required>
+                        <span class="text-bg-danger" asp-validation-for="contactUsEmail.Phone"></span>
                     </div>
                 </div>
                 <div class="form-group">
-                   
+
                     <select class="form-control" id="Subject" asp-for="contactUsEmail.Subject">
                         <option value="" selected disabled>Subject</option>
                         <option value="Contact Us">Contact Us</option>
@@ -513,22 +526,22 @@
                     <span class="text-bg-danger" asp-validation-for="contactUsEmail.Subject"></span>
                 </div>
                 <div class="form-group">
-                    
+
                     <select class="form-control" id="Department" asp-for="contactUsEmail.Department">
                         <option value="" selected disabled>Select Department</option>
                         <option value="Chefs">Chefs</option>
                         <option value="Casher">Casher</option>
-                        <option value="Staff">Staff</option>
+                        <option value="Staff">Delivery</option>
                     </select>
-                   
+
                 </div>
                 <div class="form-group">
-                    <textarea class="form-control" asp-for="contactUsEmail.Message" rows="5" placeholder="Message" required></textarea>
+                    <textarea class="form-control" asp-for="contactUsEmail.Message" rows="5" id="textArea" placeholder="Message" required></textarea>
                     <span class="text-bg-danger" asp-validation-for="contactUsEmail.Message"></span>
                 </div>
                 <div class="my-3">
-                    <alert render-mode="Bootstrap5"></alert>
-                   @* <div class="loading">Loading</div>
+
+                    @* <div class="loading">Loading</div>
                     <div class="error-message"></div>
                     <div class="sent-message">Your message has been sent. Thank you!</div>*@
                 </div>
@@ -537,6 +550,10 @@
             <!--End Contact Form -->
 
         </div>
-    </section><!-- End Contact Section -->
+    </section>
 
-</main><!-- End #main -->
+    <!-- End Contact Section -->
+
+</main>
+
+<!-- End #main -->

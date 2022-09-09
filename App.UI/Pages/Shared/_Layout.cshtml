@@ -1,7 +1,10 @@
 ﻿@using System.Globalization
 @using AppCore.Utilities
 @using App.UI.Models
-
+@inject AppCore.Managers.BusinessInfoManager businessInfoManager
+@{
+    var bussinessInfo = businessInfoManager.GetBusinessInfo();
+}
 <!DOCTYPE html>
 <html lang="en">
 
@@ -81,8 +84,7 @@
           <div>
             <h4>Address</h4>
             <p>
-              A108 Adam Street <br>
-              New York, NY 535022 - US<br>
+              @bussinessInfo.Address
             </p>
           </div>
 
@@ -91,10 +93,14 @@
         <div class="col-lg-3 col-md-6 footer-links d-flex">
           <i class="bi bi-telephone icon"></i>
           <div>
-            <h4>Reservations</h4>
+            <h4>Contact Us</h4>
             <p>
-              <strong>Phone:</strong> +1 5589 55488 55<br>
-              <strong>Email:</strong> info@example.com<br>
+                @foreach (var phone in bussinessInfo.PhoneNumbers)
+               {
+                   
+               <strong>Phone:</strong>@phone.FormattedNumber<br>
+               }
+              <strong>Email:</strong> @bussinessInfo.ContactUsEmail<br>
             </p>
           </div>
         </div>
@@ -104,8 +110,9 @@
           <div>
             <h4>Opening Hours</h4>
             <p>
-              <strong>Mon-Sat: 11AM</strong> - 23PM<br>
-              Sunday: Closed
+              @*<strong>Mon-Sat: 11AM</strong> - 23PM<br>
+              Sunday: Closed*@
+              @Html.Raw(bussinessInfo.OpeningHours)
             </p>
           </div>
         </div>
@@ -113,10 +120,12 @@
         <div class="col-lg-3 col-md-6 footer-links">
           <h4>Follow Us</h4>
           <div class="social-links d-flex">
-            <a href="#" class="twitter"><i class="bi bi-twitter"></i></a>
-            <a href="#" class="facebook"><i class="bi bi-facebook"></i></a>
-            <a href="#" class="instagram"><i class="bi bi-instagram"></i></a>
-            <a href="#" class="linkedin"><i class="bi bi-linkedin"></i></a>
+              @foreach (var link in businessInfoManager.GetSocialLinks())
+             {
+               <a href="@link.Link" target="_blank" class="@link.CssClass"><i class="bi bi-@link.CssClass"></i></a>
+                 
+             }
+          
           </div>
         </div>
 
@@ -132,7 +141,7 @@
         <!-- You can delete the links only if you purchased the pro version. -->
         <!-- Licensing information: https://bootstrapmade.com/license/ -->
         <!-- Purchase the pro version with working PHP/AJAX contact form: https://bootstrapmade.com/yummy-bootstrap-restaurant-website-template/ -->
-        Designed by <a href="https://bootstrapmade.com/">BootstrapMade</a>
+        Designed by <a href="tel:01225115538">Marco Sameh</a>
       </div>
     </div>
  
@@ -165,12 +174,17 @@
             $("#Subject").change(function() {
                 var subject = $(this).val();
                 if (subject == "Complain") {
-                    $('#Department').css('display', '');
-                    $('#Department').addClass("validate[required]")
+                    $('#Department').css('display','');                  
+                    $('#textArea').attr("placeholder", "Type your Complain here");
                 }
-                else {
+                if (subject == "Order") {
                     $('#Department').css('display', 'none');
-                    $('#Department').removeClass("validate[required]")
+                    $('#textArea').attr("placeholder", "Type your Order here");
+                }
+                if (subject == "Contact Us") {
+                    $('#Department').css('display', 'none');
+                     $('#textArea').attr("placeholder", "Type your Message here");
+                   
                 }
             });
         });

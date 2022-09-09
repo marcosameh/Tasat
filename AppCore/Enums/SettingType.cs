@@ -12,6 +12,7 @@
         Landline,
         BusinessName,
         Email, Intro, DomainName, WebsiteLink,
-        WeatherApiKey
+        WeatherApiKey,
+        OpeningHours
     }
 }

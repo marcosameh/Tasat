@@ -86,7 +86,14 @@
                         <li><a href="/Events/list.aspx">
                             <i class="fa fa-newspaper"></i><span>Events & News</span></a></li>
 
-                      
+                        
+                        <li><a href="/Testimonials/list.aspx">
+                            <i class="fa fa-book"></i><span>Guest Book</span></a></li>
+                       
+                        <li><a href="/teammembers/list.aspx">
+                            <i class="fa fa-users"></i><span>Team</span></a></li>
+
+
                         <li><a href="/SocialLinks/list.aspx">
                            <i class="fa-brands fa-facebook"></i><span>Social Links</span></a></li>
 
