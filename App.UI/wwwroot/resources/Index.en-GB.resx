@@ -117,7 +117,133 @@
   <resheader name="writer">
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
-  <data name="key" xml:space="preserve">
-    <value>value</value>
+  <data name="About Us" xml:space="preserve">
+    <value>About Us</value>
+  </data>
+  <data name="Call Us" xml:space="preserve">
+    <value>Call Us</value>
+  </data>
+  <data name="Check Our" xml:space="preserve">
+    <value>Yummy Menu</value>
+  </data>
+  <data name="Check Our Menu" xml:space="preserve">
+    <value>Check Our Menu</value>
+  </data>
+  <data name="Contact" xml:space="preserve">
+    <value>Contact</value>
+  </data>
+  <data name="Contact Us" xml:space="preserve">
+    <value>Contact Us</value>
+  </data>
+  <data name="Email Us" xml:space="preserve">
+    <value>Email Us</value>
+  </data>
+  <data name="Events" xml:space="preserve">
+    <value>Events</value>
+  </data>
+  <data name="gallery" xml:space="preserve">
+    <value>gallery</value>
+  </data>
+  <data name="In Our Restaurant" xml:space="preserve">
+    <value>In Our Restaurant</value>
+  </data>
+  <data name="Item1" xml:space="preserve">
+    <value>Ullamco laboris nisi ut aliquip ex ea commodo consequat.</value>
+  </data>
+  <data name="Item2" xml:space="preserve">
+    <value>Duis aute irure dolor in reprehenderit in voluptate velit.</value>
+  </data>
+  <data name="Item3" xml:space="preserve">
+    <value>Ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate trideta storacalaperda mastiro dolore eu fugiat nulla pariatur.</value>
+  </data>
+  <data name="Learn More" xml:space="preserve">
+    <value>Learn More</value>
+  </data>
+  <data name="Menu" xml:space="preserve">
+    <value>Menu</value>
+  </data>
+  <data name="Need Help?" xml:space="preserve">
+    <value>Need Help?</value>
+  </data>
+  <data name="Opening Hours" xml:space="preserve">
+    <value>Opening Hours</value>
+  </data>
+  <data name="Order Now" xml:space="preserve">
+    <value>Order Now</value>
+  </data>
+  <data name="Our" xml:space="preserve">
+    <value>Our</value>
+  </data>
+  <data name="Our Address" xml:space="preserve">
+    <value>Our Address</value>
+  </data>
+  <data name="Our Gallery" xml:space="preserve">
+    <value>Our Gallery</value>
+  </data>
+  <data name="Our Menu" xml:space="preserve">
+    <value>Our Menu</value>
+  </data>
+  <data name="Parghraph1" xml:space="preserve">
+    <value>Sed autem laudantium dolores. Voluptatem itaque ea consequatur eveniet. Eum quas beatae cumque eum quaerat.plllczzzzzzzzzzzzzz</value>
+  </data>
+  <data name="Parghraph2" xml:space="preserve">
+    <value>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore
+                            magna aliqua.</value>
+  </data>
+  <data name="Parghraph3" xml:space="preserve">
+    <value>Ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate
+                            velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident</value>
+  </data>
+  <data name="Parghraph4" xml:space="preserve">
+    <value>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Duis aute irure dolor in reprehenderit
+                            Asperiores dolores sed et. Tenetur quia eos. Autem tempore quibusdam vel necessitatibus optio ad corporis.</value>
+  </data>
+  <data name="Proffesional" xml:space="preserve">
+    <value>Proffesional</value>
+  </data>
+  <data name="Saying About Us" xml:space="preserve">
+    <value>Saying About Us</value>
+  </data>
+  <data name="Share" xml:space="preserve">
+    <value>Share</value>
+  </data>
+  <data name="SubTitle" xml:space="preserve">
+    <value>Delicious Food</value>
+  </data>
+  <data name="Team" xml:space="preserve">
+    <value>Team</value>
+  </data>
+  <data name="Testimonials" xml:space="preserve">
+    <value>Testimonials</value>
+  </data>
+  <data name="Title" xml:space="preserve">
+    <value>Enjoy Your Healthy</value>
+  </data>
+  <data name="What Are They" xml:space="preserve">
+    <value>What Are They</value>
+  </data>
+  <data name="Why Choose Yummy?" xml:space="preserve">
+    <value>Why Choose Yummy?</value>
+  </data>
+  <data name="WhyChooseUs1SubTitle" xml:space="preserve">
+    <value>Consequuntur sunt aut quasi enim aliquam quae harum pariatur laboris nisi ut aliquip</value>
+  </data>
+  <data name="WhyChooseUs1Title" xml:space="preserve">
+    <value>Corporis voluptates officia eiusmod</value>
+  </data>
+  <data name="WhyChooseUs2SubTitle" xml:space="preserve">
+    <value>Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt</value>
+  </data>
+  <data name="WhyChooseUs2Title" xml:space="preserve">
+    <value>Ullamco laboris ladore pan</value>
+  </data>
+  <data name="WhyChooseUs3SubTitle" xml:space="preserve">
+    <value>Aut suscipit aut cum nemo deleniti aut omnis. Doloribus ut maiores omnis facere</value>
+  </data>
+  <data name="WhyChooseUs3Title" xml:space="preserve">
+    <value>Labore consequatur incidid dolore</value>
+  </data>
+  <data name="Your Moments" xml:space="preserve">
+    <value>Your Moments</value>
   </data>
 </root>

@@ -7,10 +7,10 @@
     <div class="container">
         <div class="row justify-content-between gy-5">
             <div class="col-lg-5 order-2 order-lg-1 d-flex flex-column justify-content-center align-items-center align-items-lg-start text-center text-lg-start">
-                <h2 data-aos="fade-up">Enjoy Your Healthy<br>Delicious Food</h2>
-                <p data-aos="fade-up" data-aos-delay="100">Sed autem laudantium dolores. Voluptatem itaque ea consequatur eveniet. Eum quas beatae cumque eum quaerat.</p>
+                <h2 data-aos="fade-up"><localize key="Title" /><br><localize key="SubTitle" /></h2>
+                <p data-aos="fade-up" data-aos-delay="100"><localize key="Parghraph1" /></p>
                 <div class="d-flex" data-aos="fade-up" data-aos-delay="200">
-                    <a href="#menu" class="btn-book-a-table">Check Our Menu</a>
+                    <a href="#menu" class="btn-book-a-table"><localize key="Check Our Menu" /></a>
                     @*  <a href="https://www.youtube.com/watch?v=LXb3EKWsInQ" class="glightbox btn-watch-video d-flex align-items-center"><i class="bi bi-play-circle"></i><span>Watch Video</span></a>*@
                 </div>
             </div>
@@ -28,31 +28,34 @@
         <div class="container" data-aos="fade-up">
 
             <div class="section-header">
-                <h2>About Us</h2>
-                <p>Learn More <span>About Us</span></p>
+                <h2><localize key="About Us" /></h2>
+                <p> <localize key="Learn More" /> <span><localize key="About Us" /></span></p>
             </div>
 
             <div class="row gy-4">
                 <div class="col-lg-7 position-relative about-img" style="background-image: url(@Model.LeftImageMedia.PhotoPath) ;" data-aos="fade-up" data-aos-delay="150">
                     <div class="call-us position-absolute">
-                        <h4>Book a Table</h4>
-                        <p>+1 5589 55488 55</p>
+                        <h4><localize key="Order Now" /></h4>
+                        @foreach (var phone in Model.BusinessInfo.PhoneNumbers)
+                        {
+                           <a href="tel:@phone.FormattedNumber"> <p>@phone.FormattedNumber</p></a>
+
+                        }
                     </div>
                 </div>
                 <div class="col-lg-5 d-flex align-items-end" data-aos="fade-up" data-aos-delay="300">
                     <div class="content ps-0 ps-lg-5">
                         <p class="fst-italic">
-                            Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore
-                            magna aliqua.
+                            <localize key="Parghraph2" />
                         </p>
                         <ul>
-                            <li><i class="bi bi-check2-all"></i> Ullamco laboris nisi ut aliquip ex ea commodo consequat.</li>
-                            <li><i class="bi bi-check2-all"></i> Duis aute irure dolor in reprehenderit in voluptate velit.</li>
-                            <li><i class="bi bi-check2-all"></i> Ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate trideta storacalaperda mastiro dolore eu fugiat nulla pariatur.</li>
+                            <li><i class="bi bi-check2-all"></i> <localize key="Item1" /></li>
+                            <li><i class="bi bi-check2-all"></i> <localize key="Item2" /></li>
+                            <li><i class="bi bi-check2-all"></i> <localize key="Item3" /></li>
                         </ul>
                         <p>
-                            Ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate
-                            velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident
+                            
+                            <localize key="Parghraph3" />
                         </p>
 
                         <div class="position-relative mt-4">
@@ -73,14 +76,12 @@
 
                 <div class="col-lg-4" data-aos="fade-up" data-aos-delay="100">
                     <div class="why-box">
-                        <h3>Why Choose Yummy?</h3>
+                        <h3> <localize key="Why Choose Yummy?" /></h3>
                         <p>
-                            Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Duis aute irure dolor in reprehenderit
-                            Asperiores dolores sed et. Tenetur quia eos. Autem tempore quibusdam vel necessitatibus optio ad corporis.
+                            <localize key="Parghraph4" />
+                           
                         </p>
-                        <div class="text-center">
-                            <a href="#" class="more-btn">Learn More <i class="bx bx-chevron-right"></i></a>
-                        </div>
+                        
                     </div>
                 </div><!-- End Why Box -->
 
@@ -90,24 +91,24 @@
                         <div class="col-xl-4" data-aos="fade-up" data-aos-delay="200">
                             <div class="icon-box d-flex flex-column justify-content-center align-items-center">
                                 <i class="bi bi-clipboard-data"></i>
-                                <h4>Corporis voluptates officia eiusmod</h4>
-                                <p>Consequuntur sunt aut quasi enim aliquam quae harum pariatur laboris nisi ut aliquip</p>
+                                <h4> <localize key="WhyChooseUs1Title" /></h4>
+                                <p> <localize key="WhyChooseUs1SubTitle" /></p>
                             </div>
                         </div><!-- End Icon Box -->
 
                         <div class="col-xl-4" data-aos="fade-up" data-aos-delay="300">
                             <div class="icon-box d-flex flex-column justify-content-center align-items-center">
                                 <i class="bi bi-gem"></i>
-                                <h4>Ullamco laboris ladore pan</h4>
-                                <p>Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt</p>
+                                <h4> <localize key="WhyChooseUs2Title" /></h4>
+                                <p><localize key="WhyChooseUs2SubTitle" /></p>
                             </div>
                         </div><!-- End Icon Box -->
 
                         <div class="col-xl-4" data-aos="fade-up" data-aos-delay="400">
                             <div class="icon-box d-flex flex-column justify-content-center align-items-center">
                                 <i class="bi bi-inboxes"></i>
-                                <h4>Labore consequatur incidid dolore</h4>
-                                <p>Aut suscipit aut cum nemo deleniti aut omnis. Doloribus ut maiores omnis facere</p>
+                                <h4> <localize key="WhyChooseUs3Title" /></h4>
+                                <p> <localize key="WhyChooseUs3SubTitle" /></p>
                             </div>
                         </div><!-- End Icon Box -->
 
@@ -123,8 +124,8 @@
         <div class="container" data-aos="fade-up">
 
             <div class="section-header">
-                <h2>Our Menu</h2>
-                <p>Check Our <span>Yummy Menu</span></p>
+                <h2><localize key="Our Menu" /></h2>
+                <p><localize key="Check Our" /> <span><localize key="Yummy Menu" /></span></p>
             </div>
 
             <ul class="nav nav-tabs d-flex justify-content-center" data-aos="fade-up" data-aos-delay="200">
@@ -152,7 +153,7 @@
                     <div class="tab-pane fade @(index==0? "active show":"")" id="_@menusection.Id">
 
                         <div class="tab-header text-center">
-                            <p>Menu</p>
+                            <p> <localize key="Menu" /></p>
                             <h3>@menusection.Name</h3>
                         </div>
 
@@ -195,108 +196,43 @@
         <div class="container" data-aos="fade-up">
 
             <div class="section-header">
-                <h2>Testimonials</h2>
-                <p>What Are They <span>Saying About Us</span></p>
+                <h2> <localize key="Testimonials" /></h2>
+                <p> <localize key="What Are They" /> <span> <localize key="Saying About Us" /></span></p>
             </div>
 
             <div class="slides-1 swiper" data-aos="fade-up" data-aos-delay="100">
                 <div class="swiper-wrapper">
 
-                    <div class="swiper-slide">
-                        <div class="testimonial-item">
-                            <div class="row gy-4 justify-content-center">
-                                <div class="col-lg-6">
-                                    <div class="testimonial-content">
-                                        <p>
-                                            <i class="bi bi-quote quote-icon-left"></i>
-                                            Proin iaculis purus consequat sem cure digni ssim donec porttitora entum suscipit rhoncus. Accusantium quam, ultricies eget id, aliquam eget nibh et. Maecen aliquam, risus at semper.
-                                            <i class="bi bi-quote quote-icon-right"></i>
-                                        </p>
-                                        <h3>Saul Goodman</h3>
-                                        <h4>Ceo &amp; Founder</h4>
-                                        <div class="stars">
-                                            <i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i>
+                    @foreach (var testmoinal in Model.Testimonials)
+                    {
+                        <div class="swiper-slide">
+                            <div class="testimonial-item">
+                                <div class="row gy-4 justify-content-center">
+                                    <div class="col-lg-8">
+                                        <div class="testimonial-content">
+                                            <p>
+                                                <i class="bi bi-quote quote-icon-left"></i>
+                                                @testmoinal.Comment
+                                                <i class="bi bi-quote quote-icon-right"></i>
+                                            </p>
+                                            <h3>@testmoinal.Name</h3>
+                                            @*  <h4>@testmoinal.</h4>*@
+                                            @* <div class="stars">
+                                        <i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i>
+                                        </div>*@
                                         </div>
                                     </div>
-                                </div>
-                                <div class="col-lg-2 text-center">
-                                    <img src="/assets/img/testimonials/testimonials-1.jpg" class="img-fluid testimonial-img" alt="">
+                                    @*   <div class="col-lg-2 text-center">
+                                <img src="/assets/img/testimonials/testimonials-1.jpg" class="img-fluid testimonial-img" alt="">
+                                </div>*@
                                 </div>
                             </div>
                         </div>
-                    </div><!-- End testimonial item -->
 
-                    <div class="swiper-slide">
-                        <div class="testimonial-item">
-                            <div class="row gy-4 justify-content-center">
-                                <div class="col-lg-6">
-                                    <div class="testimonial-content">
-                                        <p>
-                                            <i class="bi bi-quote quote-icon-left"></i>
-                                            Export tempor illum tamen malis malis eram quae irure esse labore quem cillum quid cillum eram malis quorum velit fore eram velit sunt aliqua noster fugiat irure amet legam anim culpa.
-                                            <i class="bi bi-quote quote-icon-right"></i>
-                                        </p>
-                                        <h3>Sara Wilsson</h3>
-                                        <h4>Designer</h4>
-                                        <div class="stars">
-                                            <i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i>
-                                        </div>
-                                    </div>
-                                </div>
-                                <div class="col-lg-2 text-center">
-                                    <img src="/assets/img/testimonials/testimonials-2.jpg" class="img-fluid testimonial-img" alt="">
-                                </div>
-                            </div>
-                        </div>
-                    </div><!-- End testimonial item -->
+                        <!-- End testimonial item -->
+                    }
 
-                    <div class="swiper-slide">
-                        <div class="testimonial-item">
-                            <div class="row gy-4 justify-content-center">
-                                <div class="col-lg-6">
-                                    <div class="testimonial-content">
-                                        <p>
-                                            <i class="bi bi-quote quote-icon-left"></i>
-                                            Enim nisi quem export duis labore cillum quae magna enim sint quorum nulla quem veniam duis minim tempor labore quem eram duis noster aute amet eram fore quis sint minim.
-                                            <i class="bi bi-quote quote-icon-right"></i>
-                                        </p>
-                                        <h3>Jena Karlis</h3>
-                                        <h4>Store Owner</h4>
-                                        <div class="stars">
-                                            <i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i>
-                                        </div>
-                                    </div>
-                                </div>
-                                <div class="col-lg-2 text-center">
-                                    <img src="/assets/img/testimonials/testimonials-3.jpg" class="img-fluid testimonial-img" alt="">
-                                </div>
-                            </div>
-                        </div>
-                    </div><!-- End testimonial item -->
 
-                    <div class="swiper-slide">
-                        <div class="testimonial-item">
-                            <div class="row gy-4 justify-content-center">
-                                <div class="col-lg-6">
-                                    <div class="testimonial-content">
-                                        <p>
-                                            <i class="bi bi-quote quote-icon-left"></i>
-                                            Quis quorum aliqua sint quem legam fore sunt eram irure aliqua veniam tempor noster veniam enim culpa labore duis sunt culpa nulla illum cillum fugiat legam esse veniam culpa fore nisi cillum quid.
-                                            <i class="bi bi-quote quote-icon-right"></i>
-                                        </p>
-                                        <h3>John Larson</h3>
-                                        <h4>Entrepreneur</h4>
-                                        <div class="stars">
-                                            <i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i>
-                                        </div>
-                                    </div>
-                                </div>
-                                <div class="col-lg-2 text-center">
-                                    <img src="/assets/img/testimonials/testimonials-4.jpg" class="img-fluid testimonial-img" alt="">
-                                </div>
-                            </div>
-                        </div>
-                    </div><!-- End testimonial item -->
 
                 </div>
                 <div class="swiper-pagination"></div>
@@ -309,8 +245,8 @@
         <div class="container-fluid" data-aos="fade-up">
 
             <div class="section-header">
-                <h2>Events</h2>
-                <p>Share <span>Your Moments</span> In Our Restaurant</p>
+                <h2> <localize key="Events" /></h2>
+                <p><localize key="Share" /> <span><localize key="Your Moments" /></span><localize key="In Our Restaurant" /> </p>
             </div>
 
             <div class="slides-3 swiper" data-aos="fade-up" data-aos-delay="100">
@@ -342,68 +278,33 @@
         <div class="container" data-aos="fade-up">
 
             <div class="section-header">
-                <h2>Chefs</h2>
-                <p>Our <span>Proffesional</span> Chefs</p>
+                <h2> <localize key="Team" /></h2>
+                <p><localize key="Our" /> <span> <localize key="Proffesional" /> </span><localize key="Team" /></p>
             </div>
 
             <div class="row gy-4">
+                @foreach (var teamMember in Model.Team)
+                {
 
-                <div class="col-lg-4 col-md-6 d-flex align-items-stretch" data-aos="fade-up" data-aos-delay="100">
-                    <div class="chef-member">
-                        <div class="member-img">
-                            <img src="/assets/img/chefs/chefs-1.jpg" class="img-fluid" alt="">
-                            <div class="social">
-                                <a href=""><i class="bi bi-twitter"></i></a>
-                                <a href=""><i class="bi bi-facebook"></i></a>
-                                <a href=""><i class="bi bi-instagram"></i></a>
-                                <a href=""><i class="bi bi-linkedin"></i></a>
+                    <div class="col-lg-4 col-md-6 d-flex align-items-stretch" data-aos="fade-up" data-aos-delay="100">
+                        <div class="chef-member">
+                            <div class="member-img">
+                                <img src="@teamMember.PhotoPath" class="img-fluid" alt="@teamMember.Alt">
+
+                            </div>
+                            <div class="member-info">
+                                <h4>@teamMember.Name</h4>
+                                <span>@teamMember.Posistion</span>
+
                             </div>
                         </div>
-                        <div class="member-info">
-                            <h4>Walter White</h4>
-                            <span>Master Chef</span>
-                            <p>Velit aut quia fugit et et. Dolorum ea voluptate vel tempore tenetur ipsa quae aut. Ipsum exercitationem iure minima enim corporis et voluptate.</p>
-                        </div>
                     </div>
-                </div><!-- End Chefs Member -->
 
-                <div class="col-lg-4 col-md-6 d-flex align-items-stretch" data-aos="fade-up" data-aos-delay="200">
-                    <div class="chef-member">
-                        <div class="member-img">
-                            <img src="/assets/img/chefs/chefs-2.jpg" class="img-fluid" alt="">
-                            <div class="social">
-                                <a href=""><i class="bi bi-twitter"></i></a>
-                                <a href=""><i class="bi bi-facebook"></i></a>
-                                <a href=""><i class="bi bi-instagram"></i></a>
-                                <a href=""><i class="bi bi-linkedin"></i></a>
-                            </div>
-                        </div>
-                        <div class="member-info">
-                            <h4>Sarah Jhonson</h4>
-                            <span>Patissier</span>
-                            <p>Quo esse repellendus quia id. Est eum et accusantium pariatur fugit nihil minima suscipit corporis. Voluptate sed quas reiciendis animi neque sapiente.</p>
-                        </div>
-                    </div>
-                </div><!-- End Chefs Member -->
+                    <!-- End Chefs Member -->
+                }
 
-                <div class="col-lg-4 col-md-6 d-flex align-items-stretch" data-aos="fade-up" data-aos-delay="300">
-                    <div class="chef-member">
-                        <div class="member-img">
-                            <img src="/assets/img/chefs/chefs-3.jpg" class="img-fluid" alt="">
-                            <div class="social">
-                                <a href=""><i class="bi bi-twitter"></i></a>
-                                <a href=""><i class="bi bi-facebook"></i></a>
-                                <a href=""><i class="bi bi-instagram"></i></a>
-                                <a href=""><i class="bi bi-linkedin"></i></a>
-                            </div>
-                        </div>
-                        <div class="member-info">
-                            <h4>William Anderson</h4>
-                            <span>Cook</span>
-                            <p>Vero omnis enim consequatur. Voluptas consectetur unde qui molestiae deserunt. Voluptates enim aut architecto porro aspernatur molestiae modi.</p>
-                        </div>
-                    </div>
-                </div><!-- End Chefs Member -->
+
+
 
             </div>
 
@@ -414,8 +315,8 @@
         <div class="container" data-aos="fade-up">
 
             <div class="section-header">
-                <h2>gallery</h2>
-                <p>Check <span>Our Gallery</span></p>
+                <h2> <localize key="gallery" /></h2>
+                <p><span><localize key="Our Gallery" /></span></p>
             </div>
 
             <div class="gallery-slider swiper">
@@ -438,8 +339,8 @@
         <div class="container" data-aos="fade-up">
             <alert render-mode="Bootstrap5"></alert>
             <div class="section-header">
-                <h2>Contact</h2>
-                <p>Need Help? <span>Contact Us</span></p>
+                <h2> <localize key="Contact" /></h2>
+                <p> <localize key="Need Help?" /><span><localize key="Contact Us" /></span></p>
             </div>
 
             <div class="mb-3">
@@ -452,7 +353,7 @@
                     <div class="info-item  d-flex align-items-center">
                         <i class="icon bi bi-map flex-shrink-0"></i>
                         <div>
-                            <h3>Our Address</h3>
+                            <h3> <localize key="Our Address" /></h3>
                             <p>@Model.BusinessInfo.Address</p>
                         </div>
                     </div>
@@ -462,7 +363,7 @@
                     <div class="info-item d-flex align-items-center">
                         <i class="icon bi bi-envelope flex-shrink-0"></i>
                         <div>
-                            <h3>Email Us</h3>
+                            <h3> <localize key="Email Us" /></h3>
                             <p>@Model.BusinessInfo.ContactUsEmail</p>
                         </div>
                     </div>
@@ -472,11 +373,11 @@
                     <div class="info-item  d-flex align-items-center">
                         <i class="icon bi bi-telephone flex-shrink-0"></i>
                         <div>
-                            <h3>Call Us</h3>
+                            <h3> <localize key="Call Us" /></h3>
                             @foreach (var phone in Model.BusinessInfo.PhoneNumbers)
                             {
 
-                                <p>@phone</p>
+                                <p>@phone.FormattedNumber</p>
                             }
                         </div>
                     </div>
@@ -488,7 +389,7 @@
                     <div class="info-item  d-flex align-items-center">
                         <i class="icon bi bi-share flex-shrink-0"></i>
                         <div>
-                            <h3>Opening Hours</h3>
+                            <h3> <localize key="Opening Hours" /></h3>
                             <div>
                                 @Model.BusinessInfo.OpeningHours
                             </div>

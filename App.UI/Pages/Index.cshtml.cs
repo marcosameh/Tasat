@@ -22,6 +22,8 @@ namespace App.UI.Pages
         private readonly ResourceInfo resourceInfo;
         private readonly MailManager mailManager;
         private readonly BusinessInfoManager businessInfoManager;
+        private readonly TestimonialManager testimonialManager;
+        private readonly TeamManager teamManager;
 
         public MediaItem TopRightMedia { get; set; }
         public MediaItem RightImageMedia { get; set; }
@@ -29,7 +31,8 @@ namespace App.UI.Pages
         public IQueryable<MenuSection> Menu { get; set; }  
         public IQueryable<Event> Events { get; set; }  
         public IQueryable<Gallery> Galleries { get; set; }
-       
+        public IEnumerable<Testimonial> Testimonials { get; set; }
+        public IEnumerable<TeamMember> Team { get; set; }
         public BusinessInfo BusinessInfo { get; set; }
 
         [BindProperty]
@@ -37,7 +40,8 @@ namespace App.UI.Pages
 
         public IndexModel(MediaItemManager mediaItemManager,
             MenuManager menuManager,EventManager eventManager,GalleryManager galleryManager,
-            ResourceInfo resourceInfo,MailManager mailManager,BusinessInfoManager businessInfoManager)
+            ResourceInfo resourceInfo,MailManager mailManager,BusinessInfoManager businessInfoManager,
+            TestimonialManager testimonialManager,TeamManager teamManager)
         {
             this.mediaItemManager = mediaItemManager;
             this.menuManager = menuManager;
@@ -46,6 +50,8 @@ namespace App.UI.Pages
             this.resourceInfo = resourceInfo;
             this.mailManager = mailManager;
             this.businessInfoManager = businessInfoManager;
+            this.testimonialManager = testimonialManager;
+            this.teamManager = teamManager;
         }
 
 
@@ -65,6 +71,8 @@ namespace App.UI.Pages
             Events = eventManager.GetEvents();
             Galleries=galleryManager.GetGallery();
             BusinessInfo=businessInfoManager.GetBusinessInfo();
+            Testimonials = testimonialManager.GetTestimonials();
+            Team = teamManager.GetTeam();
            
 
         }

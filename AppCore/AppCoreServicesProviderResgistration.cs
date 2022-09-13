@@ -43,6 +43,7 @@ namespace AppCore
                    .AddScoped<MenuManager>()
                    .AddScoped<GalleryManager>()
                    .AddScoped<EventManager>()
+                   .AddScoped<TeamManager>()
                    .AddScoped<MailChimpServiceManager>()
                    .AddScoped<IViewRenderService, ViewRenderService>();
 
